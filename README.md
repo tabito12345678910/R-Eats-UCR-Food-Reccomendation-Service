@@ -18,9 +18,29 @@
 ## Project Description
  > Your project description should summarize the project you are proposing. Be sure to include:
  > * Why is it important or interesting to you?
+ * We are all college students and we would all have a nicer way to eat food for less
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
+* This will be a terminal based
+* It will all be written in C++
+* We will have a way to store user data using local files
+* Some sort of catering algorithm for people to choose exactly what they want to eat
  > * What will be the input/output of your project?
+ # Input:
+ * Insert choices through the terminal with key binds
+* Answer a couple questions and get your choices
+* Give your interests and what you are hungry for and the price you want to pay
+ # Output:
+ * Suggestion for foods to eat and from what place to eat, and the price of the food after taxes
  > * What are the features that the project provides?
+ * We will have a catering algorithm that will be fed from user input and interests
+ * It will include all the benefits that installing the phone app, such as 5% cashback in points
+ * Then give a QR code to download the app if you haven't already
+ * Store user data and interests, and figure out how to utilize that
+* algorithm to store all of that data
+* Tell the app where you are, then it will draw a graph from your location then tell you the distance you are to every food spot on campus
+* Works in any building, I may add the parking lots, UV, and apartments, and those local restaurants
+* Add some sort of auto-correct features in case you spell your building incorrectly, and maybe visualize the graph and shortest path
+* A CLI map shown in ascii
  > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted.
  >
  > You also need to set up an empty project board using GitHub projects (board view with default columns). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added. All columns should be in the right order.
