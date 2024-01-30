@@ -19,7 +19,7 @@
  > Your project description should summarize the project you are proposing. Be sure to include:
  > * Why is it important or interesting to you?
  * We are all college students and we would all have a nicer way to eat food for less
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
+ > * What languages/tools/technologies do you plan to use? (This list may change throughout the project)
 * This will be a terminal based
 * It will all be written in C++
 * We will have a way to store user data using local files
@@ -27,20 +27,21 @@
  > * What will be the input/output of your project?
  # Input:
  * Insert choices through the terminal with key binds
-* Answer a couple questions and get your choices
-* Give your interests and what you are hungry for and the price you want to pay
+* Answer a couple of questions and get your choices
+* Give your interests what you are hungry for and the price you want to pay
  # Output:
  * Suggestion for foods to eat and from what place to eat, and the price of the food after taxes
+ * This would be done by assigning tags such as the type of food, dietary restrictions, price ranges, etc, and spit out the nearest available option to the users description
  > * What are the features that the project provides?
  * We will have a catering algorithm that will be fed from user input and interests
  * It will include all the benefits that installing the phone app, such as 5% cashback in points
  * Then give a QR code to download the app if you haven't already
  * Store user data and interests, and figure out how to utilize that
 * algorithm to store all of that data
-* Tell the app where you are, then it will draw a graph from your location then tell you the distance you are to every food spot on campus
-* Works in any building, I may add the parking lots, UV, and apartments, and those local restaurants
+* Tell the app where you are, and then it will draw a graph from your location then tell you the distance you are to every food spot on campus
+* Works in any building, I may add the parking lots, UV, apartments, and local restaurants
 * Add some sort of auto-correct features in case you spell your building incorrectly, and maybe visualize the graph and shortest path
-* A CLI map shown in ascii
+* A CLI map shown in ASCII
  > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted.
  >
  > You also need to set up an empty project board using GitHub projects (board view with default columns). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added. All columns should be in the right order.
@@ -52,11 +53,11 @@
  >   * These cards should represent roughly 7 days worth of development time for your team. Then, once the sprint is over you should be repeating these steps to plan a new sprint, taking you until your second scrum meeting with the reader in phase III.
  > * Schedule two check-ins using Calendly. Both time slots should be during your lab on week 6. Your entire team must be present for both check-ins.
  >   * The first check-in needs to be scheduled with your lab TA. During that meeting, you will discuss your project design/class diagram from phase II.
- >   * The second check-in should be scheduled with a reader. During that meeting you will discuss:
+ >   * The second check-in should be scheduled with a reader. During that meeting, you will discuss:
  >     * The tasks you are planning for the first sprint
  >     * How work will be divided between the team members
 ## User Interface Specification
- > Include a navigation diagram for your screens and the layout of each of those screens as desribed below. For all the layouts/diagrams, you can use any tool such as PowerPoint or a drawing program. (Specification requirement is adapted from [this template](https://redirect.cs.umbc.edu/~mgrass2/cmsc345/Template_UI.doc))
+ > Include a navigation diagram for your screens and the layout of each of those screens as described below. For all the layouts/diagrams, you can use any tool such as PowerPoint or a drawing program. (Specification requirement is adapted from [this template](https://redirect.cs.umbc.edu/~mgrass2/cmsc345/Template_UI.doc))
 
 ### Navigation Diagram
 > Draw a diagram illustrating how the user can navigate from one screen to another. Here is an [example](https://creately.com/diagram/example/ikfqudv82/user-navigation-diagram-classic?r=v). It can be useful to label each symbol that represents a screen so that you can reference the screens in the next section or the rest of the document if necessary. Give a brief description of what the diagram represents.
@@ -65,14 +66,14 @@
 > Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs and expected output, or any graphical user interface components if applicable (e.g. buttons, text boxes, etc). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
 
 ## Class Diagram
- > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
+ > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project at this point and complete it. Use proper UML notation (as discussed in the course slides).
 
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
 
  > BEFORE the meeting you should do the following:
  > * Update your class diagram from Phase II to include any feedback you received from your TA/grader.
- > * Considering the SOLID design principles, reflect back on your class diagram and think about how you can use the SOLID principles to improve your design. You should then update the README.md file by adding the following:
+ > * Considering the SOLID design principles, reflect on your class diagram and think about how you can use the SOLID principles to improve your design. You should then update the README.md file by adding the following:
  >   * A new class diagram incorporating your changes after considering the SOLID principles.
  >   * For each update in your class diagram, you must explain in 3-4 sentences:
  >     * What SOLID principle(s) did you apply?
@@ -83,9 +84,9 @@
 
 > During the meeting with your reader you will discuss:
  > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
+ > * Any tasks that did not get completed last sprint, and how you considered them for this sprint
  > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
+ > * What tasks you are planning for this next sprint?
 
 
  > ## Final deliverable
