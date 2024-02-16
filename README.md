@@ -74,6 +74,9 @@ Diagram first asks for preferred food choice/cuisine. Once user inputs, program 
 > Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs and expected output, or any graphical user interface components if applicable (e.g. buttons, text boxes, etc). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
 >
 ![Alt Text](https://github.com/cs100/final-project-dtope004-nmat016-rrobe031-tsaka014/blob/master/media/Screen%20Shot%202024-02-15%20at%208.45.48%20PM.png?raw=true)
+
+
+>
  Generally all the same layouts.
  Asks questions to users about preferred food choices/restaurants.
  Underneath provide options for user to select.
