@@ -65,13 +65,13 @@ User interface will all be on the terminal. Single char inputs to change screens
 
 ### Navigation Diagram
 > Draw a diagram illustrating how the user can navigate from one screen to another. Here is an [example](https://creately.com/diagram/example/ikfqudv82/user-navigation-diagram-classic?r=v). It can be useful to label each symbol that represents a screen so that you can reference the screens in the next section or the rest of the document if necessary. Give a brief description of what the diagram represents.
-Diagram first asks for preferred food choice/cuisine. Once user inputs, program changes screens to recommended restaurants. If user wants to go back to first screen they can, using char 'b'. Input preferred restaurant name, and screen will change to recommended food from restaurant, QR Code, and ETA to restaurant. 
-![Alt Text](https://github.com/cs100/final-project-dtope004-nmat016-rrobe031-tsaka014/blob/dtope004/ProperNameREADME/media/Navigation_Diagram.png?raw=true)
+Diagram first asks for preferred food choice/cuisine. Once user inputs, program changes screens to recommended restaurants. If user wants to go back to first screen they can, using char 'b'. Input preferred restaurant name, and screen will change to recommended food from restaurant, QR Code, and ETA to restaurant.
+![Alt Text](https://github.com/cs100/final-project-dtope004-nmat016-rrobe031-tsaka014/blob/master/media/Navigation_Diagram.png?raw=true)
 
 ### Screen Layouts
 > Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs and expected output, or any graphical user interface components if applicable (e.g. buttons, text boxes, etc). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
 >
-![Alt Text](https://github.com/cs100/final-project-dtope004-nmat016-rrobe031-tsaka014/blob/dtope004/ProperNameREADME/media/Screen_Layout.png?raw=true)
+![Alt Text](https://github.com/cs100/final-project-dtope004-nmat016-rrobe031-tsaka014/blob/master/media/Screen_Layout.png?raw=true)
 
  Generally all the same layouts.
  Asks questions to users about preferred food choices/restaurants.
