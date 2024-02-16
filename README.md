@@ -24,7 +24,9 @@
 * It will all be written in C++
 * We will have a way to store user data using local files
 * Some sort of catering algorithm for people to choose exactly what they want to eat
- > * What will be the input/output of your project?
+ > * What will be the input/output of your project, you will also get colorie counts with a budget?
+ * Assign everything to a user profile and you can choose how you want your preferences sorter
+    - This being by price, calorie, price per calorie, distance
  # Input:
  * Insert choices through the terminal with key binds
 * Answer a couple of questions and get your choices
