@@ -15,6 +15,10 @@ enum class MenuChoice {
   Beans,
   Shrimp,
   Vegetables,
+  Tuna, //added seafood
+  Salmon,
+  Scallops,
+  Crab,
   Dessert
 };
 

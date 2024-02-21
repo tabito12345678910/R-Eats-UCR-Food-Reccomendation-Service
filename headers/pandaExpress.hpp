@@ -14,6 +14,7 @@ class PandaExpress : public buffetRestaurant {
     vMenu.push_back(MenuChoice::Rice);
     vMenu.push_back(MenuChoice::Shrimp);
     vMenu.push_back(MenuChoice::Vegetables);
+    vMenu.push_back(MenuChoice::Noodes); //added for chowmein
     // Eggplant Tofu!
     vMenu.push_back(MenuChoice::Vegetarian);
     vMenu.push_back(MenuChoice::Vegan);
