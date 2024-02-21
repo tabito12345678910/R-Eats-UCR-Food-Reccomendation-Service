@@ -14,7 +14,8 @@ enum class MenuChoice {
   Rice,
   Beans,
   Shrimp,
-  Vegstables
+  Vegstables,
+  Dessert
 };
 
 enum class Nationality { Japanese, Chinese, American, Halal, Mexican };
