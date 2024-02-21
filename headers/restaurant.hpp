@@ -14,7 +14,7 @@ enum class MenuChoice {
   Rice,
   Beans,
   Shrimp,
-  Vegstables,
+  Vegetables,
   Dessert
 };
 
