@@ -12,10 +12,11 @@ enum class MenuChoice {
   Mushrooms,
   Fries,
   Rice,
+  Noodles, // added for chowmein
   Beans,
   Shrimp,
   Vegetables,
-  Tuna, //added seafood
+  Tuna, //added seafood can be allergens
   Salmon,
   Scallops,
   Crab,
@@ -52,6 +53,7 @@ public:
 protected:
   // These are vectors as of now, probably change it to strings or plain enums
   // This visually makes the code look clean
+  std::string meal; //the meal restaurant is known for
   std::vector<MenuChoice> vChoices;
   std::vector<Beverages> vDrinks;
   std::vector<Nationality> vNation;
@@ -74,7 +76,7 @@ class buffetRestaurant : public Restaurant {
   }
 
 protected:
-  std::double priceS, priceM, priceL;
+  std::double priceS, priceM, priceL, priceSDrink, priceMDrink, priceLDrink; //added drinks
   /* std::vector < */
 };
 

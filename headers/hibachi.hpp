@@ -1,10 +1,12 @@
-#include "restaurants.hpp"
+#include "restaurant.hpp"
 
 class Hibachi : public buffetRestaurant {
   Hibachi() {
+    meal = "Poke Bowls";
     priceS = 12.50;
     priceM = 13.00;
     princeL = 14.50;
+
     vLocation.push_back(Location::HUB);
     vDrinks.push_back(Beverages::SodaFountain);
     vNation.push_back(Nationality::Japanese);

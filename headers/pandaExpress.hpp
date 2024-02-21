@@ -1,10 +1,14 @@
-#include "restaurants.hpp"
+#include "restaurant.hpp"
 
 class PandaExpress : public buffetRestaurant {
   PandaExpress() {
+    meal = "Chinese cuisine, protein + rice/noodles";
     priceS = 8.40;
     priceM = 9.90;
     princeL = 11.40;
+    priceSDrink = 2.59;
+    priceMDrink = 2.99;
+    priceLDrink = 3.39;
     vLocation.push_back(Location::HUB);
     vDrinks.push_back(Beverages::SodaFountain);
     vNation.push_back(Nationality::Chinese);
