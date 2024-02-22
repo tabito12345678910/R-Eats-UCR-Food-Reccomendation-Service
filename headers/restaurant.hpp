@@ -20,6 +20,7 @@ enum class MenuChoice {
   Rice,
   Noodles, // added for chowmein
   Burger,
+  Sandwich,
   Shrimp,
   Tuna, // added seafood can be allergens
   Salmon,
@@ -36,8 +37,10 @@ enum class Location {
   HUB,
   UniversityVillage,
   Glenmore,
-  BetweenOrbachAndCollegeOfMedicine,
-  Barn
+  Orbach,
+  Chung,
+  EastCampus,
+  MSE
 };
 
 enum class Beverages { Coffee, Tea, SodaFountain };
