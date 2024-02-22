@@ -10,33 +10,23 @@ enum class MenuChoice {
   Chicken,
   Beef,
   Pork,
-  Bacon,
+  Turkey,
   Vegetarian,
   Vegan,
-  Mushrooms,
-  Fries,
-  Rice,
-  Beans,
-  Shrimp,
-  Vegetables,
-  Tuna, //added seafood
-  Salmon,
-  Scallops,
-  Crab,
-  Noodles, // added for chowmein
-  Beans,
-  Shrimp,
   Vegetables,
   Salad,
+  Mushrooms, // Portabella slaps
+  Fries,
+  Rice,
+  Noodles, // added for chowmein
   Burger,
-  Tuna, //added seafood can be allergens
+  Shrimp,
+  Tuna, // added seafood can be allergens
   Salmon,
   Scallops,
   Crab,
-  Tortilla,
-  Burritos, //added broad mexican dishes
+  Burritos, // added broad mexican dishes
   Tacos,
-  Quesadilla,
   Dessert
 };
 
@@ -62,19 +52,19 @@ class Restaurant {
 public:
   virtual ~Restaurant() {}
 };
-  //virtual greeter() {} // plaeholder
+// virtual greeter() {} // plaeholder
 
-  /*virtual void addMenuChoice(MenuChoice choice) {
+/*virtual void addMenuChoice(MenuChoice choice) {
 =======
-  virtual greeter() {} // plaeholder
+virtual greeter() {} // plaeholder
 
-  virtual void addMenuChoice(MenuChoice choice) {
-    MenuChoice.push_back(choice);
-  } */
+virtual void addMenuChoice(MenuChoice choice) {
+  MenuChoice.push_back(choice);
+} */
 
-  /*virtual const std::vector<MenuChoice> &getMenuChoices() const {
-    return vChoices;
-  }*/
+/*virtual const std::vector<MenuChoice> &getMenuChoices() const {
+  return vChoices;
+}*/
 
 /*protected:
   // These are vectors as of now, probably change it to strings or plain enums
@@ -87,7 +77,7 @@ public:
   std::string restaurant_name;
 //  std::vector<std::string, std::double, std::int>
 //      vMenu; // name, price, calories
-   Location vLocation; // plain enum, keeping the v for namesake 
+   Location vLocation; // plain enum, keeping the v for namesake
 };  */
 
 // For takeout restaurants like PandaExpress / Hibachi
@@ -101,14 +91,15 @@ public:
               << "\nLarge(3 entree & 1 side): $" << priceL << endl;
   } */
 
-/*protected:
-  std::double priceS, priceM, priceL;
-  /* std::vector < */
-//};  
-  std::vector<std::string, std::double, std::int>
-      vMenu; // name, price, calories
-  /* Location vLocation; // plain enum, keeping the v for namesake */
-};
+protected:
+std::double priceS, priceM, priceL;
+std::vector <
+    //};
+    std::vector<std::string, std::double, std::int>
+        vMenu;      // name, price, calories
+Location vLocation; // plain enum, keeping the v for namesake
+}
+;
 
 // For takeout restaurants like PandaExpress / Hibachi
 class buffetRestaurant : public Restaurant {
@@ -122,12 +113,13 @@ class buffetRestaurant : public Restaurant {
   }
 
 protected:
-  std::double priceS, priceM, priceL, priceSDrink, priceMDrink, priceLDrink; //added drinks
-  /* std::vector < */
+  std::double priceS, priceM, priceL, priceSDrink, priceMDrink,
+      priceLDrink; // added drinks
+  std::vector <
 };
 
 // NOTE  testing purposes
-/*class SampleRestaurant : public Restaurant {
+class SampleRestaurant : public Restaurant {
 public:
   SampleRestaurant() {
     // You can hard code more values since it is a vector
@@ -135,6 +127,6 @@ public:
     vNation.push_back(Nationality::American);
     vLocation.push_back(Location::HUB);
   }
-}; */
+};
 
 #endif /* RESTAURANT_HPP */
