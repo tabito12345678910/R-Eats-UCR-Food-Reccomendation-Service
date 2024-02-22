@@ -20,6 +20,10 @@ enum class MenuChoice {
   Salmon,
   Scallops,
   Crab,
+  Tortilla,
+  // Burritos, //added broad mexican dishes
+  // Tacos,
+  // Quesadilla,
   Dessert
 };
 
