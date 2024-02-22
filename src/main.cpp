@@ -45,6 +45,8 @@ string menu() {
 }
 
 int main() {
+  vectorRestaurant vMenus; // class that holds all restaurants
+
   string choice = menu();
   if (choice == "quit") {
     cout << "quitting program" << endl;
@@ -54,27 +56,5 @@ int main() {
     cout << "testing" << endl;
   }
   // fix buffer just in case non-numeric choice entered
-  return 0;
-}
-
-// TODO Convert this into it's own class/file
-
-int main() {
-  vector<*Restaurant> vCombinedMenus;
-  // allocating memory
-  // TODO  Write a class for vCombinedMenus
-  // include constructor and destructor
-  // FIX  MOVE THIS TO ITS OWN HEADERS FILE
-  Restaurant *panda = new PandaExpress();
-  Restaurant *halal = new Halal();
-  vCombinedMenus.push_back(panda);
-
-  cout << "hellow world" << endl;
-
-  // Clearing memory
-  for (size_t i = 0; i < vCombinedMenus.size(); ++i) {
-    delete vCombinedMenus.at(vCombinedMenus.size() - 1);
-    vCombinedMenus.pop_back();
-  }
   return 0;
 }
