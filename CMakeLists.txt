@@ -8,6 +8,7 @@ ADD_EXECUTABLE( main
     src/main.cpp
     src/restaurant.cpp
 )
+<<<<<<< HEAD
 ADD_EXECUTABLE(test
 tests/test.cpp
 )
@@ -17,3 +18,14 @@ tests/test.cpp
 add_library(librect STATIC src/restaurant.cpp)
 TARGET_LINK_LIBRARIES(test gtest_main librect)
 TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)
+=======
+# ADD_EXECUTABLE(test
+#      tests/test.cpp
+# )
+# # ADD_EXECUTABLE(headers
+# #     headers/restaurant.hpp
+# # )
+# add_library(librect STATIC src/restaurant.cpp)
+# TARGET_LINK_LIBRARIES(test gtest_main librect)
+# TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON) 
+>>>>>>> refs/remotes/origin/nmats016/compiler
