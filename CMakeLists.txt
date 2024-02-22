@@ -2,7 +2,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 project(Final-Project)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y")
 
-ADD_SUBDIRECTORY(googletest)
+ADD_SUBDIRECTORY(tests/googletest)
 
 ADD_EXECUTABLE( main
     src/main.cpp
