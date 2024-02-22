@@ -37,22 +37,26 @@ enum class Location {
 enum class Beverages { Coffee, Tea, SodaFountain };
 
 // virtual class
-/*
+struct MenuItem {
+  std::string itemName;
+  double itemCost;
+};
+
 class Restaurant {
 public:
   virtual ~Restaurant() {}
-
+};
   //virtual greeter() {} // plaeholder
 
   /*virtual void addMenuChoice(MenuChoice choice) {
     MenuChoice.push_back(choice);
-  } 
+  } */
 
-  virtual const std::vector<MenuChoice> &getMenuChoices() const {
+  /*virtual const std::vector<MenuChoice> &getMenuChoices() const {
     return vChoices;
-  }
+  }*/
 
-protected:
+/*protected:
   // These are vectors as of now, probably change it to strings or plain enums
   // This visually makes the code look clean
   std::vector<MenuChoice> vChoices;
@@ -62,8 +66,8 @@ protected:
   std::string restaurant_name;
 //  std::vector<std::string, std::double, std::int>
 //      vMenu; // name, price, calories
-  /* Location vLocation; // plain enum, keeping the v for namesake 
-}; */
+   Location vLocation; // plain enum, keeping the v for namesake 
+};  */
 
 // For takeout restaurants like PandaExpress / Hibachi
 /*class buffetRestaurant : public Restaurant {
@@ -74,15 +78,15 @@ protected:
               << "Prices: Small(1 entree & 1 side): $" << priceS
               << " Medium (2 entree & 1 side): $" << priceM
               << "\nLarge(3 entree & 1 side): $" << priceL << endl;
-  }
+  } */
 
-protected:
+/*protected:
   std::double priceS, priceM, priceL;
   /* std::vector < */
-//}; 
-/*
+//};  
+
 // NOTE  testing purposes
-class SampleRestaurant : public Restaurant {
+/*class SampleRestaurant : public Restaurant {
 public:
   SampleRestaurant() {
     // You can hard code more values since it is a vector
