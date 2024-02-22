@@ -11,17 +11,7 @@ ADD_EXECUTABLE( main
 ADD_EXECUTABLE(test
       tests/test.cpp
  )
-ADD_EXECUTABLE(head
-      headers/restaurant.hpp
-      headers/habit.hpp
-      headers/chronicTacos.hpp
-      headers/coffeeBean.hpp
-      headers/halalShack.hpp
-      headers/menuItem.hpp
-      headers/pandaExpress.hpp
-      headers/starbucks.hpp
-      headers/subway.hpp
-  )
+
 add_library(librect STATIC src/restaurant.cpp)
 TARGET_LINK_LIBRARIES(test gtest_main librect)
 TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)
