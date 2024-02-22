@@ -1,7 +1,7 @@
 #include "restaurant.hpp"
 
 class ChronicTacos : public Restaurant {
-  PandaExpress() {
+  ChronicTacos() {
     meal = "Mexican street food. Tacos, burritos, and bowls";
     priceMDrink = 2.59;
     priceLDrink = 3.39;

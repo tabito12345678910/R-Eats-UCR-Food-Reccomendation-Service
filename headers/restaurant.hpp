@@ -7,6 +7,7 @@ enum class MenuChoice {
   Chicken,
   Beef,
   Pork,
+  Bacon,
   Vegetarian,
   Vegan,
   Mushrooms,
@@ -16,14 +17,16 @@ enum class MenuChoice {
   Beans,
   Shrimp,
   Vegetables,
+  Salad,
+  Burger,
   Tuna, //added seafood can be allergens
   Salmon,
   Scallops,
   Crab,
   Tortilla,
-  // Burritos, //added broad mexican dishes
-  // Tacos,
-  // Quesadilla,
+  Burritos, //added broad mexican dishes
+  Tacos,
+  Quesadilla,
   Dessert
 };
 
