@@ -11,7 +11,7 @@ ADD_EXECUTABLE( main
 ADD_EXECUTABLE(test
       tests/test.cpp
  )
-ADD_EXECUTABLE(headers
+ADD_EXECUTABLE(head
       headers/restaurant.hpp
       headers/habit.hpp
       headers/chronicTacos.hpp
