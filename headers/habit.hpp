@@ -17,5 +17,6 @@ class Habit : public Restaurant {
     vMenu.push_back(MenuChoice::Tuna)
     vMenu.push_back(MenuChoice::Vegetarian);
     vMenu.push_back(MenuChoice::Salad);
+    vMenu.push_back(MenuChoice::Sandwich);
   }
 };
