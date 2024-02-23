@@ -11,6 +11,8 @@ string menu() {
   string choice;
   cout << endl << "Enter food type or cuisines ";
   cout << endl;
+  // TODO Put the result into a unsigned int
+  //    Then into a hash table that holds all restaurants with that enum
   cout << "Food types:" << endl
        << "1. Chicken" << endl
        << "2. Beef" << endl
@@ -34,7 +36,8 @@ string menu() {
        << "2. Chinese" << endl
        << "3. American" << endl
        << "4. Halal" << endl
-       << "5. Mexican" << endl;
+       << "5. Mexican" << endl
+       << "6. No preference" << endl; // default
   cin >> choice;
 
   // fix buffer just in case non-numeric choice entered

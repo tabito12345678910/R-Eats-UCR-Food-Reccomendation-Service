@@ -1,4 +1,4 @@
-#include "restaurant.hpp"
+#include "buffetRestaurant.hpp"
 
 class Hibachi : public buffetRestaurant {
   Hibachi() {
