@@ -1,4 +1,6 @@
-
+#ifndef MENUITEM_HPP
+#define MENUITEM_HPP
+#include <string>
 // THe file of all the anumeration classes
 enum class MenuChoice {
   Chicken,
@@ -44,3 +46,4 @@ struct MenuItem {
   std::string itemName;
   double itemCost;
 };
+#endif

@@ -9,18 +9,14 @@
 
 class Restaurant {
 public:
-  virtual ~Restaurant() {}
+  virtual Restaurant;
+  virtual ~Restaurant();
   // virtual greeter() {} // plaeholder
 
-  virtual void addMenuChoice(MenuChoice choice) {}
+  virtual void addMenuChoice(MenuChoice choice);
 
-  virtual void addMenuChoice(MenuChoice choice) {
-    MenuChoice.push_back(choice);
-  }
-
-  virtual const std::vector<MenuChoice> &getMenuChoices() const {
-    return vChoices;
-  }
+  virtual void addMenuChoice(MenuChoice choice);
+  virtual const std::vector<MenuChoice> &getMenuChoices() const;
 
 protected:
   // These are vectors as of now, probably change it to strings or plain enums
@@ -35,3 +31,5 @@ protected:
   //      vMenu; // name, price, calories
   Location vLocation; // plain enum, keeping the v for namesake
 };
+
+#endif
