@@ -27,7 +27,7 @@ enum class MenuChoice {
   Dessert
 };
 
-enum class Nationality { Japanese, Chinese, American, Halal, Mexican };
+enum class Nationality { Japanese, Chinese, American, Mediterranean, Mexican };
 
 enum class Location {
   HUB,

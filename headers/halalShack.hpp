@@ -1,12 +1,12 @@
 #include "restaurant.hpp"
 
 class HalalShack : public Restaurant {
-  HalalShack() {
+  HalalShack(){
     meal = "Mediterranean street food";
     priceMDrink = 2.59;
     vLocation.push_back(Location::HUB);
     vDrinks.push_back(Beverages::SodaFountain);
-    vNation.push_back(Nationality::Halal);
+    vNation.push_back(Nationality::Mediterranean);
 
     vMenu.push_back(MenuChoice::Fries);
     vMenu.push_back(MenuChoice::Beef);
