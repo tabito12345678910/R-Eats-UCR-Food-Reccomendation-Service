@@ -48,7 +48,7 @@ string menu() {
 }
 
 int main() {
-  vectorRestaurant vMenus; // class that holds all restaurants
+  /* vectorRestaurant vMenus; // class that holds all restaurants */
 
   string choice = menu();
   if (choice == "quit") {
