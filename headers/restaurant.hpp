@@ -7,29 +7,35 @@
 #include <string>
 #include <vector>
 
+using std::string;
+using std::vector;
+
 class Restaurant {
+
 public:
-  virtual Restaurant;
-  virtual ~Restaurant();
+  Restaurant() : priceSDrink(0), priceMDrink(0), priceLDrink(0) {}
+  ~Restaurant();
   // virtual greeter() {} // plaeholder
 
-  virtual void addMenuChoice(MenuChoice choice);
+  void addMenuChoice(MenuChoice choice);
 
-  virtual void addMenuChoice(MenuChoice choice);
-  virtual const std::vector<MenuChoice> &getMenuChoices() const;
+  vector<MenuChoice> &getMenuChoices() const;
 
 protected:
   // These are vectors as of now, probably change it to strings or plain enums
   // This visually makes the code look clean
-  std::string meal; // the meal restaurant is known for
-  std::vector<MenuChoice> vChoices;
-  std::vector<Beverages> vDrinks;
-  std::vector<Nationality> vNation;
-  std::vector<Location> vLocation;
-  std::string restaurant_name;
+  string meal; // the meal restaurant is known for
+  /* vector<MenuChoice> vChoices; */
+  vector<MenuChoice> vMenu;
+  vector<Beverages> vDrinks;
+  vector<Nationality> vNation;
+  vector<Location> vLocation;
+
+  // Note Used
+  string restaurant_name;
+  double priceSDrink, priceMDrink, priceLDrink;
   //  std::vector<std::string, std::double, std::int>
   //      vMenu; // name, price, calories
-  Location vLocation; // plain enum, keeping the v for namesake
 };
 
 #endif
