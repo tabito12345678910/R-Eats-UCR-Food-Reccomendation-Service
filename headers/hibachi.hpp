@@ -1,11 +1,12 @@
-#include "restaurant.hpp"
+#include "buffetRestaurant.hpp"
 
 class Hibachi : public buffetRestaurant {
-  Hibachi() {
-    meal = "Poke Bowls";
+public:
+  Hibachi() : meal("Poke Bowls"), priceS(12.50), priceM(13), priceL(14.5) {
+    /* meal = "Poke Bowls";
     priceS = 12.50;
     priceM = 13.00;
-    princeL = 14.50;
+    priceL = 14.50; */
 
     vLocation.push_back(Location::HUB);
     vDrinks.push_back(Beverages::SodaFountain);
@@ -24,4 +25,8 @@ class Hibachi : public buffetRestaurant {
     vMenu.push_back(MenuChoice::Vegetarian);
     vMenu.push_back(MenuChoice::Vegan);
   }
+
+private:
+  double priceS, priceM, priceL;
+  string meal;
 };
