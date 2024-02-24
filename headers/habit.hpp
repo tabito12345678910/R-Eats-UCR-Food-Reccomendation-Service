@@ -1,5 +1,6 @@
 #include "restaurant.hpp"
 class Habit : public Restaurant {
+public:
   Habit() : priceMDrink(2.79), priceLDrink(3.29) {
     meal = "Burger place";
     /* priceMDrink = 2.79;
@@ -13,9 +14,13 @@ class Habit : public Restaurant {
     vMenu.push_back(MenuChoice::Beef);
     vMenu.push_back(MenuChoice::Pork);
     vMenu.push_back(MenuChoice::Chicken);
-    vMenu.push_back(MenuChoice::Bacon);
-    vMenu.push_back(MenuChoice::Tuna) vMenu.push_back(MenuChoice::Vegetarian);
+    vMenu.push_back(MenuChoice::Tuna);
+    vMenu.push_back(MenuChoice::Vegetarian);
     vMenu.push_back(MenuChoice::Salad);
     vMenu.push_back(MenuChoice::Sandwich);
   }
+
+private:
+  double priceMDrink, priceLDrink;
+  string meal;
 };
