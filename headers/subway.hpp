@@ -14,7 +14,7 @@ class Subway : public Restaurant {
     vMenu.push_back(MenuChoice::Chicken);
     vMenu.push_back(MenuChoice::Turkey);
     vMenu.push_back(MenuChoice::Vegetables);
-    vMenu.push_back(MenuChoice::Dessert)
+    vMenu.push_back(MenuChoice::Dessert);
     vMenu.push_back(MenuChoice::Vegetarian);
   }
 };
