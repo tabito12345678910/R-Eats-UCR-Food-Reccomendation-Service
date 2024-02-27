@@ -1,6 +1,7 @@
 #include "../headers/restaurants.hpp"
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using std::cin;
 using std::cout;
@@ -80,7 +81,7 @@ string menu() {
   // TODO Put the result into a unsigned int
   //    Then into a hash table that holds all restaurants with that enum
   cout << "Food Preferences:" << endl
-       << "1. Meats:" << endl
+       << "1. Meat:" << endl
        << "2. Seafood:" << endl
        << "3. Vegetarian" << endl
        << "4. Vegan" << endl
@@ -88,7 +89,9 @@ string menu() {
        << "6. Dishes:" << endl
        << "7. Dessert" << endl
        << "8. Cuisines:" << endl
-       << "9. No preference" << endl; // default; will give every and all options
+       << "9. None" << endl // default; will give every and all options; using "None" rather than "No Preference" to avoid using getline 
+       << "10. [Quit]" << endl; //quit option
+
   cin >> choice;
 
   // fix buffer just in case non-numeric choice entered
@@ -101,14 +104,58 @@ string menu() {
 int main() {
   /* vectorRestaurant vMenus; // class that holds all restaurants */
 
-  string choice = menu();
-  if (choice == "quit") {
-    cout << "quitting program" << endl;
-  } else if (choice == "Chicken") {
-    cout << "Chicken" << endl;
-  } else {
-    cout << "testing" << endl;
+  string choice;
+  
+  while(choice != "quit") {
+    choice = menu();
+    std::transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); }); //ideally make choice lowercase for input conviences
+
+    if (choice == "quit") {
+      cout << "quitting program" << endl;
+    } else if (choice == "meat") {
+      //show meat options
+      choice = meatOptions();
+      std::transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); });
+
+      
+    } else if (choice == "seafood") {
+      choice = seafoodOptions();
+      std::transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); });
+
+
+    } else if (choice == "vegetarian") {
+      //add Vegetarian to preferences
+
+    } else if (choice == "vegan") {
+      //add Vegan to preferences
+
+
+    } else if (choice == "vegetables") {
+      //add Vegetables to preferences
+
+
+    } else if (choice == "dishes") {
+      choice = dishOptions();
+      std::transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); });
+
+      
+    } else if (choice == "dessert") {
+      //add Dessert to preferences
+
+
+    } else if (choice == "cuisines") {
+      choice = cuisineOptions();
+      std::transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); });
+
+      
+    } else if (choice == "none") {
+      //if none, show user all restaurant options, default
+
+
+    } else { //invalid respones
+
+    }
   }
-  // fix buffer just in case non-numeric choice entered
+  
   return 0;
 }
