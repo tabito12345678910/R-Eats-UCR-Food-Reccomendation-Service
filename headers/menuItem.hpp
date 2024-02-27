@@ -11,7 +11,6 @@ enum class MenuChoice {
   Vegan,
   Vegetables,
   Salad,
-  Mushrooms, // Portabella slaps
   Fries,
   Rice,
   Noodles, // added for chowmein
