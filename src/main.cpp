@@ -74,12 +74,113 @@ string cuisineOptions() { //displays meat options when "Cuisine" is selected
   return choice;
 }
 
+unsigned int selectingMeat() {
+  string choice;
+  while(choice != "back") {
+    choice = meatOptions(); //show meat options and pick
+    std::transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); });
+    if (choice == "back") {
+      
+    } else if (choice == "beef"){
+
+    } else if (choice == "chicken") {
+
+    } else if (choice == "pork") {
+
+    } else if (choice == "turkey") {
+
+    } else {
+      cout << "Invalid Response: Try Again" << endl;
+    }
+  }
+  return 0; //0 signals main to continue asking for food prefs
+}
+
+unsigned int selectingSeafood() {
+  string choice;
+  while(choice != "back") {
+    choice = seafoodOptions(); //show seafood options and pick
+    std::transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); });
+    if (choice == "back") {
+
+    } else if (choice == "crab"){
+
+    } else if (choice == "salmon") {
+
+    } else if (choice == "scallops") {
+
+    } else if (choice == "shrimp") {
+
+    } else if (choice == "tuna") {
+
+    } else {
+      cout << "Invalid Response: Try Again" << endl;
+    }
+  }
+  return 0; //0 signals main to continue asking for food prefs
+}
+
+unsigned int selectingDishes() {
+  string choice;
+  while(choice != "back") {
+    choice = dishOptions(); //show dish options and pick
+    std::transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); });
+    if (choice == "back") {
+
+    } else if (choice == "burger"){
+
+    } else if (choice == "burritos") {
+
+    } else if (choice == "fries") {
+
+    } else if (choice == "noodles") {
+
+    } else if (choice == "rice") {
+
+    } else if (choice == "salad") {
+
+    } else if (choice == "sandwich") {
+
+    } else if (choice == "tacos") {
+
+    } else {
+      cout << "Invalid Response: Try Again" << endl;
+    }
+  }
+  return 0; //0 signals main to continue asking for food prefs
+}
+
+unsigned int selectingCuisine() {
+  string choice;
+  while(choice != "back") {
+    choice = cuisineOptions(); //show cuisine options and pick
+    std::transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); });
+    if (choice == "back") {
+
+    } else if (choice == "american"){
+
+    } else if (choice == "chinese") {
+
+    } else if (choice == "japanese") {
+
+    } else if (choice == "mediterranean") {
+
+    } else if (choice == "mexican") {
+
+    } else {
+      cout << "Invalid Response: Try Again" << endl;
+    }
+  }
+  return 0; //0 signals main to continue asking for food prefs
+}
+
 string menu() {
   string choice;
-  cout << endl << "Enter food type or cuisines ";
-  cout << endl;
+  cout << endl << "Welcome to R'Eats" << endl;
+  cout << endl << "Enter food type or cuisines " << endl;
   // TODO Put the result into a unsigned int
   //    Then into a hash table that holds all restaurants with that enum
+  //
   cout << "Food Preferences:" << endl
        << "1. Meat:" << endl
        << "2. Seafood:" << endl
@@ -90,7 +191,8 @@ string menu() {
        << "7. Dessert" << endl
        << "8. Cuisines:" << endl
        << "9. None" << endl // default; will give every and all options; using "None" rather than "No Preference" to avoid using getline 
-       << "10. [Quit]" << endl; //quit option
+       << "10. [Done]" << endl
+       << "11. [Quit]" << endl; //quit option
 
   cin >> choice;
 
@@ -101,27 +203,22 @@ string menu() {
   return choice;
 }
 
-int main() {
+unsigned int menuSelect() {
   /* vectorRestaurant vMenus; // class that holds all restaurants */
 
   string choice;
   
   while(choice != "quit") {
     choice = menu();
-    std::transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); }); //ideally make choice lowercase for input conviences
+    std::transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); }); //ideally make "choice" lowercase for input conviences
 
     if (choice == "quit") {
-      cout << "quitting program" << endl;
+      cout << "Quitting Program" << endl;
     } else if (choice == "meat") {
-      //show meat options
-      choice = meatOptions();
-      std::transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); });
+      return selectingMeat(); //selector for meat options; returns 0 if back 1 if any other option
 
-      
     } else if (choice == "seafood") {
-      choice = seafoodOptions();
-      std::transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); });
-
+      return selectingSeafood(); //selector for seafood options; returns 0 if back 1 if any other option
 
     } else if (choice == "vegetarian") {
       //add Vegetarian to preferences
@@ -135,27 +232,30 @@ int main() {
 
 
     } else if (choice == "dishes") {
-      choice = dishOptions();
-      std::transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); });
-
+      return selectingDishes(); //selector for dish options; returns 0 if back 1 if any other option
       
     } else if (choice == "dessert") {
       //add Dessert to preferences
 
 
     } else if (choice == "cuisines") {
-      choice = cuisineOptions();
-      std::transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); });
-
+      return selectingCuisine(); //selector for cuisine options; returns 0 if back 1 if any other option
       
     } else if (choice == "none") {
       //if none, show user all restaurant options, default
 
 
-    } else { //invalid respones
+    } else if (choice == "done") {
+      return 1; //signals main that program is done and should display restaurant options that fit prefs
 
+    } else { //invalid response
+      cout << "Invalid Response: Try Again" << endl;
     }
   }
-  
+  return 2; //2 signals main that program is quitting, exits program and ends
+}
+
+int main() {
+
   return 0;
 }
