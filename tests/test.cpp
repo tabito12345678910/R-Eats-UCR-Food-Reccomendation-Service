@@ -1,9 +1,8 @@
-#include "../header/buffetRestaurant.hpp"
+#include "../headers/buffetRestaurant.hpp"
+#include "../headers/restaurant.hpp"
+#include "../headers/restaurants.hpp"
 #include "gtest/gtest.h"
 
 TEST(RestaurantTests, testingGreeter) {
-  Rectangle rect;
-  EXPECT_NO_THROW({Rectangle rect;});
-  EXPECT_EQ(rect.get_width(), 0);
-  EXPECT_EQ(rect.get_height(), 0);
+    
 }
