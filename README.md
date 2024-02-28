@@ -85,6 +85,10 @@ Have space for user to answer questions.
 [link](https://drive.google.com/file/d/1omhp5G6YEEz9L6IH52S4SWfvoZL6wKgt/view?usp=sharing)
 >
 Menu_Items points to Resturant as a composition relationship as Menu_Items is used to further build the Resturant class. User points to Resturant as user needs the information from resturant to establish the user and their preferences. Resturant then points to User_Interface so that User_interface can interact and use the Resturant class to set up the user interface specifications shown and explained in our navigation diagram.
+Subclass of Class Restaurant, BuffetRestaurant has a few more functions specific to buffets. Also added a class for every restaurant on campus that inherits from Restaurant or BuffetRestaurant.
+S. Each restaurant class is on a separate file, and they only have constructors that create the restaurants.
+O. The functionality of the classes is all set, and should not need modifications.
+This made the code much easier to read and elegant, as everything is compartmentalized into their files. 
 
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
