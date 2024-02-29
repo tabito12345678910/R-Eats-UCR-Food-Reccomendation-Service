@@ -9,7 +9,7 @@ using std::string;
 
 string meatOptions() { //displays meat options when "Meat" is selected
     string choice;
-    cout << "Meat Options" << endl
+    cout << endl << "Meat Options" << endl
         << "1. Beef" << endl
         << "2. Chicken" << endl
         << "3. Pork" << endl
@@ -24,7 +24,7 @@ string meatOptions() { //displays meat options when "Meat" is selected
 
 string seafoodOptions() { //displays meat options when "Seafood" is selected
     string choice;
-    cout << "Seafood Options" << endl
+    cout << endl << "Seafood Options" << endl
         << "1. Crab" << endl
         << "2. Salmon" << endl
         << "3. Scallops" << endl
@@ -40,9 +40,9 @@ string seafoodOptions() { //displays meat options when "Seafood" is selected
 
 string dishOptions() { //displays meat options when "Dishes" is selected
     string choice;
-    cout << "Dishes Options" << endl
+    cout << endl << "Dishes Options" << endl
         << "1. Burger" << endl
-        << "2. Burritos" << endl
+        << "2. Burrito" << endl
         << "3. Fries" << endl
         << "4. Noodles" << endl
         << "5. Rice" << endl
@@ -59,7 +59,7 @@ string dishOptions() { //displays meat options when "Dishes" is selected
 
 string cuisineOptions() { //displays meat options when "Cuisine" is selected
     string choice;
-    cout << "Cuisine Options:" << endl
+    cout << endl << "Cuisine Options:" << endl
         << "1. American" << endl
         << "2. Chinese" << endl
         << "3. Japanese" << endl

@@ -6,3 +6,4 @@ bin/
 lib/
 main
 googletest
+ui_test

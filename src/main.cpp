@@ -2,7 +2,6 @@
 #include "../headers/menu.hpp"
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
 using std::cin;
 using std::cout;
@@ -10,7 +9,16 @@ using std::endl;
 using std::string;
 
 int main() {
-  string choice;
-  choice = menuDisplay();
+  unsigned int track = 0;
+  while(track == 0) {
+    track = menuSelect();
+  }
+  if (track == 2) {
+    return 0; //quit the program nothing occurs
+  } else if (track > 2) {
+    return -1; //any other number is faulty 
+  }
+  cout << "Program done. Display Resturant Options" << endl;
+  
   return 0;
 }
