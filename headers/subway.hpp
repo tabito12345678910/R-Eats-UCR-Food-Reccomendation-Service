@@ -1,5 +1,6 @@
 #include "restaurant.hpp"
 class Subway : public Restaurant {
+public:
   Subway() {
     meal = "Sub sandwiches";
     priceSDrink = 2.59;

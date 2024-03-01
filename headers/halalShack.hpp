@@ -1,6 +1,7 @@
 #include "restaurant.hpp"
 
 class HalalShack : public Restaurant {
+public:
   HalalShack(){
     meal = "Mediterranean street food";
     priceMDrink = 2.59;
