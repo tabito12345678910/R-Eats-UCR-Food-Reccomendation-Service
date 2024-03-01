@@ -19,9 +19,11 @@ jobs:
     # - name: configure
     #   run: ./configure
 
+  - name: submodules
+    run: git submodule update --init --recursive
     - name: make
       run: |
-        cmake /home/runner/work/final-project-dtope004-nmat016-rrobe031-tsaka014/
+        cmake .
         make
 
     # Runs a single command using the runners shell
