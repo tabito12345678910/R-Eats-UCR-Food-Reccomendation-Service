@@ -1,4 +1,4 @@
-#include "../include/buffetRestaurant.h"
+#include "../headers/buffetRestaurant.hpp"
 
 using std::cout;
 using std::endl;

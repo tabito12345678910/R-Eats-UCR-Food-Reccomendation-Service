@@ -6,5 +6,6 @@ bin/
 lib/
 main
 googletest
+ui_test
 liblibrect.a
 test
