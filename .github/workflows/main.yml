@@ -19,8 +19,8 @@ jobs:
     # - name: configure
     #   run: ./configure
 
-  - name: submodules
-    run: git submodule update --init --recursive
+    - name: submodules
+      run: git submodule update --init --recursive
     - name: make
       run: |
         cmake .
