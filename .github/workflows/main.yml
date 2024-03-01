@@ -1,7 +1,7 @@
 name: CI
 on:
   push:
-    branches: [ master, dtope004/CI_Setup ]
+    branches: [ master, dtope004/CI_setup ]
   pull_request:
     branches: [ main ]
 
