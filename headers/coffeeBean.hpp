@@ -1,5 +1,6 @@
 #include "restaurant.hpp"
 class CoffeeBean : public Restaurant {
+public:
   CoffeeBean() {
     meal = "Coffee place";
     // priceMDrink = 2.79;
