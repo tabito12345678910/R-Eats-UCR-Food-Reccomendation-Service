@@ -82,8 +82,9 @@ Have space for user to answer questions.
 >
 Menu_Items points to Resturant as a composition relationship as Menu_Items is used to further build the Resturant class. User points to Resturant as user needs the information from resturant to establish the user and their preferences. Resturant then points to User_Interface so that User_interface can interact and use the Resturant class to set up the user interface specifications shown and explained in our navigation diagram.
 Subclass of Class Restaurant, BuffetRestaurant has a few more functions specific to buffets. Also added a class for every restaurant on campus that inherits from Restaurant or BuffetRestaurant.
-S. Each restaurant class is on a separate file, and they only have constructors that create the restaurants.
+S. Each restaurant class is on a separate file, and they only have constructors that create the restaurants, satisfying the single responsibility principle. 
 O. The functionality of the classes is all set, and should not need modifications.
+D. All the restaurants that are inherent in the restaurant class does not affect the parent classes, as they only have constructors for each restaurant. 
 This made the code much easier to read and elegant, as everything is compartmentalized into their files. 
 
  > ## Phase III
