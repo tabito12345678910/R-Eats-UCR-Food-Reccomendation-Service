@@ -21,7 +21,7 @@ jobs:
 
     - name: make
       run: |
-        cmake .
+        cmake /home/runner/work/final-project-dtope004-nmat016-rrobe031-tsaka014/
         make
 
     # Runs a single command using the runners shell
