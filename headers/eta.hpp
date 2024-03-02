@@ -40,8 +40,9 @@ class Eta {
     }
     vector<Place> getVPlace(){
         return vPlace;
-        }
-    int getEta(string from, Location to){
+    }
+
+    int getEta(string from, Location to){ //from should be a user input and to should be the location of the recommended restaurant
         vector<Place> EtaToRecommended = getVPlace();
         for(unsigned int i = 0; i<EtaToRecommended.size(); ++i){
             if(from == EtaToRecommended.at(i).getFrom()&&to == EtaToRecommended.at(i).getTo()){
