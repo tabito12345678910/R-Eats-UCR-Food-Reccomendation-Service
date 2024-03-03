@@ -1,6 +1,8 @@
 #include "restaurant.hpp"
 #include <string>
 
+using namespace std;
+
 class HalalShack : public Restaurant {
 public:
   HalalShack(){
@@ -18,6 +20,7 @@ public:
     vMenu.push_back(MenuChoice::Vegetables);
     vMenu.push_back(MenuChoice::Vegetarian);
     vMenu.push_back(MenuChoice::Vegan);
+
 
     vMeal.push_back(MenuItem("Rice and Chicken Bowl", 12.99, "530 ~ 1140 calories", MenuChoice::Rice, MenuChoice::Vegetables, MenuChoice::Chicken));
     vMeal.push_back(MenuItem("Rice and Beef Bowl", 12.99, "530 ~ 1140 calories", MenuChoice::Rice, MenuChoice::Vegetables, MenuChoice::Beef));

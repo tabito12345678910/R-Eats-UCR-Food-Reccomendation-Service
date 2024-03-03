@@ -1,8 +1,10 @@
 #ifndef MENUITEM_HPP
 #define MENUITEM_HPP
 #include <string>
+using namespace std;
 // THe file of all the anumeration classes
 enum class MenuChoice {
+  Protein, //for options where you can choose between chicken, beef, pork
   Chicken,
   Beef,
   Pork,
@@ -14,6 +16,8 @@ enum class MenuChoice {
   Fries,
   Rice,
   Noodles, // added for chowmein
+  Cheese, //added dairy options
+  Milk,
   Burger,
   Sandwich,
   Shrimp,
@@ -21,8 +25,7 @@ enum class MenuChoice {
   Salmon,
   Scallops,
   Crab,
-  Burritos, // added broad mexican dishes
-  Tacos,
+  Snacks, //slightly diff nuance from dessert so added, cuz user wouldnt think chips and salsa = dessert
   Dessert
 };
 
@@ -41,8 +44,17 @@ enum class Location {
 enum class Beverages { Coffee, Tea, SodaFountain };
 
 // virtual class
-struct MenuItem {
-  std::string itemName;
-  double itemCost;
+class MenuItem {
+  private:
+    string itemName;
+    double itemCost;
+    MenuChoice choice1;
+    MenuChoice choice2;
+    MenuChoice choice3;
+    string calories;
+  public:
+  //ADD CALORIES ONCE U GET BETTER PICTURES OF MENUS
+    MenuItem(string in, double ic, string cal, MenuChoice cho1, MenuChoice cho2, MenuChoice cho3): itemName(in), itemCost(ic), calories(cal), choice1(cho1), choice2(cho2), choice3(cho3){} //constructor each meal has two menuChoices assigned
+
 };
 #endif
