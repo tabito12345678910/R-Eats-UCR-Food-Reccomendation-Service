@@ -12,6 +12,7 @@ public:
     vDrinks.push_back(Beverages::SodaFountain);
     vNation.push_back(Nationality::Chinese);
 
+    vMenu.push_back(MenuChoice::Protein);
     vMenu.push_back(MenuChoice::Chicken);
     vMenu.push_back(MenuChoice::Beef);
     vMenu.push_back(MenuChoice::Rice);
@@ -23,6 +24,10 @@ public:
     vMenu.push_back(MenuChoice::Vegan);
     // There are desserts
     vMenu.push_back(MenuChoice::Dessert);
+
+
+
+    
   }
 
 private:

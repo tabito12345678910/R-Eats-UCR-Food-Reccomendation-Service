@@ -39,6 +39,7 @@ class Eta {
         vPlace.push_back(Place("EntemologyMuseum",Location::HUB, 10));
         vPlace.push_back(Place("EntemologyMuseum",Location::Chung, 10));
     }
+    
     vector<Place> getVPlace(){
         return vPlace;
     }
