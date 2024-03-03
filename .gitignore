@@ -4,8 +4,12 @@ Makefile
 cmake_install.cmake
 bin/
 lib/
-main
-googletest
-ui_test
 liblibrect.a
+
+# Binaries
 test
+ui_test
+main
+mainBinary
+QRCodeGenerator
+googletest
