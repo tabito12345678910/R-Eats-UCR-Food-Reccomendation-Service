@@ -2,6 +2,18 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 project(Final-Project)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y")
 
+# Add the include directory for libqrencode
+include_directories(${CMAKE_SOURCE_DIR}/external/libqrencode/include)
+
+# Find and link against the libqrencode library
+find_library(QRENCODE_LIB qrencode HINTS ${CMAKE_SOURCE_DIR}/external/libqrencode/lib)
+
+# Add the executable
+add_executable(QRCodeGenerator tests/testQRCode.cpp)
+
+# Link against libqrencode
+target_link_libraries(QRCodeGenerator PRIVATE ${QRENCODE_LIB})
+
 ADD_SUBDIRECTORY(tests/googletest)
 
 ADD_EXECUTABLE( main
