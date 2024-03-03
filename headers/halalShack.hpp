@@ -5,6 +5,7 @@ public:
   HalalShack() {
     meal = "Mediterranean street food";
     restaurantName = "Halal Shack";
+    vNameVariations = {restaurantName, "halal", "shack"};
 
     androidLink =
         "https://www.thehalalshack.com/discover-deliciousness/build-your-own";

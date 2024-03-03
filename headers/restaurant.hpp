@@ -9,6 +9,7 @@
 #include <vector>
 
 using std::string;
+using std::transform;
 using std::vector;
 
 class Restaurant {
@@ -25,6 +26,15 @@ public:
   Beverages getBeverage() { return vDrinks.at(0); };
   Nationality getNationality() { return vNation.at(0); };
   string getName() { return restaurantName; }
+  bool isOptionValid(const string &option) const {
+    string lowercaseOption = option;
+    transform(lowercaseOption.begin(), lowercaseOption.end(),
+              lowercaseOption.begin(), ::tolower);
+
+    // Checks if lower option matches a variation
+    return find(vNameVariations.begin(), vNameVariations.end(),
+                lowercaseOption) != vNameVariations.end();
+  }
 
   string getLink(string OperatingSystem) {
     std::transform(OperatingSystem.begin(), OperatingSystem.end(),
@@ -39,6 +49,9 @@ public:
       return "Invalid OS";
     }
   };
+
+  // Had to place this to public
+  vector<string> vNameVariations;
 
 protected:
   // These are vectors as of now, probably change it to strings or plain
@@ -56,6 +69,7 @@ protected:
 
   // Note Used
   string restaurantName;
+
   double priceSDrink, priceMDrink, priceLDrink;
   //  std::vector<std::string, std::double, std::int>
   //      vMenu; // name, price, calories

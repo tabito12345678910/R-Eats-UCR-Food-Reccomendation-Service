@@ -8,6 +8,7 @@ public:
   ~vectorRestaurants();
 
   Restaurant *getRestaurant(int index);
+  const vector<Restaurant *> &getRestaurants() const;
   Restaurant *getRestaurantByName(const std::string &name);
 
 private:

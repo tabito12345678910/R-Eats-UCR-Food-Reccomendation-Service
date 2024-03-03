@@ -4,6 +4,7 @@ public:
   Habit() : priceMDrink(2.79), priceLDrink(3.29) {
     meal = "Burger place";
     restaurantName = "Habit";
+    vNameVariations = {restaurantName, "the habit", "thehabit", "habit"};
 
     androidLink =
         "https://play.google.com/store/apps/details?id=com.habit.mobile";

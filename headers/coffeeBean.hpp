@@ -4,6 +4,8 @@ public:
   CoffeeBean() {
     meal = "Coffee place";
     restaurantName = "CoffeeBean";
+    vNameVariations = {restaurantName, "bean", "tea leaf", "tea"};
+
     androidLink = "https://play.google.com/store/apps/"
                   "details?id=com.coffeebean.apps.production";
     iphoneLink = "https://itunes.apple.com/us/app/the-coffee-bean-rewards/"

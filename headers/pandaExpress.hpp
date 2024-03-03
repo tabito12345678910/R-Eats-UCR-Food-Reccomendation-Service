@@ -10,9 +10,11 @@ public:
 
     iphoneLink = "https://apps.apple.com/us/app/panda-express-chinese-kitchen/"
                  "id903990394";
-    restaurantName = "Panda Express";
     androidLink =
         "https://play.google.com/store/apps/details?id=com.pandaexpress.app";
+
+    restaurantName = "Panda Express";
+    vNameVariations = {restaurantName, "panda", "express"};
 
     vLocation.push_back(Location::HUB);
     vDrinks.push_back(Beverages::SodaFountain);

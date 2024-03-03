@@ -33,6 +33,10 @@ Restaurant *vectorRestaurants::getRestaurant(int index) {
   return nullptr;
 };
 
+const vector<Restaurant *> &vectorRestaurants::getRestaurants() const {
+  return vRestaurants;
+};
+
 // Not very efficient
 /* vectorRestaurants::Restaurant *getRestaurantByName(const std::string &name) {
   for (Restaurant *res : vRestaurants) {

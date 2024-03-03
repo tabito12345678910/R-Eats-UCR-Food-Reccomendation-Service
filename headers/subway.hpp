@@ -4,6 +4,8 @@ public:
   Subway() {
     meal = "Sub sandwiches";
     restaurantName = "Subway";
+    vNameVariations = {restaurantName, "sub", "footlongs", "sandwich"};
+
     androidLink = "https://play.google.com/store/apps/"
                   "details?id=com.subway.mobile.subwayapp03&hl=en";
     iphoneLink = "https://apps.apple.com/us/app/subway/id901941015";
