@@ -3,6 +3,7 @@ class Starbucks : public Restaurant {
 public:
   Starbucks() {
     meal = "Coffee place";
+    restaurantName = "Starbucks";
 
     androidLink = "https://starbucks.app.link/wWzZZ9P9z5";
     iphoneLink = "https://starbucks.app.link/I1sntOS9z5";

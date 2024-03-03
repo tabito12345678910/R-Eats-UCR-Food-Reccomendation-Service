@@ -7,6 +7,7 @@ public:
     priceS = 12.50;
     priceM = 13.00;
     priceL = 14.50; */
+    restaurantName = "Hibachi";
 
     // Hibachi doesn't have a an app nor a website lol
     androidLink = "https://www.menuwithprice.com/menu/hibachi-san/";

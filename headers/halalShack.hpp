@@ -4,6 +4,7 @@ class HalalShack : public Restaurant {
 public:
   HalalShack() {
     meal = "Mediterranean street food";
+    restaurantName = "Halal Shack";
 
     androidLink =
         "https://www.thehalalshack.com/discover-deliciousness/build-your-own";

@@ -3,6 +3,7 @@ class Subway : public Restaurant {
 public:
   Subway() {
     meal = "Sub sandwiches";
+    restaurantName = "Subway";
     androidLink = "https://play.google.com/store/apps/"
                   "details?id=com.subway.mobile.subwayapp03&hl=en";
     iphoneLink = "https://apps.apple.com/us/app/subway/id901941015";

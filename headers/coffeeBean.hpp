@@ -3,6 +3,7 @@ class CoffeeBean : public Restaurant {
 public:
   CoffeeBean() {
     meal = "Coffee place";
+    restaurantName = "CoffeeBean";
     androidLink = "https://play.google.com/store/apps/"
                   "details?id=com.coffeebean.apps.production";
     iphoneLink = "https://itunes.apple.com/us/app/the-coffee-bean-rewards/"

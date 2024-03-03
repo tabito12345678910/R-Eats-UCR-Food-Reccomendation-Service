@@ -3,6 +3,7 @@ class Habit : public Restaurant {
 public:
   Habit() : priceMDrink(2.79), priceLDrink(3.29) {
     meal = "Burger place";
+    restaurantName = "Habit";
 
     androidLink =
         "https://play.google.com/store/apps/details?id=com.habit.mobile";
