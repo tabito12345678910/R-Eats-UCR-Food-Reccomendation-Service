@@ -64,48 +64,36 @@ void test2() {
 
 // Test using userInput
 void test3() {
-    cout << "Welcome to test3\n";
-    vectorRestaurants vRestaurants;
-    string option;
-    string os;
+  cout << "Welcome to test3\n";
+  vectorRestaurants vRestaurants;
+  string option;
+  string os;
 
-    // WARNING  The inputs are not sanitized
+  // WARNING  The inputs are not sanitized
+  //
+  cout << "Welcome to app store\n";
+  cout << "What Restaurant app: ";
 
-    cout << "Welcome to app store\n";
-    cout << "What Restaurant app: ";
+  cin >> option;
+  cout << endl << endl;
 
-    cin >> option;
-    std::transform(option.begin(), option.end(), option.begin(), ::tolower);
-    cout << endl << endl;
+  cout << "What OS? (android/iphone): ";
+  cin >> os;
+  cout << endl;
 
-    cout << "What OS? (android/iphone): ";
-    cin >> os;
-    std::transform(os.begin(), os.end(), os.begin(), ::tolower);
-    cout << endl;
+  // restaurantOption holds a pointer to the restaurant that the user chose
+  Restaurant *restaurantOption = vRestaurants.getRestaurantByName(option);
+  if (restaurantOption != nullptr) {
+    vector<string> links;
+    string link = restaurantOption->getLink(os);
+    cout << "Link: " << link << endl;
 
-    // restaurantOption holds a pointer to the restaurant that the user chose
-    const vector<Restaurant *>& restaurantOptions = vRestaurants.getRestaurants();
-    for (const auto &restaurant : restaurantOptions) {
-        if (restaurant->getName() == option) {
-            cout << "Restaurant found: " << restaurant->getName() << endl;
-
-            vector<string> links;
-            for (const auto &variation : restaurant->vNameVariations) {
-                string link = restaurant->getLink(os);
-                cout << "Link for " << variation << ": " << link << endl;
-                if (link != "Invalid OS") {
-                    links.push_back(link);
-                }
-            }
-
-            if (!links.empty()) {
-                QRCodeModule qrModule;
-                qrModule.displayLinkAsQRCode(links);
-            } else {
-                cout << "No valid links found for the specified operating system\n";
-            }
-            return;
-        }
+    if (link != "Invalid OS") {
+      links.push_back(link);
+      QRCodeModule qrModule;
+      qrModule.displayLinkAsQRCode(links);
+    } else {
+      cout << "Invalid OS" << endl;
     }
-    cout << "Restaurant not found\n";
+  }
 }
