@@ -7,6 +7,12 @@ public:
     priceS = 12.50;
     priceM = 13.00;
     priceL = 14.50; */
+    restaurantName = "Hibachi";
+    vNameVariations = {restaurantName, "hibachisan", "hibachi"};
+
+    // Hibachi doesn't have a an app nor a website lol
+    androidLink = "https://www.menuwithprice.com/menu/hibachi-san/";
+    iphoneLink = "https://www.menuwithprice.com/menu/hibachi-san/";
 
     vLocation.push_back(Location::HUB);
     vDrinks.push_back(Beverages::SodaFountain);

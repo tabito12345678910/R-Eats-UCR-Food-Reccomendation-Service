@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 #include "place.hpp"
-using namespace std; 
+using namespace std;
 using std::vector;
 
 
@@ -11,7 +11,7 @@ class Eta {
     public:
     Eta(){
         //non hub destinations are all closest starbucks locations
-        //for ui, please provide the strings below as options for current locations of user, and have them select one. 
+        //for ui, please provide the strings below as options for current locations of user, and have them select one.
         vPlace.push_back(Place("Hub",Location::HUB, 0));
         vPlace.push_back(Place("Hub",Location::Chung, 7));
         vPlace.push_back(Place("Lot30",Location::HUB, 12));
@@ -54,5 +54,5 @@ class Eta {
     }
     private:
         vector<Place> vPlace;
-    
+
 };
