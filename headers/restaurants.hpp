@@ -1,5 +1,4 @@
 // NOTE  include this file if you need all the restaurants
-#include "QRCodeModule.hpp"
 #include "chronicTacos.hpp"
 #include "coffeeBean.hpp"
 #include "eta.hpp"

@@ -1,14 +1,16 @@
-#include "resturants.hpp"
+/* #include "restaurants.hpp" */
+#include <unordered_map>
 #include <vector>
 
-// NOTE  This only works in my head
-// I don't think this compiles
 class vectorRestaurants {
 public:
   vectorRestaurants();
   ~vectorRestaurants();
-  // NOTE Think of functions to write
+
+  Restaurant *getRestaurant(int index);
+  Restaurant *getRestaurantByName(const std::string &name);
 
 private:
-  vector<*Restaurant> vRestaurants;
+  vector<Restaurant *> vRestaurants;
+  std::unordered_map<std::string, Restaurant *> nameToRestaurant;
 };

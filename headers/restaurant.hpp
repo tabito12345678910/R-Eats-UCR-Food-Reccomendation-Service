@@ -24,7 +24,7 @@ public:
   Location getLocation() { return vLocation.at(0); };
   Beverages getBeverage() { return vDrinks.at(0); };
   Nationality getNationality() { return vNation.at(0); };
-  string getName() { return restaurant_name; }
+  string getName() { return restaurantName; }
 
   string getLink(string OperatingSystem) {
     std::transform(OperatingSystem.begin(), OperatingSystem.end(),
@@ -55,7 +55,7 @@ protected:
   string iphoneLink;
 
   // Note Used
-  string restaurant_name;
+  string restaurantName;
   double priceSDrink, priceMDrink, priceLDrink;
   //  std::vector<std::string, std::double, std::int>
   //      vMenu; // name, price, calories

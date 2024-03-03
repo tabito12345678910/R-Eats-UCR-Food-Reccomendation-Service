@@ -12,4 +12,5 @@ ui_test
 main
 mainBinary
 QRCodeGenerator
+QRCodeRestaurant
 googletest
