@@ -2,6 +2,7 @@
 #define RESTAURANT_HPP
 
 #include "menuItem.hpp"
+#include <algorithm>
 #include <iomanip>
 #include <iostream>
 #include <string>
@@ -26,7 +27,8 @@ public:
   string getName() { return restaurant_name; }
 
   string getLink(string OperatingSystem) {
-    OperatingSystem.toLower();
+    std::transform(OperatingSystem.begin(), OperatingSystem.end(),
+                   OperatingSystem.begin(), ::tolower);
     if (OperatingSystem == "iphone" || OperatingSystem == "apple") {
       return iphoneLink;
     } else if (OperatingSystem == "android" || OperatingSystem == "samsung" ||
