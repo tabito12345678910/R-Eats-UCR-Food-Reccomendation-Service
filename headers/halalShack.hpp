@@ -2,8 +2,14 @@
 
 class HalalShack : public Restaurant {
 public:
-  HalalShack(){
+  HalalShack() {
     meal = "Mediterranean street food";
+
+    androidLink =
+        "https://www.thehalalshack.com/discover-deliciousness/build-your-own";
+    iphoneLink =
+        "https://www.thehalalshack.com/discover-deliciousness/build-your-own";
+
     priceMDrink = 2.59;
     vLocation.push_back(Location::HUB);
     vDrinks.push_back(Beverages::SodaFountain);

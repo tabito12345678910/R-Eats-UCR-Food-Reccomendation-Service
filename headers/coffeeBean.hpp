@@ -3,6 +3,10 @@ class CoffeeBean : public Restaurant {
 public:
   CoffeeBean() {
     meal = "Coffee place";
+    androidLink = "https://play.google.com/store/apps/"
+                  "details?id=com.coffeebean.apps.production";
+    iphoneLink = "https://itunes.apple.com/us/app/the-coffee-bean-rewards/"
+                 "id1145922517?ls=1&mt=8";
     // priceMDrink = 2.79;
     // priceLDrink = 3.29;
     vLocation.push_back(Location::HUB);
