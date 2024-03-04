@@ -24,6 +24,7 @@ ADD_EXECUTABLE(QRCodeRestaurant
 target_link_libraries(QRCodeGenerator PRIVATE ${QRENCODE_LIB})
 target_link_libraries(QRCodeRestaurant PRIVATE ${QRENCODE_LIB})
 
+# Add the include directory for googletest
 ADD_SUBDIRECTORY(tests/googletest)
 
 ADD_EXECUTABLE( main
