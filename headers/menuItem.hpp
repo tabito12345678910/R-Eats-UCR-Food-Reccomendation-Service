@@ -18,6 +18,8 @@ enum class MenuChoice {
   Bread,
   Cheese, //added dairy options
   Milk,
+  Coffee,
+  Tea,
   Shrimp,
   Tuna, // added seafood can be allergens
   Salmon,

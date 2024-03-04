@@ -1,4 +1,7 @@
 #include "buffetRestaurant.hpp"
+#include <string>
+using namespace std;
+using std::string;
 
 class PandaExpress : public buffetRestaurant {
 
@@ -7,6 +10,10 @@ public:
       : meal("Chinese cuisine, protein + rice/noodles"), priceS(8.40),
         priceM(9.90), priceL(11.40), priceSDrink(2.59), priceMDrink(2.99),
         priceLDrink(3.39) {
+
+    calS = "240 ~ 1010";
+    calM = "390 ~1500";
+    calL = "540 ~ 1990";
 
     vLocation.push_back(Location::HUB);
     vDrinks.push_back(Beverages::SodaFountain);
@@ -25,9 +32,11 @@ public:
     // There are desserts
     vMenu.push_back(MenuChoice::Dessert);
 
+    //Entrees
+
+    //Sides
 
 
-    
   }
 
 private:
