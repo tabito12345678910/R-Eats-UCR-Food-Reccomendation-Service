@@ -11,6 +11,11 @@ include_directories(
 # Find and link against the libqrencode library
 find_library(QRENCODE_LIB qrencode HINTS ${CMAKE_SOURCE_DIR}/external/libqrencode/lib)
 
+# Ensure libqrencode library is found
+if(NOT QRENCODE_LIB)
+    message(FATAL_ERROR "libqrencode library not found")
+endif()
+
 # Test QRCode backend code
 ADD_EXECUTABLE(QRCodeGenerator tests/testQRCode.cpp)
 
@@ -31,6 +36,10 @@ ADD_EXECUTABLE( main
     src/main.cpp
     src/restaurant.cpp
 )
+
+# Link against librect (your restaurant library) for main
+target_link_libraries(main PRIVATE librect)
+
 ADD_EXECUTABLE(test
       tests/test.cpp
  )
