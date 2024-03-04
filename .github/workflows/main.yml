@@ -19,12 +19,13 @@ jobs:
     # - name: configure
     #   run: ./configure
 
+    - name: submodules
+      run: git submodule update --init --recursive
+
     - name: make
       run: |
-      git submodule update --init --recursive
         cmake .
         make
-
     - name: runGTests
       run: ./test
 
@@ -37,4 +38,3 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
-
