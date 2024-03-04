@@ -12,14 +12,12 @@ enum class MenuChoice {
   Vegetarian,
   Vegan,
   Vegetables,
-  Salad,
   Fries,
   Rice,
   Noodles, // added for chowmein
+  Bread,
   Cheese, //added dairy options
   Milk,
-  Burger,
-  Sandwich,
   Shrimp,
   Tuna, // added seafood can be allergens
   Salmon,

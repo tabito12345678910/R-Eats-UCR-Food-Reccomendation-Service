@@ -14,6 +14,7 @@ public:
     vNation.push_back(Nationality::American);
 
     vMenu.push_back(MenuChoice::Dessert);
-    vMenu.push_back(MenuChoice::Sandwich);
+    vMenu.push_back(MenuChoice::Bread);
+    vMenu.push_back(MenuChoice::Milk);
   }
 };
