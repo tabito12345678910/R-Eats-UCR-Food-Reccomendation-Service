@@ -24,6 +24,7 @@ jobs:
 
     - name: make
       run: |
+        git submodule update --init --recursive
         cmake .
         make
     - name: runGTests
