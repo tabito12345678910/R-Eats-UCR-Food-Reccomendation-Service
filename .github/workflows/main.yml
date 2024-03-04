@@ -22,9 +22,12 @@ jobs:
     - name: submodules
       run: git submodule update --init --recursive
 
+    # This is cheating, I am aware
+    - name: Install libqrencode Dependacy
+      run: sudo apt-get update && sudo apt-get install -y libqrencode-dev
+
     - name: make
       run: |
-        git submodule update --init --recursive
         cmake .
         make
     - name: runGTests

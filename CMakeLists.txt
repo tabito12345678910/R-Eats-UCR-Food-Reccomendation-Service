@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 # Add the include directory for libqrencode
 include_directories(
-    ${CMAKE_SOURCE_DIR}/external/libqrencode/include
+    ${CMAKE_SOURCE_DIR}/external/libqrencode/
     ${CMAKE_SOURCE_DIR}/src
 )
 
