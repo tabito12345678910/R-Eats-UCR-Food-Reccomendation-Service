@@ -57,4 +57,23 @@ class MenuItem {
     MenuItem(string in, double ic, string cal, MenuChoice cho1, MenuChoice cho2, MenuChoice cho3): itemName(in), itemCost(ic), calories(cal), choice1(cho1), choice2(cho2), choice3(cho3){} //constructor each meal has two menuChoices assigned
 
 };
+
+//MenuItem but for buffetclass
+class Entree {
+  private:
+    string itemName;
+    MenuChoice choice1;
+  public:
+    Entree(string in, MenuChoice cho1): itemName(in), choice1(cho1){} //constructor each meal has two menuChoices assigned
+
+};
+
+class Side {
+  private:
+    string itemName;
+    MenuChoice choice1;
+  public:
+    Side(string in, MenuChoice cho1): itemName(in), choice1(cho1){} //constructor each meal has two menuChoices assigned
+
+};
 #endif

@@ -9,14 +9,16 @@ using std::string;
 using std::vector;
 // For takeout restaurants like PandaExpress / Hibachi
 class buffetRestaurant : public Restaurant {
-  void greeter();
+
 
 protected:
   double priceS, priceM, priceL;
   string calS, calM, calL;
 
-  vector<MenuChoice> vEntree;
-  vector<MenuChoice> vSide;
+  string name;
+
+  vector<Entree> vEntree;
+  vector<Side> vSide;
 
 
 
