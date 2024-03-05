@@ -16,8 +16,10 @@ unsigned int selectingMeat() {
             cout << "Pork added" << endl;
         } else if (choice == "turkey") {
             cout << "Turkey added" << endl;
+        } else if (choice == "all") {
+            cout << "All Proteins added" << endl;
         } else {
-        cout << "Invalid Response: Try Again" << endl;
+           cout << "Invalid Response: Try Again" << endl;
         }
     }
     return 0; //0 signals main to continue asking for food prefs
@@ -54,22 +56,14 @@ unsigned int selectingDishes() {
         transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); });
         if (choice == "back") {
             cout << "Backing" << endl;
-        } else if (choice == "burger"){
-            cout << "Burger added" << endl;
-        } else if (choice == "burrito") {
-            cout << "Burrito added" << endl;
+        } else if (choice == "bread"){
+            cout << "Bread added" << endl;
         } else if (choice == "fries") {
             cout << "Fries added" << endl;
         } else if (choice == "noodles") {
             cout << "Noodles added" << endl;
         } else if (choice == "rice") {
             cout << "Rice added" << endl;
-        } else if (choice == "salad") {
-            cout << "Salad added" << endl;
-        } else if (choice == "sandwich") {
-            cout << "Sandwich added" << endl;
-        } else if (choice == "tacos") {
-            cout << "Taco added" << endl;
         } else {
         cout << "Invalid Response: Try Again" << endl;
         }
@@ -94,6 +88,42 @@ unsigned int selectingCuisine() {
             cout << "Mediterranean added" << endl;
         } else if (choice == "mexican") {
             cout << "Mexican added" << endl;
+        } else {
+        cout << "Invalid Response: Try Again" << endl;
+        }
+    }
+    return 0; //0 signals main to continue asking for food prefs
+}
+
+unsigned int selectingDairy() {
+    string choice;
+    while(choice != "back") {
+        choice = dairyOptions(); //show dairy options and pick
+        transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); });
+        if (choice == "back") {
+            cout << "Backing" << endl;
+        } else if (choice == "cheese"){
+            cout << "Cheese added" << endl;
+        } else if (choice == "milk") {
+            cout << "Milk added" << endl;
+        } else {
+        cout << "Invalid Response: Try Again" << endl;
+        }
+    }
+    return 0; //0 signals main to continue asking for food prefs
+}
+
+unsigned int selectingDrink() {
+    string choice;
+    while(choice != "back") {
+        choice = drinkOptions(); //show drink options and pick
+        transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); });
+        if (choice == "back") {
+            cout << "Backing" << endl;
+        } else if (choice == "coffee"){
+            cout << "Coffee added" << endl;
+        } else if (choice == "tea") {
+            cout << "Tea added" << endl;
         } else {
         cout << "Invalid Response: Try Again" << endl;
         }

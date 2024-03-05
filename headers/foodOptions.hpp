@@ -14,7 +14,8 @@ string meatOptions() { //displays meat options when "Meat" is selected
         << "2. Chicken" << endl
         << "3. Pork" << endl
         << "4. Turkey" << endl
-        << "5. [Back]" << endl; //"Back" to go back to food preferences 
+        << "5. All" << endl
+        << "6. [Back]" << endl; //"Back" to go back to food preferences 
     
     cin >> choice;
     cin.clear();
@@ -41,15 +42,11 @@ string seafoodOptions() { //displays meat options when "Seafood" is selected
 string dishOptions() { //displays meat options when "Dishes" is selected
     string choice;
     cout << endl << "Dishes Options" << endl
-        << "1. Burger" << endl
-        << "2. Burrito" << endl
-        << "3. Fries" << endl
-        << "4. Noodles" << endl
-        << "5. Rice" << endl
-        << "6. Salad" << endl
-        << "7. Sandwich" << endl
-        << "8. Tacos" << endl
-        << "9. [Back]" << endl; //"Back" to go back to food preferences
+        << "1. Bread" << endl
+        << "2. Fries" << endl
+        << "3. Noodles" << endl
+        << "4. Rice" << endl
+        << "5. [Back]" << endl; //"Back" to go back to food preferences
     
     cin >> choice;
     cin.clear();
@@ -66,6 +63,32 @@ string cuisineOptions() { //displays meat options when "Cuisine" is selected
         << "4. Mediterranean" << endl
         << "5. Mexican" << endl
         << "6. [Back]" << endl; //"Back" to go back to food preferences
+
+    cin >> choice;
+    cin.clear();
+    cin.ignore(256, '\n');
+    return choice;
+}
+
+string dairyOptions() { //displays meat options when "Dairy" is selected
+    string choice;
+    cout << endl << "Dairy Options:" << endl
+        << "1. Cheese" << endl
+        << "2. Milk" << endl
+        << "3. [Back]" << endl; //"Back" to go back to food preferences
+
+    cin >> choice;
+    cin.clear();
+    cin.ignore(256, '\n');
+    return choice;
+}
+
+string drinkOptions() { //displays meat options when "Drinks" is selected
+    string choice;
+    cout << endl << "Drink Options:" << endl
+        << "1. Coffee" << endl
+        << "2. Tea" << endl
+        << "3. [Back]" << endl; //"Back" to go back to food preferences
 
     cin >> choice;
     cin.clear();

@@ -10,8 +10,9 @@ using std::string;
 
 int main() {
   unsigned int track = 0;
+  unsigned int diet = dietarySelect();
   while(track == 0) {
-    track = menuSelect();
+    track = menuSelect(diet);
   }
   if (track == 2) {
     return 0; //quit the program nothing occurs
