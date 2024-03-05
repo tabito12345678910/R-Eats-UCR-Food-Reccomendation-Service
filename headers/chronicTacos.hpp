@@ -6,6 +6,12 @@ class ChronicTacos : public Restaurant {
 public:
   ChronicTacos() : Restaurant(), priceMDrink(2.59), priceLDrink(3.39) {
     meal = "Mexican street food. Tacos, burritos, and bowls";
+    restaurantName = "Chronic Tacos";
+    vNameVariations = {restaurantName, "chronic", "tacos"};
+
+    iphoneLink = "https://apps.apple.com/us/app/chronic-tacos-usa/id1610719960";
+    androidLink = "https://play.google.com/store/apps/"
+                  "details?id=com.percoid.ctusa&hl=en&gl=US";
     /* priceMDrink = 2.59;
     priceLDrink = 3.39; */
     vLocation.push_back(Location::HUB);

@@ -3,6 +3,13 @@ class Habit : public Restaurant {
 public:
   Habit() : priceMDrink(2.79), priceLDrink(3.29) {
     meal = "Burger place";
+    restaurantName = "Habit";
+    vNameVariations = {restaurantName, "the habit", "thehabit", "habit"};
+
+    androidLink =
+        "https://play.google.com/store/apps/details?id=com.habit.mobile";
+    iphoneLink = "https://itunes.apple.com/us/app/the-habit-burger-grill/"
+                 "id1398002552?ls=1&mt=8";
     /* priceMDrink = 2.79;
     priceLDrink = 3.29; */
     vLocation.push_back(Location::HUB);
