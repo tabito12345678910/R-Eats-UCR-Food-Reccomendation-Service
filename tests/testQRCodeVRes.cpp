@@ -77,6 +77,7 @@ void test3() {
   } else {
     cout << "pRestaurant is kinda nullptr lol\n";
   }
+  delete pRestaurant;
 }
 
 // Test using userInput
