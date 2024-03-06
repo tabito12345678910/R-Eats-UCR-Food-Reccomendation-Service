@@ -1,4 +1,5 @@
 #include "foodSelector.hpp"
+#include "dietaryMenu.hpp"
 #include <iostream>
 #include <algorithm>
 
@@ -22,7 +23,7 @@ string menuDisplay(unsigned int diet) {
   cout << "Food Preferences:" << endl;
 
   if (diet != 3 && diet != 4) {
-    cout << disNum << ". Meats:" << endl;
+    cout << disNum << ". Protein:" << endl;
     disNum++;
   }
 
@@ -66,65 +67,6 @@ string menuDisplay(unsigned int diet) {
   return choice;
 }
 
-string dietaryDisplay() {
-  string choice;
-  cout << endl << "Select Dietary restriction" << endl;
-  cout << "1. Vegetarian" << endl
-       << "2. Vegan" << endl
-       << "3. Seafood" << endl
-       << "4. Dairy" << endl
-       << "5. None" << endl // default; will give every and all options; using "None" rather than "No Preference" to avoid using getline 
-       << "6. [Quit]" << endl; //quit option
-
-  cin >> choice;
-
-  // fix buffer just in case non-numeric choice entered
-  // also gets rid of newline character
-  cin.clear();
-  cin.ignore(256, '\n');
-  return choice;
-}
-
-unsigned int dietarySelect() {
-
-  string choice;
-  
-  while(choice != "quit") {
-    choice = dietaryDisplay();
-    std::transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); }); //ideally make "choice" lowercase for input conviences
-
-    if (choice == "quit") {
-      return 2;
-    } else if (choice == "vegetarian") {
-      //leave only resturants and menu items that are vegetarian
-      cout << "Vegetarian Menu:" << endl;
-      return 3;
-
-    } else if (choice == "vegan") {
-      //leave only resturants and menu items that are vegan
-      cout << "Vegan Menu:" << endl;
-      return 4;
-
-    } else if (choice == "seafood") {
-      //remove menu items that have seafood
-      cout << "No Seafood Menu:" << endl;
-      return 5;
-
-    } else if (choice == "dairy") {
-      //remove menu items that have seafood
-      cout << "No Dairy Menu:" << endl;
-      return 6;
-
-    } else if (choice == "none") {
-      cout << "No Restrictions" << endl;
-      return 1;
-    } else { //invalid response
-      cout << "Invalid Response: Try Again" << endl;
-    }
-  }
-  return 2; //2 signals main that program is quitting, exits program and ends
-}
-
 unsigned int menuSelect(unsigned int diet) {
   /* vectorRestaurant vMenus; // class that holds all restaurants */
 
@@ -136,10 +78,10 @@ unsigned int menuSelect(unsigned int diet) {
 
     if (choice == "quit") {
       cout << "Quitting Program" << endl;
-    } else if (choice == "meats") {
+    } else if (choice == "protein" && diet != 3 && diet != 4) {
       return selectingMeat(); //selector for meat options; returns 0 if back 1 if any other option
 
-    } else if (choice == "seafood") {
+    } else if (choice == "seafood" && diet != 4 && diet != 5) {
       return selectingSeafood(); //selector for seafood options; returns 0 if back 1 if any other option
 
     } else if (choice == "vegetables") {
@@ -147,7 +89,7 @@ unsigned int menuSelect(unsigned int diet) {
       cout << "Vegetables added" << endl;
       return 0;
 
-    } else if (choice == "dairy") {
+    } else if (choice == "dairy" && diet != 4 && diet != 6) {
       return selectingDairy(); //selector for dairy options; returns 0 if back 1 if any other option
       
     } else if (choice == "dishes") {

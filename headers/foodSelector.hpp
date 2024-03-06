@@ -1,3 +1,5 @@
+#ifndef FOODSELECTOR_HPP
+#define FOODSELECTOR_HPP
 #include "foodOptions.hpp"
 #include <algorithm>
 
@@ -18,6 +20,7 @@ unsigned int selectingMeat() {
             cout << "Turkey added" << endl;
         } else if (choice == "all") {
             cout << "All Proteins added" << endl;
+            return 0;
         } else {
            cout << "Invalid Response: Try Again" << endl;
         }
@@ -42,6 +45,9 @@ unsigned int selectingSeafood() {
             cout << "Shrimp added" << endl;
         } else if (choice == "tuna") {
             cout << "Tuna added" << endl;
+        } else if (choice == "all") {
+            cout << "All Seafood added" << endl;
+            return 0;
         } else {
         cout << "Invalid Response: Try Again" << endl;
         }
@@ -130,3 +136,5 @@ unsigned int selectingDrink() {
     }
     return 0; //0 signals main to continue asking for food prefs
 }
+
+#endif
