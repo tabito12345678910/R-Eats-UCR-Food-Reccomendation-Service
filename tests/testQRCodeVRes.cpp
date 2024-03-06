@@ -68,9 +68,11 @@ void test2() {
 
 // NOTE  This should be the proper way to actually do it hardcoded
 void test3() {
+  cout << "Test 3" << endl << endl;
   Restaurant *pRestaurant = new ChronicTacos();
+  string OperatingSystem = "android";
   if (pRestaurant != nullptr) {
-    vector<string> vlink = {pRestaurant->getName()};
+    vector<string> vlink = {pRestaurant->getLink(OperatingSystem)};
     cout << "Link: " << vlink.at(0) << endl;
     QRCodeModule qrModule;
     qrModule.displayLinkAsQRCode(vlink);
@@ -82,7 +84,7 @@ void test3() {
 
 // Test using userInput
 void test4() {
-  cout << "Welcome to test4\n";
+  cout << "\nWelcome to test4\n";
   vectorRestaurants vRestaurants;
   string option;
   string os;
