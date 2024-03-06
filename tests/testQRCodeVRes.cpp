@@ -15,6 +15,7 @@ using std::vector;
 void test1();
 void test2();
 void test3();
+void test4();
 
 int main() {
   // hardcoded link test
@@ -23,8 +24,11 @@ int main() {
   // hardcoded restaurant test
   test2();
 
-  // Real test using user input
+  // The cleaned up version you should be using
   test3();
+
+  // Real test using user input
+  test4();
 
   return 0;
 }
@@ -62,9 +66,22 @@ void test2() {
   cout << "End of Test 2 \n";
 }
 
-// Test using userInput
+// NOTE  This should be the proper way to actually do it hardcoded
 void test3() {
-  cout << "Welcome to test3\n";
+  Restaurant *pRestaurant = new ChronicTacos();
+  if (pRestaurant != nullptr) {
+    vector<string> vlink = {pRestaurant->getName()};
+    cout << "Link: " << vlink.at(0) << endl;
+    QRCodeModule qrModule;
+    qrModule.displayLinkAsQRCode(vlink);
+  } else {
+    cout << "pRestaurant is kinda nullptr lol\n";
+  }
+}
+
+// Test using userInput
+void test4() {
+  cout << "Welcome to test4\n";
   vectorRestaurants vRestaurants;
   string option;
   string os;
