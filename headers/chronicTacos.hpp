@@ -1,3 +1,4 @@
+#pragma once
 #include "restaurant.hpp"
 #include <string>
 
@@ -23,7 +24,8 @@ public:
     vMenu.push_back(MenuChoice::Vegetables);
     vMenu.push_back(MenuChoice::Snacks);
     vMenu.push_back(MenuChoice::Vegetarian);
-
+    vMenu.push_back(MenuChoice::Seafood);
+    
     vMeal.push_back(MenuItem("Quesadilla", 10.50, "730 ~ 1320 calories",
                              MenuChoice::Vegetables, MenuChoice::Cheese,
                              MenuChoice::Beef));

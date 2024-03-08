@@ -4,6 +4,8 @@
 #include <vector>
 using namespace std;
 using std::vector;
+#pragma once
+
 
 class Eta {
 public:

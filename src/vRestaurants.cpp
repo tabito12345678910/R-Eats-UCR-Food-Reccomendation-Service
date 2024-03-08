@@ -1,4 +1,5 @@
 #include "../headers/vRestaurants.hpp"
+#include "../headers/restaurants.hpp"
 
 vectorRestaurants::vectorRestaurants() {
   ChronicTacos chronic;
@@ -39,12 +40,12 @@ vectorRestaurants::~vectorRestaurants(){
 
 Restaurant vectorRestaurants::getRestaurant(int index) {
   if (index < vRestaurants.size()) {
-    return vRestaurants.at(index);
+    return vRestaurants[index];
   }
   throw runtime_error("SMOKE");
 };
 
-const vector<Restaurant> &vectorRestaurants::getRestaurants() const {
+vector<Restaurant> &vectorRestaurants::getRestaurants()  {
   return vRestaurants;
 };
 

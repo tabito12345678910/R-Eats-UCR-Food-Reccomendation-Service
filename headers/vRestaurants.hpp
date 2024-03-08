@@ -1,3 +1,6 @@
+#pragma once
+#include "restaurants.hpp"
+
 #include <unordered_map>
 #include <vector>
 
@@ -6,8 +9,8 @@ public:
   vectorRestaurants();
   ~vectorRestaurants();
 
+  vector<Restaurant *> &getRestaurants();
   Restaurant getRestaurant(int index);
-  const vector<Restaurant> &getRestaurants() const;
   Restaurant getRestaurantByName(const std::string &name);
 
 private:

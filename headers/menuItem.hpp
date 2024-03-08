@@ -25,9 +25,9 @@ enum class MenuChoice {
   Salmon,
   Scallops,
   Crab,
-  Snacks, // slightly diff nuance from dessert so added, cuz user wouldnt think
-          // chips and salsa = dessert
-  Dessert
+  Snacks, //slightly diff nuance from dessert so added, cuz user wouldnt think chips and salsa = dessert
+  Dessert,
+  Seafood
 };
 
 enum class Nationality { Japanese, Chinese, American, Mediterranean, Mexican };
