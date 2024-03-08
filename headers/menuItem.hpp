@@ -60,6 +60,10 @@ public:
            MenuChoice cho3)
       : itemName(in), itemCost(ic), calories(cal), choice1(cho1), choice2(cho2),
         choice3(cho3) {} // constructor each meal has two menuChoices assigned
+  //getters
+  string getItemName(){return itemName;}
+  double getItemCost(){return itemCost;}
+  string getCalories(){return calories;}
 };
 
 // MenuItem but for buffetclass
@@ -72,6 +76,8 @@ public:
   Entree(string in, MenuChoice cho1)
       : itemName(in), choice1(cho1) {
   } // constructor each meal has two menuChoices assigned
+  //getter
+  string getItemName(){return itemName;}
 };
 
 class Side {
@@ -83,5 +89,7 @@ public:
   Side(string in, MenuChoice cho1)
       : itemName(in), choice1(cho1) {
   } // constructor each meal has two menuChoices assigned
+  //getter
+  string getItemName(){return itemName;}
 };
 #endif
