@@ -9,10 +9,9 @@ using namespace std;
 void removeRestaurantByMenu(vectorRestaurants& vRestaurants, MenuChoice pref) {
     for(int i = vRestaurants.getRestaurants().size()-1; i >= 0; i--) {
         bool found = false;
-        Restaurant* cur = vRestaurants.getRestaurant(i);
-        cout << cur->getName() << endl;
-        for(unsigned int j = 0; j < cur->getMenuChoices().size(); j++) {
-            if(cur->getMenuChoices().at(j) == pref) {
+        Restaurant cur = vRestaurants.getRestaurant(i);
+        for(unsigned int j = 0; j < cur.getMenuChoices().size(); j++) {
+            if(cur.getMenuChoices().at(j) == pref) {
                 found = true;
             }
         }

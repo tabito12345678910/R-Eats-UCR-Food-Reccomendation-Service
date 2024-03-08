@@ -33,10 +33,10 @@ int main() {
   }
   cout << "Displaying Resturant Options" << endl;
   int list = 1;
-  vector<Restaurant *> test = vRestaurants.getRestaurants();
-  for ( const auto value : test )
+  vector<Restaurant> test = vRestaurants.getRestaurants();
+  for ( auto value : test )
 	{
-		cout << list << "." << value->getName() << endl;
+		cout << list << "." << value.getName() << endl;
     list++;
 	}
   

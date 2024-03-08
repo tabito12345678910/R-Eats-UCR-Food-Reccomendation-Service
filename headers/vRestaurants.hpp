@@ -9,7 +9,7 @@ public:
   vectorRestaurants();
   ~vectorRestaurants();
 
-  vector<Restaurant *> &getRestaurants();
+  vector<Restaurant> &getRestaurants();
   Restaurant getRestaurant(int index);
   Restaurant getRestaurantByName(const std::string &name);
 
