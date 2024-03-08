@@ -7,11 +7,11 @@ public:
   vectorRestaurants();
   ~vectorRestaurants();
 
-  Restaurant *getRestaurant(int index);
-  const vector<Restaurant *> &getRestaurants() const;
-  Restaurant *getRestaurantByName(const std::string &name);
+  Restaurant getRestaurant(int index);
+  const vector<Restaurant> &getRestaurants() const;
+  Restaurant getRestaurantByName(const std::string &name);
 
 private:
-  vector<Restaurant *> vRestaurants;
-  std::unordered_map<std::string, Restaurant *> nameToRestaurant;
+  vector<Restaurant> vRestaurants;
+  std::unordered_map<std::string, Restaurant> nameToRestaurant;
 };
