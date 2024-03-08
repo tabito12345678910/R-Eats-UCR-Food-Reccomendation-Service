@@ -21,6 +21,7 @@ vectorRestaurants::vectorRestaurants() {
   vRestaurants.push_back(starb);
   vRestaurants.push_back(sub);
 
+  // Required for the getRestaurantByName
   for (Restaurant restaurant : vRestaurants) {
     nameToRestaurant[restaurant.getName()] = restaurant;
   }
@@ -40,9 +41,7 @@ Restaurant vectorRestaurants::getRestaurant(int index) {
   if (index < vRestaurants.size()) {
     return vRestaurants.at(index);
   }
-
-  // FIX
-  /* return; */
+  throw runtime_error("SMOKE");
 };
 
 const vector<Restaurant> &vectorRestaurants::getRestaurants() const {
@@ -66,6 +65,5 @@ Restaurant vectorRestaurants::getRestaurantByName(const std::string &name) {
   if (it != nameToRestaurant.end()) {
     return it->second;
   }
-  // FIX
-  /* return; */
+  throw runtime_error("SMOKE");
 };
