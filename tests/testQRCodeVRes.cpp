@@ -51,10 +51,10 @@ void test2() {
   string restaurantName = "Habit";
   string os = "iphone";
 
-  Restaurant *pRestaurant = vRestaurants.getRestaurantByName(restaurantName);
-  if (pRestaurant) {
+  Restaurant pRestaurant = vRestaurants.getRestaurantByName(restaurantName);
+  if (pRestaurant.getLink(os) != "Invalid OS") {
     vector<string> links;
-    string link = pRestaurant->getLink(os);
+    string link = pRestaurant.getLink(os);
     cout << "Link: " << link << endl;
     QRCodeModule qrModule;
     vector<string> vlinks;
@@ -69,17 +69,16 @@ void test2() {
 // NOTE  This should be the proper way to actually do it hardcoded
 void test3() {
   cout << "Test 3" << endl << endl;
-  Restaurant *pRestaurant = new ChronicTacos();
+  Restaurant pRestaurant = ChronicTacos();
   string OperatingSystem = "android";
-  if (pRestaurant != nullptr) {
-    vector<string> vlink = {pRestaurant->getLink(OperatingSystem)};
+  if (pRestaurant.getLink(OperatingSystem) != "Invalid OS") {
+    vector<string> vlink = {pRestaurant.getLink(OperatingSystem)};
     cout << "Link: " << vlink.at(0) << endl;
     QRCodeModule qrModule;
     qrModule.displayLinkAsQRCode(vlink);
   } else {
     cout << "pRestaurant is kinda nullptr lol\n";
   }
-  delete pRestaurant;
 }
 
 // Test using userInput
@@ -101,11 +100,11 @@ void test4() {
   cin >> os;
   cout << endl;
 
-  // restaurantOption holds a pointer to the restaurant that the user chose
-  Restaurant *restaurantOption = vRestaurants.getRestaurantByName(option);
-  if (restaurantOption != nullptr) {
+  // restaurantOption Should hold the dynamic object
+  Restaurant restaurantOption = vRestaurants.getRestaurantByName(option);
+  if (restaurantOption.getLink(os) != "Invalid OS") {
     vector<string> links;
-    string link = restaurantOption->getLink(os);
+    string link = restaurantOption.getLink(os);
     cout << "Link: " << link << endl;
 
     if (link != "Invalid OS") {
