@@ -41,10 +41,11 @@ public:
     // There are desserts
     vMenu.push_back(MenuChoice::Dessert);
 
-    //Entrees
-    //Print each string in ui when 
+    // Entrees
+    // Print each string in ui when
     vEntree.push_back(Entree("Orange Chicken", MenuChoice::Chicken));
-    vEntree.push_back(Entree("String Bean Chicken Breast", MenuChoice::Chicken));
+    vEntree.push_back(
+        Entree("String Bean Chicken Breast", MenuChoice::Chicken));
     vEntree.push_back(Entree("Kung Pao Chicken", MenuChoice::Chicken));
     vEntree.push_back(Entree("Mushroom Chicken", MenuChoice::Chicken));
     vEntree.push_back(Entree("Beijing Beef", MenuChoice::Beef));
@@ -52,19 +53,17 @@ public:
     vEntree.push_back(Entree("Black Pepper Angus Steak", MenuChoice::Beef));
     vEntree.push_back(Entree("Honey Walnut Shrimp", MenuChoice::Shrimp));
     vEntree.push_back(Entree("Grilled Teriyaki Chicken", MenuChoice::Chicken));
-    vEntree.push_back(Entree("Honey Sesame Chicken Breast", MenuChoice::Chicken));
+    vEntree.push_back(
+        Entree("Honey Sesame Chicken Breast", MenuChoice::Chicken));
     vEntree.push_back(Entree("Black Pepper Chicken", MenuChoice::Chicken));
     vEntree.push_back(Entree("Eggplant Tofu", MenuChoice::Vegan));
-    //Sides
+    // Sides
 
     vSide.push_back(Side("Chow Mein", MenuChoice::Noodles));
     vSide.push_back(Side("White Steamed Rice", MenuChoice::Rice));
     vSide.push_back(Side("Brown Steamed Rice", MenuChoice::Rice));
     vSide.push_back(Side("Fried Rice", MenuChoice::Rice));
     vSide.push_back(Side("Mixed Vegetables", MenuChoice::Vegan));
-
-
-
   }
 
 private:

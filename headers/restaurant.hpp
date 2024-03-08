@@ -59,7 +59,8 @@ protected:
   string meal; // the meal restaurant is known for
   /* vector<MenuChoice> vChoices; */
   vector<MenuChoice> vMenu;
-  vector<MenuItem> vMeal; //actual meals to recommend to user from the restaurants
+  vector<MenuItem>
+      vMeal; // actual meals to recommend to user from the restaurants
   vector<Beverages> vDrinks;
   vector<Nationality> vNation;
   vector<Location> vLocation;
