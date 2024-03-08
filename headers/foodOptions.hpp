@@ -88,9 +88,9 @@ string drinkOptions() { //displays meat options when "Drinks" is selected
     string choice;
     cout << endl << "Drink Options:" << endl
         << "1. Coffee" << endl
-        << "2. Tea" << endl
-        << "3. [Back]" << endl; //"Back" to go back to food preferences
-
+        << "2. Fountain" << endl
+        << "3. Tea" << endl
+        << "4. [Back]" << endl; //"Back" to go back to food preferences4
     cin >> choice;
     cin.clear();
     cin.ignore(256, '\n');

@@ -8,26 +8,26 @@ using std::cout;
 using std::endl;
 using std::string;
 
-string menuDisplay(unsigned int diet) {
+string menuDisplay(unsigned int diet, unsigned int allergy) {
   string choice;
-  if (diet == 2) { //when quit from dietarySelect
+  if (diet == 2 || allergy == 2) { //when quit from dietarySelect
     return "quit";
   }
 
   unsigned int disNum = 1;
 
-  cout << endl << "Enter food type or cuisines " << endl;
+  cout << endl << "Enter 3 food types or cuisines " << endl;
   // TODO Put the result into a unsigned int
   //    Then into a hash table that holds all restaurants with that enum
   //
   cout << "Food Preferences:" << endl;
 
-  if (diet != 3 && diet != 4) {
+  if (diet != 3 && diet != 4 && diet != 5) {
     cout << disNum << ". Protein:" << endl;
     disNum++;
   }
 
-  if (diet != 4 && diet != 5) {
+  if (diet != 4 && diet != 3 && allergy != 6) {
     cout << disNum << ". Seafood:" << endl;
     disNum++;
   }
@@ -35,7 +35,7 @@ string menuDisplay(unsigned int diet) {
   cout << disNum << ". Vegetables" << endl;
   disNum++;
 
-  if (diet != 4 && diet != 6) {
+  if (diet != 4 && allergy != 6) {
     cout << disNum << ". Dairy:" << endl;
     disNum++;
   }
@@ -67,50 +67,67 @@ string menuDisplay(unsigned int diet) {
   return choice;
 }
 
-unsigned int menuSelect(unsigned int diet) {
+unsigned int menuSelect(unsigned int diet, unsigned int allergy, vectorRestaurants& vRestaurants) {
   /* vectorRestaurant vMenus; // class that holds all restaurants */
-
+  unsigned int selected;
   string choice;
   
   while(choice != "quit") {
-    choice = menuDisplay(diet);
+    choice = menuDisplay(diet, allergy);
     std::transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); }); //ideally make "choice" lowercase for input conviences
 
     if (choice == "quit") {
       cout << "Quitting Program" << endl;
     } else if (choice == "protein" && diet != 3 && diet != 4) {
-      return selectingMeat(); //selector for meat options; returns 0 if back 1 if any other option
-
-    } else if (choice == "seafood" && diet != 4 && diet != 5) {
-      return selectingSeafood(); //selector for seafood options; returns 0 if back 1 if any other option
-
+      selected = selectingMeat(vRestaurants); //selector for meat options; returns 0 if back 1 if any other option
+      if(selected == 0) {
+        return selected;
+      }
+    } else if (choice == "seafood" && diet != 4 && diet != 3 && allergy != 6) {
+      selected = selectingSeafood(vRestaurants); //selector for seafood options; returns 0 if back 1 if any other option
+      if(selected == 0) {
+        return selected;
+      }
     } else if (choice == "vegetables") {
       //add Vegetables to preferences
       cout << "Vegetables added" << endl;
+      removeRestaurantByMenu(vRestaurants, MenuChoice::Vegetables);
       return 0;
 
-    } else if (choice == "dairy" && diet != 4 && diet != 6) {
-      return selectingDairy(); //selector for dairy options; returns 0 if back 1 if any other option
-      
+    } else if (choice == "dairy" && diet != 4 && allergy != 7) {
+      selected = selectingDairy(vRestaurants); //selector for dairy options; returns 0 if back 1 if any other option
+      if(selected == 0) {
+        return selected;
+      }
     } else if (choice == "dishes") {
-      return selectingDishes(); //selector for dish options; returns 0 if back 1 if any other option
-      
+      selected = selectingDishes(vRestaurants); //selector for dish options; returns 0 if back 1 if any other option
+      if(selected == 0) {
+        return selected;
+      }
     } else if (choice == "drinks") {
-      return selectingDrink(); //selector for drink options; returns 0 if back 1 if any other option
-      
+      selected = selectingDrink(diet, vRestaurants); //selector for drink options; returns 0 if back 1 if any other option
+      if(selected == 0) {
+        return selected;
+      } else if (selected == 2) {
+        return 1;
+      }
     } else if (choice == "snacks") {
       //add Snacks to preferences
       cout << "Snacks added" << endl;
+      removeRestaurantByMenu(vRestaurants, MenuChoice::Snacks);
       return 0;
 
     } else if (choice == "dessert") {
       //add Dessert to preferences
       cout << "Dessert added" << endl;
+      removeRestaurantByMenu(vRestaurants, MenuChoice::Dessert);
       return 0;
 
     } else if (choice == "cuisines") {
-      return selectingCuisine(); //selector for cuisine options; returns 0 if back 1 if any other option
-      
+      selected = selectingCuisine(vRestaurants); //selector for cuisine options; returns 0 if back 1 if any other option
+      if(selected == 0) {
+        return selected;
+      }
     } else if (choice == "none") {
       cout << "No Preference" << endl;
       //if none, show user all restaurant options, default

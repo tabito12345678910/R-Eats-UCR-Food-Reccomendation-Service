@@ -1,4 +1,5 @@
 #include "restaurant.hpp"
+#pragma once
 class Habit : public Restaurant {
 public:
   Habit() : priceMDrink(2.79), priceLDrink(3.29) {

@@ -3,7 +3,7 @@
 #include <vector>
 #include "menuItem.hpp"
 using namespace std; 
-
+#pragma once
 class Place{
     private: 
         string from; //location user is in currently
