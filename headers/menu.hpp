@@ -1,7 +1,9 @@
 #include "foodSelector.hpp"
 #include "dietaryMenu.hpp"
 #include <iostream>
+
 #include <algorithm>
+#include <iostream>
 
 using std::cin;
 using std::cout;
@@ -72,11 +74,12 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy, vectorRestauran
   unsigned int selected;
   string choice;
   
-  while(choice != "quit") {
+  while(choice != "quit" || choice != "q") {
     choice = menuDisplay(diet, allergy);
-    std::transform(choice.begin(), choice.end(), choice.begin(), [](unsigned char c){ return std::tolower(c); }); //ideally make "choice" lowercase for input conviences
-
-    if (choice == "quit") {
+    std::transform(choice.begin(), choice.end(), choice.begin(),
+                   [](unsigned char c) {
+                     return std::tolower(c);
+    if (choice == "quit" || choice == "q") {
       cout << "Quitting Program" << endl;
     } else if (choice == "protein" && diet != 3 && diet != 4) {
       selected = selectingMeat(vRestaurants); //selector for meat options; returns 0 if back 1 if any other option
@@ -88,8 +91,9 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy, vectorRestauran
       if(selected == 0) {
         return selected;
       }
+
     } else if (choice == "vegetables") {
-      //add Vegetables to preferences
+      // add Vegetables to preferences
       cout << "Vegetables added" << endl;
       removeRestaurantByMenu(vRestaurants, MenuChoice::Vegetables);
       return 0;
@@ -116,9 +120,8 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy, vectorRestauran
       cout << "Snacks added" << endl;
       removeRestaurantByMenu(vRestaurants, MenuChoice::Snacks);
       return 0;
-
     } else if (choice == "dessert") {
-      //add Dessert to preferences
+      // add Dessert to preferences
       cout << "Dessert added" << endl;
       removeRestaurantByMenu(vRestaurants, MenuChoice::Dessert);
       return 0;
@@ -130,15 +133,16 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy, vectorRestauran
       }
     } else if (choice == "none") {
       cout << "No Preference" << endl;
-      //if none, show user all restaurant options, default
+      // if none, show user all restaurant options, default
       return 1;
 
     } else if (choice == "done") {
-      return 1; //signals main that program is done and should display restaurant options that fit prefs
+      return 1; // signals main that program is done and should display
+                // restaurant options that fit prefs
 
-    } else { //invalid response
+    } else { // invalid response
       cout << "Invalid Response: Try Again" << endl;
     }
   }
-  return 2; //2 signals main that program is quitting, exits program and ends
+  return 2; // 2 signals main that program is quitting, exits program and ends
 }

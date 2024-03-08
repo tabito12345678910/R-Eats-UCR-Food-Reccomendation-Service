@@ -36,7 +36,7 @@ public:
     vMenu.push_back(MenuChoice::Vegetarian);
     vMenu.push_back(MenuChoice::Vegan);
     vMenu.push_back(MenuChoice::Seafood);
-    //Entrees
+
     vEntree.push_back(Entree("Grilled Chicken", MenuChoice::Chicken));
     vEntree.push_back(Entree("Tri-Tip Beef", MenuChoice::Beef));
     vEntree.push_back(Entree("Shrimp Tempura", MenuChoice::Shrimp));
@@ -50,7 +50,7 @@ public:
     vEntree.push_back(Entree("Crab Mix", MenuChoice::Crab));
     vEntree.push_back(Entree("Spicy Crab Mix", MenuChoice::Crab));
     vEntree.push_back(Entree("Tofu", MenuChoice::Vegan));
-    //Sides
+    // Sides
     vSide.push_back(Side("Sushi Rice", MenuChoice::Rice));
     vSide.push_back(Side("Brown Rice", MenuChoice::Rice));
     vSide.push_back(Side("Mixed Salad", MenuChoice::Vegan));

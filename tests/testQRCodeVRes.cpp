@@ -15,6 +15,7 @@ using std::vector;
 void test1();
 void test2();
 void test3();
+void test4();
 
 int main() {
   // hardcoded link test
@@ -23,8 +24,11 @@ int main() {
   // hardcoded restaurant test
   test2();
 
-  // Real test using user input
+  // The cleaned up version you should be using
   test3();
+
+  // Real test using user input
+  test4();
 
   return 0;
 }
@@ -47,10 +51,10 @@ void test2() {
   string restaurantName = "Habit";
   string os = "iphone";
 
-  Restaurant *pRestaurant = vRestaurants.getRestaurantByName(restaurantName);
-  if (pRestaurant) {
+  Restaurant pRestaurant = vRestaurants.getRestaurantByName(restaurantName);
+  if (pRestaurant.getLink(os) != "Invalid OS") {
     vector<string> links;
-    string link = pRestaurant->getLink(os);
+    string link = pRestaurant.getLink(os);
     cout << "Link: " << link << endl;
     QRCodeModule qrModule;
     vector<string> vlinks;
@@ -62,9 +66,24 @@ void test2() {
   cout << "End of Test 2 \n";
 }
 
-// Test using userInput
+// NOTE  This should be the proper way to actually do it hardcoded
 void test3() {
-  cout << "Welcome to test3\n";
+  cout << "Test 3" << endl << endl;
+  Restaurant pRestaurant = ChronicTacos();
+  string OperatingSystem = "android";
+  if (pRestaurant.getLink(OperatingSystem) != "Invalid OS") {
+    vector<string> vlink = {pRestaurant.getLink(OperatingSystem)};
+    cout << "Link: " << vlink.at(0) << endl;
+    QRCodeModule qrModule;
+    qrModule.displayLinkAsQRCode(vlink);
+  } else {
+    cout << "pRestaurant is kinda nullptr lol\n";
+  }
+}
+
+// Test using userInput
+void test4() {
+  cout << "\nWelcome to test4\n";
   vectorRestaurants vRestaurants;
   string option;
   string os;
@@ -81,11 +100,11 @@ void test3() {
   cin >> os;
   cout << endl;
 
-  // restaurantOption holds a pointer to the restaurant that the user chose
-  Restaurant *restaurantOption = vRestaurants.getRestaurantByName(option);
-  if (restaurantOption != nullptr) {
+  // restaurantOption Should hold the dynamic object
+  Restaurant restaurantOption = vRestaurants.getRestaurantByName(option);
+  if (restaurantOption.getLink(os) != "Invalid OS") {
     vector<string> links;
-    string link = restaurantOption->getLink(os);
+    string link = restaurantOption.getLink(os);
     cout << "Link: " << link << endl;
 
     if (link != "Invalid OS") {
