@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 using std::string;
-
+#pragma once
 class PandaExpress : public buffetRestaurant {
 
 public:
@@ -39,6 +39,7 @@ public:
     vMenu.push_back(MenuChoice::Vegan);
     // There are desserts
     vMenu.push_back(MenuChoice::Dessert);
+    vMenu.push_back(MenuChoice::Seafood);
 
     // Entrees
     // Print each string in ui when

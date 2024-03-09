@@ -1,5 +1,5 @@
 #include "buffetRestaurant.hpp"
-
+#pragma once
 class Hibachi : public buffetRestaurant {
 public:
   
@@ -35,8 +35,8 @@ public:
     // Tofu!
     vMenu.push_back(MenuChoice::Vegetarian);
     vMenu.push_back(MenuChoice::Vegan);
+    vMenu.push_back(MenuChoice::Seafood);
 
-    // Entrees
     vEntree.push_back(Entree("Grilled Chicken", MenuChoice::Chicken));
     vEntree.push_back(Entree("Tri-Tip Beef", MenuChoice::Beef));
     vEntree.push_back(Entree("Shrimp Tempura", MenuChoice::Shrimp));

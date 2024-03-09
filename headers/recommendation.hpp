@@ -1,11 +1,10 @@
 #ifndef RECOMMENDATION_HPP
 #define RECOMMENDATION_HPP
 #include "restaurants.hpp"
-#include "vRestaurants.hpp" 
-
+#include "vRestaurants.hpp"
 #include <iostream>
-#include <vector>
 #include <string>
+#include <vector>
 using namespace std;
 
 class UserPreference { 
@@ -27,7 +26,4 @@ class UserPreference {
 
 };
 
-
-
 #endif
-

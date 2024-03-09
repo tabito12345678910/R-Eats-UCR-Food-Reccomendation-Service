@@ -1,3 +1,4 @@
+#pragma once
 #include "restaurant.hpp"
 class CoffeeBean : public Restaurant {
 public:

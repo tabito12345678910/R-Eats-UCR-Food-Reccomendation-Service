@@ -1,6 +1,9 @@
 #include "../headers/vRestaurants.hpp"
+#include "../headers/restaurants.hpp"
+#include <stdexcept>
 
 vectorRestaurants::vectorRestaurants() {
+<<<<<<< HEAD
   ChronicTacos chronic;
   CoffeeBean bean;
   Habit hab;
@@ -23,10 +26,24 @@ vectorRestaurants::vectorRestaurants() {
 
   // Required for the getRestaurantByName
   for (Restaurant restaurant : vRestaurants) {
+=======
+  vRestaurants.push_back(ChronicTacos());
+  vRestaurants.push_back(CoffeeBean());
+  vRestaurants.push_back(Habit());
+  vRestaurants.push_back(HalalShack());
+  vRestaurants.push_back(Hibachi());
+  vRestaurants.push_back(PandaExpress());
+  vRestaurants.push_back(Starbucks());
+  vRestaurants.push_back(Subway());
+
+  // Required for the getRestaurantByName
+  for (Restaurant &restaurant : vRestaurants) {
+>>>>>>> refs/remotes/origin/tsaka014/algo
     nameToRestaurant[restaurant.getName()] = restaurant;
   }
 };
 
+<<<<<<< HEAD
 vectorRestaurants::~vectorRestaurants(){
     /* for (size_t i = 0; i < vRestaurants.size(); ++i) {
       delete vRestaurants.at(i);
@@ -45,6 +62,21 @@ Restaurant vectorRestaurants::getRestaurant(int index) {
 };
 
 const vector<Restaurant> &vectorRestaurants::getRestaurants() const {
+=======
+vectorRestaurants::~vectorRestaurants() {
+  vRestaurants.clear();
+  nameToRestaurant.clear();
+};
+
+Restaurant vectorRestaurants::getRestaurant(int index) {
+  if (index < static_cast<int>(vRestaurants.size())) {
+    return vRestaurants[index];
+  }
+  throw runtime_error("Invalud restaurant index");
+};
+
+vector<Restaurant> &vectorRestaurants::getRestaurants() {
+>>>>>>> refs/remotes/origin/tsaka014/algo
   return vRestaurants;
 };
 
@@ -65,5 +97,9 @@ Restaurant vectorRestaurants::getRestaurantByName(const std::string &name) {
   if (it != nameToRestaurant.end()) {
     return it->second;
   }
+<<<<<<< HEAD
   throw runtime_error("SMOKE");
+=======
+  throw runtime_error("Invalid Restaurant Name");
+>>>>>>> refs/remotes/origin/tsaka014/algo
 };
