@@ -1,4 +1,5 @@
 #include "../headers/recommendation.hpp"
+using namespace std;
 
 void UserPreference::PrintMeals(){
     vectorRestaurants restaurants;
@@ -21,19 +22,19 @@ void UserPreference::PrintMeals(){
             includesMeal = true;
             cout<<"Recommendations from "<<restaurants.getRestaurant(i).getName()<<": "<<endl;
             //loop scans to find all meals that matches users preferences and prints them
-            if(!(restaurants.getRestaurant(i).getMeal().empty())){
+            if(restaurants.getRestaurant(i).getEntree().empty()){
                 for(int k = 0; k<restaurants.getRestaurant(i).getMeal().size(); ++k){
                     if(restaurants.getRestaurant(i).getMeal().at(k).getChoice1()==pref1){
                         if(restaurants.getRestaurant(i).getMeal().at(k).getChoice2()==pref2){
                             if(restaurants.getRestaurant(i).getMeal().at(k).getChoice3()==pref3){
                                 MenuItem meal = restaurants.getRestaurant(i).getMeal().at(k);
-                                cout<<meal.getItemName()<<" Price: "<<meal.getItemCost()<<" Calories: "<<meal.getCalories()<<endl;
+                                cout<<meal.getItemName()<<" Price: "<<meal.getItemCost()<<", Calories: "<<meal.getCalories()<<endl;
                             }
                         }
                         else if(restaurants.getRestaurant(i).getMeal().at(k).getChoice2()==pref3){
                             if(restaurants.getRestaurant(i).getMeal().at(k).getChoice3()==pref2){
                                 MenuItem meal = restaurants.getRestaurant(i).getMeal().at(k);
-                                cout<<meal.getItemName()<<" Price: "<<meal.getItemCost()<<" Calories: "<<meal.getCalories()<<endl;
+                                cout<<meal.getItemName()<<" Price: "<<meal.getItemCost()<<", Calories: "<<meal.getCalories()<<endl;
                             }
                         }
                     }
@@ -41,13 +42,13 @@ void UserPreference::PrintMeals(){
                         if(restaurants.getRestaurant(i).getMeal().at(k).getChoice2()==pref1){
                             if(restaurants.getRestaurant(i).getMeal().at(k).getChoice3()==pref3){
                                 MenuItem meal = restaurants.getRestaurant(i).getMeal().at(k);
-                                cout<<meal.getItemName()<<" Price: "<<meal.getItemCost()<<" Calories: "<<meal.getCalories()<<endl;
+                                cout<<meal.getItemName()<<" Price: "<<meal.getItemCost()<<", Calories: "<<meal.getCalories()<<endl;
                             }
                         }
                         else if(restaurants.getRestaurant(i).getMeal().at(k).getChoice2()==pref3){
                             if(restaurants.getRestaurant(i).getMeal().at(k).getChoice3()==pref1){
                                 MenuItem meal = restaurants.getRestaurant(i).getMeal().at(k);
-                                cout<<meal.getItemName()<<" Price: "<<meal.getItemCost()<<" Calories: "<<meal.getCalories()<<endl;
+                                cout<<meal.getItemName()<<" Price: "<<meal.getItemCost()<<", Calories: "<<meal.getCalories()<<endl;
                             }
                         }
                     }
@@ -55,17 +56,18 @@ void UserPreference::PrintMeals(){
                         if(restaurants.getRestaurant(i).getMeal().at(k).getChoice2()==pref1){
                             if(restaurants.getRestaurant(i).getMeal().at(k).getChoice3()==pref2){
                                 MenuItem meal = restaurants.getRestaurant(i).getMeal().at(k);
-                                cout<<meal.getItemName()<<" Price: "<<meal.getItemCost()<<" Calories: "<<meal.getCalories()<<endl;
+                                cout<<meal.getItemName()<<" Price: "<<meal.getItemCost()<<", Calories: "<<meal.getCalories()<<endl;
                             }
                         }
                         else if(restaurants.getRestaurant(i).getMeal().at(k).getChoice2()==pref2){
                             if(restaurants.getRestaurant(i).getMeal().at(k).getChoice3()==pref1){
                                 MenuItem meal = restaurants.getRestaurant(i).getMeal().at(k);
-                                cout<<meal.getItemName()<<" Price: "<<meal.getItemCost()<<" Calories: "<<meal.getCalories()<<endl;
+                                cout<<meal.getItemName()<<" Price: "<<meal.getItemCost()<<", Calories: "<<meal.getCalories()<<endl;
                             }
                         }
                     }
                 }
+                cout<<endl;
             }
             //buffet restaurants
             else{
@@ -84,6 +86,7 @@ void UserPreference::PrintMeals(){
                             cout<<panda.getEntree().at(k).getEntreeItemName()<<endl;
                         }
                     }
+                    
                     cout<<"Sides:"<<endl;
                     bool preferredSide = false;
                     for(int k = 0; k<panda.getSide().size(); ++k){
@@ -105,6 +108,7 @@ void UserPreference::PrintMeals(){
                             cout<<panda.getSide().at(k).getSideItemName()<<endl;
                         }
                     }
+                    cout<<endl;
                 }
                 else if(restaurants.getRestaurant(i).getName() == "Hibachi"){
                     Hibachi hiba;
@@ -120,6 +124,7 @@ void UserPreference::PrintMeals(){
                             cout<<hiba.getEntree().at(k).getEntreeItemName()<<endl;
                         }
                     }
+                    
                     cout<<"Sides:"<<endl;
                     bool preferredSide = false;
                     for(int k = 0; k<hiba.getSide().size(); ++k){
@@ -140,7 +145,8 @@ void UserPreference::PrintMeals(){
                         for(int k = 0; k<hiba.getSide().size(); ++k){
                             cout<<hiba.getSide().at(k).getSideItemName()<<endl;
                         }
-                    }   
+                    }
+                    cout<<endl;   
                 }
             }  
         }
