@@ -77,8 +77,7 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy,
   while (choice != "quit" && choice != "q") { // Fixing logical error here
     choice = menuDisplay(diet, allergy);
     std::transform(choice.begin(), choice.end(), choice.begin(),
-                   [](unsigned char c) {
-                     return std::tolower(c); });
+                   [](unsigned char c) { return std::tolower(c); });
     if (choice == "quit" || choice == "q") {
       cout << "Quitting Program" << endl;
     } else if (choice == "protein" && diet != 3 && diet != 4) {

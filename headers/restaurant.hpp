@@ -21,11 +21,11 @@ public:
 
   void addMenuChoice(MenuChoice choice);
 
-  vector<MenuChoice> &getMenuChoices() {return vMenu;};
+  vector<MenuChoice> &getMenuChoices() { return vMenu; };
   Location getLocation() { return vLocation.at(0); };
   Beverages getBeverage() { return vDrinks.at(0); };
   Nationality getNationality() { return vNation.at(0); };
-  vector<MenuItem> &getMenuItems() {return vMeal;};
+  vector<MenuItem> &getMenuItems() { return vMeal; };
   string getName() { return restaurantName; }
   bool isOptionValid(const string &option) const {
     string lowercaseOption = option;
@@ -60,7 +60,8 @@ protected:
   string meal; // the meal restaurant is known for
   /* vector<MenuChoice> vChoices; */
   vector<MenuChoice> vMenu;
-  vector<MenuItem> vMeal; // actual meals to recommend to user from the restaurants
+  vector<MenuItem>
+      vMeal; // actual meals to recommend to user from the restaurants
   vector<Beverages> vDrinks;
   vector<Nationality> vNation;
   vector<Location> vLocation;
