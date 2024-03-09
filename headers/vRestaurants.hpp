@@ -1,6 +1,6 @@
 #ifndef VRESTAURANTS_HPP
 #define VRESTAURANTS_HPP
-#include "restaurants.hpp" 
+#include "restaurants.hpp"
 #include <unordered_map>
 #include <vector>
 
@@ -10,7 +10,7 @@ public:
   ~vectorRestaurants();
 
   Restaurant getRestaurant(int index);
-  const vector<Restaurant> &getRestaurants() const;
+  vector<Restaurant> &getRestaurants();
   Restaurant getRestaurantByName(const std::string &name);
 
 private:

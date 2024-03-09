@@ -46,7 +46,7 @@ Restaurant vectorRestaurants::getRestaurant(int index) {
   throw runtime_error("SMOKE");
 };
 
-const vector<Restaurant> &vectorRestaurants::getRestaurants() const {
+vector<Restaurant> &vectorRestaurants::getRestaurants() {
   return vRestaurants;
 };
 
