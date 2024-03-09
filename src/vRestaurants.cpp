@@ -23,6 +23,7 @@ vectorRestaurants::~vectorRestaurants() {
   nameToRestaurant.clear();
 };
 
+
 Restaurant vectorRestaurants::getRestaurant(int index) {
   if (index < static_cast<int>(vRestaurants.size())) {
     return vRestaurants[index];

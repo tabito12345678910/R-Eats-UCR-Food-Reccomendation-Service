@@ -10,7 +10,7 @@ public:
   ~vectorRestaurants();
 
   vector<Restaurant> &getRestaurants();
-  Restaurant getRestaurant(int index);
+  Restaurant &getRestaurant(int index);
   Restaurant getRestaurantByName(const std::string &name);
 
 private:

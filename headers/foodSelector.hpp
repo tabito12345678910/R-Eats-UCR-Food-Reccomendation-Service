@@ -14,18 +14,27 @@ unsigned int selectingMeat(vectorRestaurants& vRestaurants) {
         } else if (choice == "beef"){
             cout << "Beef added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Beef);
+            removeItemsByPref(vRestaurants, MenuChoice::Beef);
+            return 0;
         } else if (choice == "chicken") {
             cout << "Chicken added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Chicken);
+            removeItemsByPref(vRestaurants, MenuChoice::Chicken);
+            return 0;
         } else if (choice == "pork") {
             cout << "Pork added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Pork);
+            removeItemsByPref(vRestaurants, MenuChoice::Pork);
+            return 0;
         } else if (choice == "turkey") {
             cout << "Turkey added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Turkey);
+            removeItemsByPref(vRestaurants, MenuChoice::Turkey);
+            return 0;
         } else if (choice == "all") {
             cout << "All Proteins added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Protein);
+            removeItemsByPref(vRestaurants, MenuChoice::Protein);
             return 0;
         } else {
            cout << "Invalid Response: Try Again" << endl;
@@ -44,21 +53,32 @@ unsigned int selectingSeafood(vectorRestaurants& vRestaurants) {
         } else if (choice == "crab"){
             cout << "Crab added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Crab);
+            removeItemsByPref(vRestaurants, MenuChoice::Crab);
+            return 0;
         } else if (choice == "salmon") {
             cout << "Salmon added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Salmon);
+            removeItemsByPref(vRestaurants, MenuChoice::Salmon);
+            return 0;
         } else if (choice == "scallops") {
             cout << "Scallops added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Scallops);
+            removeItemsByPref(vRestaurants, MenuChoice::Scallops);
+            return 0;
         } else if (choice == "shrimp") {
             cout << "Shrimp added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Shrimp);
+            removeItemsByPref(vRestaurants, MenuChoice::Shrimp);
+            return 0;
         } else if (choice == "tuna") {
             cout << "Tuna added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Tuna);
+            removeItemsByPref(vRestaurants, MenuChoice::Tuna);
+            return 0;
         } else if (choice == "all") {
             cout << "All Seafood added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Seafood);
+            removeItemsByPref(vRestaurants, MenuChoice::Seafood);
             return 0;
         } else {
         cout << "Invalid Response: Try Again" << endl;
@@ -77,15 +97,23 @@ unsigned int selectingDishes(vectorRestaurants& vRestaurants) {
         } else if (choice == "bread"){
             cout << "Bread added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Bread);
+            removeItemsByPref(vRestaurants, MenuChoice::Bread);
+            return 0;
         } else if (choice == "fries") {
             cout << "Fries added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Fries);
+            removeItemsByPref(vRestaurants, MenuChoice::Fries);
+            return 0;
         } else if (choice == "noodles") {
             cout << "Noodles added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Noodles);
+            removeItemsByPref(vRestaurants, MenuChoice::Noodles);
+            return 0;
         } else if (choice == "rice") {
             cout << "Rice added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Rice);
+            removeItemsByPref(vRestaurants, MenuChoice::Rice);
+            return 0;
         } else {
         cout << "Invalid Response: Try Again" << endl;
         }
@@ -102,14 +130,24 @@ unsigned int selectingCuisine(vectorRestaurants& vRestaurants) {
             cout << "Backing" << endl;
         } else if (choice == "american"){
             cout << "American added" << endl;
+            removeByCuisine(vRestaurants, Nationality::American);
+            return 0;
         } else if (choice == "chinese") {
             cout << "Chinese added" << endl;
+            removeByCuisine(vRestaurants, Nationality::Chinese);
+            return 0;
         } else if (choice == "japanese") {
             cout << "Japanese added" << endl;
+            removeByCuisine(vRestaurants, Nationality::Japanese);
+            return 0;
         } else if (choice == "mediterranean") {
             cout << "Mediterranean added" << endl;
+            removeByCuisine(vRestaurants, Nationality::Mediterranean);
+            return 0;
         } else if (choice == "mexican") {
             cout << "Mexican added" << endl;
+            removeByCuisine(vRestaurants, Nationality::Mexican);
+            return 0;
         } else {
         cout << "Invalid Response: Try Again" << endl;
         }
@@ -126,10 +164,15 @@ unsigned int selectingDairy(vectorRestaurants& vRestaurants) {
             cout << "Backing" << endl;
         } else if (choice == "cheese"){
             cout << "Cheese added" << endl;
+            return 0;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Cheese);
+            removeItemsByPref(vRestaurants, MenuChoice::Cheese);
+            return 0;
         } else if (choice == "milk") {
             cout << "Milk added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Milk);
+            removeItemsByPref(vRestaurants, MenuChoice::Milk);
+            return 0;
         } else {
         cout << "Invalid Response: Try Again" << endl;
         }
@@ -147,15 +190,19 @@ unsigned int selectingDrink(unsigned int diet, vectorRestaurants& vRestaurants) 
         } else if (choice == "coffee"){
             cout << "Coffee added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Coffee);
+            removeItemsByPref(vRestaurants, MenuChoice::Coffee);
             if(diet == 4) {
                 return 2;
             }
+            return 0;
             
         } else if (choice == "fountain") {
             cout << "Fountain Drink added" << endl;
         } else if (choice == "tea") {
             cout << "Tea added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Tea);
+            removeItemsByPref(vRestaurants, MenuChoice::Tea);
+            return 0;
         } else {
         cout << "Invalid Response: Try Again" << endl;
         }
