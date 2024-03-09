@@ -33,20 +33,19 @@ int main() {
   } else if (status > 2) {
     return -1; // any other number is faulty
   }
-  
+
   cout << "Displaying Resturant Options" << endl;
   int list = 1;
   vector<Restaurant> test = vRestaurants.getRestaurants();
-  for ( auto value : test )
-	{
-		cout << list << "." << value.getName() << endl;
+  for (auto value : test) {
+    cout << list << "." << value.getName() << endl;
     list++;
     vector<MenuItem> test2 = value.getMenuItems();
-    for ( auto item : test2) {
+    for (auto item : test2) {
       cout << item.getItemName() << " - " << item.getCost() << ", ";
     }
     cout << endl;
-	}
+  }
 
   return 0;
 }
