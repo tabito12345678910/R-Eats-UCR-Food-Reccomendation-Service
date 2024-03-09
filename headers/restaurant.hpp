@@ -22,7 +22,7 @@ public:
   void addMenuChoice(MenuChoice choice);
 
   vector<MenuChoice> getMenu() { return vMenu; }
-  vector<MenuChoice> &getMenuChoices() { return vMenu; };
+  vector<MenuItem> getMeal() { return vMeal; }
 
   Location getLocation() { return vLocation.at(0); };
   Beverages getBeverage() { return vDrinks.at(0); };
