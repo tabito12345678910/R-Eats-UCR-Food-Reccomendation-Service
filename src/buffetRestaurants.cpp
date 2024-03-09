@@ -6,7 +6,7 @@ using std::cout;
 using std::endl;
 using std::vector;
 
-void PandaExpress::greeter() {
+void PandaExpress::PandaGreeter() {
   cout << name << " Menu\n"
        << std::fixed << std::showpoint << std::setprecision(2)
        << "Prices: Small(1 entree & 1 side): $" << priceS << " Calories: "<< calS
@@ -14,7 +14,7 @@ void PandaExpress::greeter() {
        << "\nLarge(3 entree & 1 side): $" << priceL  << " Calories: "<< calL << endl;
 }
 
-void Hibachi::greeter() {
+void Hibachi::HibaGreeter() {
   cout << name << " Menu\n"
        << std::fixed << std::showpoint << std::setprecision(2)
        << "Prices: Small(2 entree & 1 side): $" << priceS << " Calories: "<< calS

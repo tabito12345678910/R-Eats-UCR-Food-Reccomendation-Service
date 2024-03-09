@@ -6,7 +6,6 @@ using std::string;
 class PandaExpress : public buffetRestaurant {
 
 public:
-  void greeter();
   PandaExpress()
       : meal("Chinese cuisine, protein + rice/noodles"), priceS(8.40),
         priceM(9.90), priceL(11.40), priceSDrink(2.59), priceMDrink(2.99),
@@ -65,6 +64,8 @@ public:
     vSide.push_back(Side("Fried Rice", MenuChoice::Rice));
     vSide.push_back(Side("Mixed Vegetables", MenuChoice::Vegan));
   }
+
+  void PandaGreeter();
 
 private:
   double priceS, priceM, priceL, priceSDrink, priceMDrink, priceLDrink;

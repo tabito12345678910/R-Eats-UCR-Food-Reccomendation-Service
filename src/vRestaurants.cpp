@@ -1,39 +1,50 @@
 #include "../headers/vRestaurants.hpp"
 
 vectorRestaurants::vectorRestaurants() {
-  vRestaurants.push_back(new ChronicTacos());
-  vRestaurants.push_back(new CoffeeBean());
-  vRestaurants.push_back(new Habit());
-  vRestaurants.push_back(new HalalShack());
-  vRestaurants.push_back(new Hibachi());
-  vRestaurants.push_back(new PandaExpress());
-  vRestaurants.push_back(new Starbucks());
-  vRestaurants.push_back(new Subway());
+  ChronicTacos chronic;
+  CoffeeBean bean;
+  Habit hab;
+  HalalShack halal;
+  Hibachi hiba;
+  PandaExpress panda;
+  Starbucks starb;
+  Subway sub;
 
-  for (Restaurant *restaurant : vRestaurants) {
-    nameToRestaurant[restaurant->getName()] = restaurant;
+  // Every single object is pushed alphabetically
+  //    We can easily push this into an enum class if we want to
+  vRestaurants.push_back(chronic);
+  vRestaurants.push_back(bean);
+  vRestaurants.push_back(hab);
+  vRestaurants.push_back(halal);
+  vRestaurants.push_back(hiba);
+  vRestaurants.push_back(panda);
+  vRestaurants.push_back(starb);
+  vRestaurants.push_back(sub);
+
+  // Required for the getRestaurantByName
+  for (Restaurant restaurant : vRestaurants) {
+    nameToRestaurant[restaurant.getName()] = restaurant;
   }
 };
 
-vectorRestaurants::~vectorRestaurants() {
-  /* for (size_t i = 0; i < vRestaurants.size(); ++i) {
-    delete vRestaurants.at(i);
-    vRestaurants.pop_front();
-  } */
-  for (Restaurant *restaurant : vRestaurants) {
-    delete restaurant;
-  }
+vectorRestaurants::~vectorRestaurants(){
+    /* for (size_t i = 0; i < vRestaurants.size(); ++i) {
+      delete vRestaurants.at(i);
+      vRestaurants.pop_front();
+    } */
+    /* for (Restaurant *restaurant : vRestaurants) {
+      delete restaurant;
+    } */
 };
 
-Restaurant *vectorRestaurants::getRestaurant(int index) {
+Restaurant vectorRestaurants::getRestaurant(int index) {
   if (index < vRestaurants.size()) {
     return vRestaurants.at(index);
   }
-
-  return nullptr;
+  throw runtime_error("SMOKE");
 };
 
-const vector<Restaurant *> &vectorRestaurants::getRestaurants() const {
+const vector<Restaurant> &vectorRestaurants::getRestaurants() const {
   return vRestaurants;
 };
 
@@ -49,10 +60,10 @@ const vector<Restaurant *> &vectorRestaurants::getRestaurants() const {
 }; */
 
 // Superior unorder map data structure
-Restaurant *vectorRestaurants::getRestaurantByName(const std::string &name) {
+Restaurant vectorRestaurants::getRestaurantByName(const std::string &name) {
   auto it = nameToRestaurant.find(name);
   if (it != nameToRestaurant.end()) {
     return it->second;
   }
-  return nullptr;
+  throw runtime_error("SMOKE");
 };

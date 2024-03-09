@@ -2,6 +2,7 @@
 #define RECOMMENDATION_HPP
 #include "restaurants.hpp"
 #include "vRestaurants.hpp" 
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -22,8 +23,7 @@ class UserPreference {
         MenuChoice getPref1(){return pref1;}
         MenuChoice getPref2(){return pref2;}
         MenuChoice getPref3(){return pref3;}
-        vector<Restaurant> RestaurantsThatIncludePreferences(){};
-        void printMeals(vector<Restaurant>){};
+        void PrintMeals();
 
 };
 

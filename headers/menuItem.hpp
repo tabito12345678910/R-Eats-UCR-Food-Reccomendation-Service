@@ -1,6 +1,7 @@
 #ifndef MENUITEM_HPP
 #define MENUITEM_HPP
 #include <string>
+#pragma once 
 using namespace std;
 // THe file of all the anumeration classes
 enum class MenuChoice {
@@ -64,6 +65,9 @@ public:
   string getItemName(){return itemName;}
   double getItemCost(){return itemCost;}
   string getCalories(){return calories;}
+  MenuChoice getChoice1(){return choice1;}
+  MenuChoice getChoice2(){return choice2;}
+  MenuChoice getChoice3(){return choice3;}
 };
 
 // MenuItem but for buffetclass
@@ -77,7 +81,8 @@ public:
       : itemName(in), choice1(cho1) {
   } // constructor each meal has two menuChoices assigned
   //getter
-  string getItemName(){return itemName;}
+  string getEntreeItemName(){return itemName;}
+  MenuChoice getEntreeChoice(){return choice1;}
 };
 
 class Side {
@@ -90,6 +95,7 @@ public:
       : itemName(in), choice1(cho1) {
   } // constructor each meal has two menuChoices assigned
   //getter
-  string getItemName(){return itemName;}
+  string getSideItemName(){return itemName;}
+  MenuChoice getSideChoice(){return choice1;}
 };
 #endif
