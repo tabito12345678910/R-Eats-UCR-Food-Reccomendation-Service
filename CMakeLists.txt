@@ -38,7 +38,6 @@ ADD_SUBDIRECTORY(tests/googletest)
 ADD_EXECUTABLE( main
     src/main.cpp
     src/restaurant.cpp
-<<<<<<< HEAD
     src/recommendation.cpp
     src/buffetRestaurants.cpp
     src/vRestaurants.cpp
@@ -53,9 +52,6 @@ ADD_EXECUTABLE(Algorithm
     src/buffetRestaurants.cpp
     src/vRestaurants.cpp
 
-=======
-    src/vRestaurants.cpp
->>>>>>> refs/remotes/origin/tsaka014/algo
 )
 
 

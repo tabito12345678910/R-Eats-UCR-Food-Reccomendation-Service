@@ -21,14 +21,9 @@ public:
 
   void addMenuChoice(MenuChoice choice);
 
-<<<<<<< HEAD
-  vector<MenuChoice> getMenu(){return vMenu;}
-  vector<MenuItem> getMeal(){return vMeal;}
-=======
   vector<MenuChoice> getMenu() { return vMenu; }
   vector<MenuChoice> &getMenuChoices() { return vMenu; };
 
->>>>>>> refs/remotes/origin/tsaka014/algo
   Location getLocation() { return vLocation.at(0); };
   Beverages getBeverage() { return vDrinks.at(0); };
   Nationality getNationality() { return vNation.at(0); };
