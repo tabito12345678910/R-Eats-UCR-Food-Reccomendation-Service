@@ -22,15 +22,18 @@ int main() {
     cout << "Quiting Program" << endl;
     return 0;
   }
+
   while(status == 0 && track < 4) {
     status = menuSelect(diet, allergy, vRestaurants);
     track++;
   }
+
   if (status == 2) {
     return 0; //quit the program nothing occurs
   } else if (status > 2) {
     return -1; //any other number is faulty 
   }
+  
   cout << "Displaying Resturant Options" << endl;
   int list = 1;
   vector<Restaurant> test = vRestaurants.getRestaurants();
