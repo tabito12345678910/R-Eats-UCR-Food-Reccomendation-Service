@@ -1,5 +1,5 @@
-#include "foodSelector.hpp"
 #include "dietaryMenu.hpp"
+#include "foodSelector.hpp"
 #include <iostream>
 
 #include <algorithm>
@@ -12,7 +12,7 @@ using std::string;
 
 string menuDisplay(unsigned int diet, unsigned int allergy) {
   string choice;
-  if (diet == 2 || allergy == 2) { //when quit from dietarySelect
+  if (diet == 2 || allergy == 2) { // when quit from dietarySelect
     return "quit";
   }
 
@@ -69,12 +69,12 @@ string menuDisplay(unsigned int diet, unsigned int allergy) {
   return choice;
 }
 
-unsigned int menuSelect(unsigned int diet, unsigned int allergy, vectorRestaurants& vRestaurants) {
-  /* vectorRestaurant vMenus; // class that holds all restaurants */
+unsigned int menuSelect(unsigned int diet, unsigned int allergy,
+                        vectorRestaurants &vRestaurants) {
   unsigned int selected;
-  string choice;
-  
-  while(choice != "quit" || choice != "q") {
+  string choice = "NULL"; // you should never see "NULL"
+
+  while (choice != "quit" && choice != "q") { // Fixing logical error here
     choice = menuDisplay(diet, allergy);
     std::transform(choice.begin(), choice.end(), choice.begin(),
                    [](unsigned char c) {
@@ -82,13 +82,15 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy, vectorRestauran
     if (choice == "quit" || choice == "q") {
       cout << "Quitting Program" << endl;
     } else if (choice == "protein" && diet != 3 && diet != 4) {
-      selected = selectingMeat(vRestaurants); //selector for meat options; returns 0 if back 1 if any other option
-      if(selected == 0) {
+      selected = selectingMeat(vRestaurants);
+      if (selected == 0) {
         return selected;
       }
     } else if (choice == "seafood" && diet != 4 && diet != 3 && allergy != 6) {
-      selected = selectingSeafood(vRestaurants); //selector for seafood options; returns 0 if back 1 if any other option
-      if(selected == 0) {
+      selected = selectingSeafood(
+          vRestaurants); // selector for seafood options; returns 0 if back 1 if
+                         // any other option
+      if (selected == 0) {
         return selected;
       }
 
@@ -99,24 +101,30 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy, vectorRestauran
       return 0;
 
     } else if (choice == "dairy" && diet != 4 && allergy != 7) {
-      selected = selectingDairy(vRestaurants); //selector for dairy options; returns 0 if back 1 if any other option
-      if(selected == 0) {
+      selected =
+          selectingDairy(vRestaurants); // selector for dairy options; returns 0
+                                        // if back 1 if any other option
+      if (selected == 0) {
         return selected;
       }
     } else if (choice == "dishes") {
-      selected = selectingDishes(vRestaurants); //selector for dish options; returns 0 if back 1 if any other option
-      if(selected == 0) {
+      selected =
+          selectingDishes(vRestaurants); // selector for dish options; returns 0
+                                         // if back 1 if any other option
+      if (selected == 0) {
         return selected;
       }
     } else if (choice == "drinks") {
-      selected = selectingDrink(diet, vRestaurants); //selector for drink options; returns 0 if back 1 if any other option
-      if(selected == 0) {
+      selected = selectingDrink(
+          diet, vRestaurants); // selector for drink options; returns 0 if back
+                               // 1 if any other option
+      if (selected == 0) {
         return selected;
       } else if (selected == 2) {
         return 1;
       }
     } else if (choice == "snacks") {
-      //add Snacks to preferences
+      // add Snacks to preferences
       cout << "Snacks added" << endl;
       removeRestaurantByMenu(vRestaurants, MenuChoice::Snacks);
       return 0;
@@ -127,8 +135,10 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy, vectorRestauran
       return 0;
 
     } else if (choice == "cuisines") {
-      selected = selectingCuisine(vRestaurants); //selector for cuisine options; returns 0 if back 1 if any other option
-      if(selected == 0) {
+      selected = selectingCuisine(
+          vRestaurants); // selector for cuisine options; returns 0 if back 1 if
+                         // any other option
+      if (selected == 0) {
         return selected;
       }
     } else if (choice == "none") {
@@ -144,5 +154,6 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy, vectorRestauran
       cout << "Invalid Response: Try Again" << endl;
     }
   }
-  return 2; // 2 signals main that program is quitting, exits program and ends
+
+  return 2;
 }

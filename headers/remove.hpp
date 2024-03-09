@@ -1,24 +1,28 @@
 #pragma once
-#include "vRestaurants.hpp"
 #include "restaurant.hpp"
-#include <vector>
-#include <algorithm> 
+#include "vRestaurants.hpp"
+#include <algorithm>
 #include <iostream>
-using namespace std; 
+#include <vector>
+using namespace std;
 
-void removeRestaurantByMenu(vectorRestaurants& vRestaurants, MenuChoice pref) {
-    for(int i = vRestaurants.getRestaurants().size()-1; i >= 0; i--) {
-        bool found = false;
-        Restaurant cur = vRestaurants.getRestaurant(i);
-        for(unsigned int j = 0; j < cur.getMenuChoices().size(); j++) {
-            if(cur.getMenuChoices().at(j) == pref) {
-                found = true;
-            }
-        }
-        if(found == false) {
-            vRestaurants.getRestaurants().erase(vRestaurants.getRestaurants().begin() + i);
-        }
+void removeRestaurantByMenu(vectorRestaurants &vRestaurants, MenuChoice pref) {
+  for (int i = vRestaurants.getRestaurants().size() - 1; i >= 0; i--) {
+    bool found = false;
+    Restaurant currentRestaurant = vRestaurants.getRestaurant(i);
+
+    cout << currentRestaurant.getName() << endl;
+    for (unsigned int j = 0; j < currentRestaurant.getMenuChoices().size();
+         j++) {
+      if (currentRestaurant.getMenuChoices().at(j) == pref) {
+        found = true;
+      }
     }
+    if (found == false) {
+      vRestaurants.getRestaurants().erase(
+          vRestaurants.getRestaurants().begin() + i);
+    }
+  }
 }
 
 //functions to make: remove by cuisines, remove by allergy, removeItem 
