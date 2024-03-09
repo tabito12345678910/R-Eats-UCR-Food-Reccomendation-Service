@@ -41,11 +41,11 @@ int main() {
 	{
 		cout << list << "." << value.getName() << endl;
     list++;
-    vector<MenuItem> test2 = value.getMenuItems();
-    for ( auto item : test2) {
-      cout << item.getItemName() << " - " << item.getCost() << ", ";
-    }
-    cout << endl;
+    // vector<MenuItem> test2 = value.getMenuItems();
+    // for ( auto item : test2) {
+    //   cout << item.getItemName() << " - " << item.getCost() << ", ";
+    // }
+    // cout << endl;
 	}
   
   

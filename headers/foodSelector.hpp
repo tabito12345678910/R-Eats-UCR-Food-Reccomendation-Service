@@ -173,7 +173,7 @@ unsigned int selectingDrink(unsigned int diet, vectorRestaurants& vRestaurants) 
         } else if (choice == "coffee"){
             cout << "Coffee added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Coffee);
-            removeItem(vRestaurants, MenuChoice::Coffee);
+            //removeItem(vRestaurants, MenuChoice::Coffee);
             if(diet == 4) {
                 return 2;
             }

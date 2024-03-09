@@ -41,7 +41,7 @@ void removeItem(vectorRestaurants& vRestaurants, MenuChoice pref) {
                 found = true;
             }
             if(found == false) {
-                cur.getMenuItems().erase(cur.getMenuItems().begin() + j);
+                vRestaurants.getRestaurant(i).getMenuItems().erase(vRestaurants.getRestaurant(i).getMenuItems().begin() + j);
             }
         }
     }

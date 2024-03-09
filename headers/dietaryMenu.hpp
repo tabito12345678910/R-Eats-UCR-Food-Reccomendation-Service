@@ -91,7 +91,7 @@ unsigned int dietarySelect(vectorRestaurants& vRestaurants) {
       //leave only resturants and menu items that are vegan
       cout << "Vegan Menu:" << endl;
       removeRestaurantByMenu(vRestaurants, MenuChoice::Vegan); //removes restaurants without Vegan options
-      removeItem(vRestaurants, MenuChoice::Vegan);
+      //removeItem(vRestaurants, MenuChoice::Vegan);
       return 4;
 
     } else if (choice == "pescatarian") {
