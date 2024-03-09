@@ -11,7 +11,6 @@ void removeRestaurantByMenu(vectorRestaurants &vRestaurants, MenuChoice pref) {
     bool found = false;
     Restaurant currentRestaurant = vRestaurants.getRestaurant(i);
 
-    cout << currentRestaurant.getName() << endl;
     for (unsigned int j = 0; j < currentRestaurant.getMenuChoices().size();
          j++) {
       if (currentRestaurant.getMenuChoices().at(j) == pref) {
@@ -35,18 +34,17 @@ void removeByCuisine(vectorRestaurants& vRestaurants, Nationality pref) {
     }
 }
 
-void removeItem(vectorRestaurants& vRestaurants, MenuChoice pref) {
-    for(int i = vRestaurants.getRestaurants().size()-1; i >= 0; i--) {
-        bool found = false;
-        Restaurant cur = vRestaurants.getRestaurant(i);
-        for(int j = cur.getMenuItems().size()-1; j >= 0; j--) {
-            MenuItem curItem = cur.getMenuItems().at(j);
-            if(curItem.getChoOne() == pref || curItem.getChoTwo() == pref || curItem.getChoThree() == pref) {
-                found = true;
-            }
-            if(found == false) {
-                vRestaurants.getRestaurant(i).getMenuItems().erase(vRestaurants.getRestaurant(i).getMenuItems().begin() + j);
-            }
+
+void removeItem(vector<MenuItem> &vMeal, MenuChoice pref) {
+    for(int i = vMeal.size()-1; i >= 0; i--) {        
+        if(vMeal.at(i).getChoOne() != pref && vMeal.at(i).getChoTwo() != pref && vMeal.at(i).getChoThree() != pref) {
+            vMeal.erase(vMeal.begin() + i);
         }
+    }
+}
+
+void removeItemsByPref(vectorRestaurants& vRestaurants, MenuChoice pref) {
+    for(int i = 0; i < vRestaurants.getRestaurants().size(); i++) {
+        removeItem(vRestaurants.getRestaurant(i).getMenuItems(), pref);
     }
 }

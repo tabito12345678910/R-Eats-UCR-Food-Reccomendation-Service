@@ -83,19 +83,17 @@ unsigned int dietarySelect(vectorRestaurants& vRestaurants) {
       return 2;
     } else if (choice == "vegetarian") {
       //leave only resturants and menu items that are vegetarian
-      cout << "Vegetarian Menu:" << endl;
       removeRestaurantByMenu(vRestaurants, MenuChoice::Vegetarian);
+      removeItemsByPref(vRestaurants, MenuChoice::Vegetarian);
       return 3;
 
     } else if (choice == "vegan") {
       //leave only resturants and menu items that are vegan
-      cout << "Vegan Menu:" << endl;
       removeRestaurantByMenu(vRestaurants, MenuChoice::Vegan); //removes restaurants without Vegan options
-      //removeItem(vRestaurants, MenuChoice::Vegan);
+      removeItemsByPref(vRestaurants, MenuChoice::Vegan);
       return 4;
 
     } else if (choice == "pescatarian") {
-      cout << "Pescatarian Menu:" << endl;
       return 5;
     } else if (choice == "none") {
       cout << "No Restrictions" << endl;
