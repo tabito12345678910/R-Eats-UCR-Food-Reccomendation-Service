@@ -1,5 +1,5 @@
-#include "../headers/vRestaurants.hpp"
 #include "../headers/menu.hpp"
+#include "../headers/vRestaurants.hpp"
 #include <iostream>
 #include <vector>
 
@@ -13,33 +13,32 @@ int main() {
   unsigned int track = 1;
   unsigned int status = 0;
   unsigned int diet = dietarySelect(vRestaurants);
-  if(diet == 2) {
+  if (diet == 2) {
     cout << "Quiting Program" << endl;
     return 0;
   }
   unsigned int allergy = allergySelect(vRestaurants);
-  if(allergy == 2) {
+  if (allergy == 2) {
     cout << "Quiting Program" << endl;
     return 0;
   }
-  while(status == 0 && track < 4) {
+  while (status == 0 && track < 4) {
     status = menuSelect(diet, allergy, vRestaurants);
     track++;
   }
   if (status == 2) {
-    return 0; //quit the program nothing occurs
+    return 0; // quit the program nothing occurs
   } else if (status > 2) {
-    return -1; //any other number is faulty 
+    return -1; // any other number is faulty
   }
   cout << "Displaying Resturant Options" << endl;
   int list = 1;
-  vector<Restaurant *> test = vRestaurants.getRestaurants();
-  for ( const auto value : test )
-	{
-		cout << list << "." << value->getName() << endl;
+  vector<Restaurant> test = vRestaurants.getRestaurants();
+  // FIX
+  /* for (const auto value : test) {
+    cout << list << "." << value.getName() << endl;
     list++;
-	}
-  
-  
+  } */
+
   return 0;
 }
