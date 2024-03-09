@@ -98,6 +98,7 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy,
       // add Vegetables to preferences
       cout << "Vegetables added" << endl;
       removeRestaurantByMenu(vRestaurants, MenuChoice::Vegetables);
+      removeItemsByPref(vRestaurants, MenuChoice::Vegetables);
       return 0;
 
     } else if (choice == "dairy" && diet != 4 && allergy != 7) {
@@ -127,11 +128,13 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy,
       // add Snacks to preferences
       cout << "Snacks added" << endl;
       removeRestaurantByMenu(vRestaurants, MenuChoice::Snacks);
+      removeItemsByPref(vRestaurants, MenuChoice::Snacks);
       return 0;
     } else if (choice == "dessert") {
       // add Dessert to preferences
       cout << "Dessert added" << endl;
       removeRestaurantByMenu(vRestaurants, MenuChoice::Dessert);
+      removeItemsByPref(vRestaurants, MenuChoice::Dessert);
       return 0;
 
     } else if (choice == "cuisines") {

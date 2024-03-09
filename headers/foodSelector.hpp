@@ -14,22 +14,27 @@ unsigned int selectingMeat(vectorRestaurants& vRestaurants) {
         } else if (choice == "beef"){
             cout << "Beef added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Beef);
+            removeItemsByPref(vRestaurants, MenuChoice::Beef);
             return 0;
         } else if (choice == "chicken") {
             cout << "Chicken added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Chicken);
+            removeItemsByPref(vRestaurants, MenuChoice::Chicken);
             return 0;
         } else if (choice == "pork") {
             cout << "Pork added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Pork);
+            removeItemsByPref(vRestaurants, MenuChoice::Pork);
             return 0;
         } else if (choice == "turkey") {
             cout << "Turkey added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Turkey);
+            removeItemsByPref(vRestaurants, MenuChoice::Turkey);
             return 0;
         } else if (choice == "all") {
             cout << "All Proteins added" << endl;
             removeRestaurantByMenu(vRestaurants, MenuChoice::Protein);
+            removeItemsByPref(vRestaurants, MenuChoice::Protein);
             return 0;
         } else {
            cout << "Invalid Response: Try Again" << endl;
