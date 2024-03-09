@@ -1,4 +1,6 @@
-#include "restaurants.hpp" 
+#pragma once
+#include "restaurants.hpp"
+
 #include <unordered_map>
 #include <vector>
 
@@ -7,11 +9,11 @@ public:
   vectorRestaurants();
   ~vectorRestaurants();
 
-  Restaurant *getRestaurant(int index);
-  const vector<Restaurant *> &getRestaurants() const;
-  Restaurant *getRestaurantByName(const std::string &name);
+  vector<Restaurant> &getRestaurants();
+  Restaurant getRestaurant(int index);
+  Restaurant getRestaurantByName(const std::string &name);
 
 private:
-  vector<Restaurant *> vRestaurants;
-  std::unordered_map<std::string, Restaurant *> nameToRestaurant;
+  vector<Restaurant> vRestaurants;
+  std::unordered_map<std::string, Restaurant> nameToRestaurant;
 };

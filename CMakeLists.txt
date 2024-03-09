@@ -37,7 +37,9 @@ ADD_SUBDIRECTORY(tests/googletest)
 ADD_EXECUTABLE( main
     src/main.cpp
     src/restaurant.cpp
+    src/vRestaurants.cpp
 )
+
 
 # Link against librect (your restaurant library) for main
 target_link_libraries(main PRIVATE librect)

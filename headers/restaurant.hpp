@@ -21,7 +21,9 @@ public:
 
   void addMenuChoice(MenuChoice choice);
 
-  vector<MenuChoice> getMenu(){return vMenu;}
+  vector<MenuChoice> getMenu() { return vMenu; }
+  vector<MenuChoice> &getMenuChoices() { return vMenu; };
+
   Location getLocation() { return vLocation.at(0); };
   Beverages getBeverage() { return vDrinks.at(0); };
   Nationality getNationality() { return vNation.at(0); };

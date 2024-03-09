@@ -1,39 +1,36 @@
 #include "../headers/vRestaurants.hpp"
+#include "../headers/restaurants.hpp"
+#include <stdexcept>
 
 vectorRestaurants::vectorRestaurants() {
-  vRestaurants.push_back(new ChronicTacos());
-  vRestaurants.push_back(new CoffeeBean());
-  vRestaurants.push_back(new Habit());
-  vRestaurants.push_back(new HalalShack());
-  vRestaurants.push_back(new Hibachi());
-  vRestaurants.push_back(new PandaExpress());
-  vRestaurants.push_back(new Starbucks());
-  vRestaurants.push_back(new Subway());
+  vRestaurants.push_back(ChronicTacos());
+  vRestaurants.push_back(CoffeeBean());
+  vRestaurants.push_back(Habit());
+  vRestaurants.push_back(HalalShack());
+  vRestaurants.push_back(Hibachi());
+  vRestaurants.push_back(PandaExpress());
+  vRestaurants.push_back(Starbucks());
+  vRestaurants.push_back(Subway());
 
-  for (Restaurant *restaurant : vRestaurants) {
-    nameToRestaurant[restaurant->getName()] = restaurant;
+  // Required for the getRestaurantByName
+  for (Restaurant &restaurant : vRestaurants) {
+    nameToRestaurant[restaurant.getName()] = restaurant;
   }
 };
 
 vectorRestaurants::~vectorRestaurants() {
-  /* for (size_t i = 0; i < vRestaurants.size(); ++i) {
-    delete vRestaurants.at(i);
-    vRestaurants.pop_front();
-  } */
-  for (Restaurant *restaurant : vRestaurants) {
-    delete restaurant;
-  }
+  vRestaurants.clear();
+  nameToRestaurant.clear();
 };
 
-Restaurant *vectorRestaurants::getRestaurant(int index) {
-  if (index < vRestaurants.size()) {
-    return vRestaurants.at(index);
+Restaurant vectorRestaurants::getRestaurant(int index) {
+  if (index < static_cast<int>(vRestaurants.size())) {
+    return vRestaurants[index];
   }
-
-  return nullptr;
+  throw runtime_error("Invalud restaurant index");
 };
 
-const vector<Restaurant *> &vectorRestaurants::getRestaurants() const {
+vector<Restaurant> &vectorRestaurants::getRestaurants() {
   return vRestaurants;
 };
 
@@ -49,10 +46,10 @@ const vector<Restaurant *> &vectorRestaurants::getRestaurants() const {
 }; */
 
 // Superior unorder map data structure
-Restaurant *vectorRestaurants::getRestaurantByName(const std::string &name) {
+Restaurant vectorRestaurants::getRestaurantByName(const std::string &name) {
   auto it = nameToRestaurant.find(name);
   if (it != nameToRestaurant.end()) {
     return it->second;
   }
-  return nullptr;
+  throw runtime_error("Invalid Restaurant Name");
 };

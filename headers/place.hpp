@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#pragma once
+
 using namespace std;
 
 class Place {

@@ -1,4 +1,5 @@
 #include "restaurant.hpp"
+#pragma once
 class Starbucks : public Restaurant {
 public:
   Starbucks() {
