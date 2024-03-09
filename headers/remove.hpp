@@ -30,3 +30,19 @@ void removeByCuisine(vectorRestaurants& vRestaurants, Nationality pref) {
         }
     }
 }
+
+void removeItem(vectorRestaurants& vRestaurants, MenuChoice pref) {
+    for(int i = vRestaurants.getRestaurants().size()-1; i >= 0; i--) {
+        bool found = false;
+        Restaurant cur = vRestaurants.getRestaurant(i);
+        for(int j = cur.getMenuItems().size()-1; j >= 0; j--) {
+            MenuItem curItem = cur.getMenuItems().at(j);
+            if(curItem.getChoOne() == pref || curItem.getChoTwo() == pref || curItem.getChoThree() == pref) {
+                found = true;
+            }
+            if(found == false) {
+                cur.getMenuItems().erase(cur.getMenuItems().begin() + j);
+            }
+        }
+    }
+}

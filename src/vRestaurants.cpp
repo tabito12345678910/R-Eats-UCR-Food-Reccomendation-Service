@@ -38,7 +38,7 @@ vectorRestaurants::~vectorRestaurants(){
     } */
 };
 
-Restaurant vectorRestaurants::getRestaurant(int index) {
+Restaurant &vectorRestaurants::getRestaurant(int index) {
   if (index < vRestaurants.size()) {
     return vRestaurants[index];
   }
