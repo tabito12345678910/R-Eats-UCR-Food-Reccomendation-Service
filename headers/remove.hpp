@@ -12,9 +12,9 @@ void removeRestaurantByMenu(vectorRestaurants &vRestaurants, MenuChoice pref) {
     Restaurant currentRestaurant = vRestaurants.getRestaurant(i);
 
     cout << currentRestaurant.getName() << endl;
-    for (unsigned int j = 0; j < currentRestaurant.getMenuChoices().size();
+    for (unsigned int j = 0; j < currentRestaurant.getMenu().size();
          j++) {
-      if (currentRestaurant.getMenuChoices().at(j) == pref) {
+      if (currentRestaurant.getMenu().at(j) == pref) {
         found = true;
       }
     }
