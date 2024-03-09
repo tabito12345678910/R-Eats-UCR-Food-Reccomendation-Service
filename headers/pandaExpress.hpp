@@ -27,19 +27,16 @@ public:
     vDrinks.push_back(Beverages::SodaFountain);
     vNation.push_back(Nationality::Chinese);
 
-    vMenu.push_back(MenuChoice::Protein);
     vMenu.push_back(MenuChoice::Chicken);
     vMenu.push_back(MenuChoice::Beef);
     vMenu.push_back(MenuChoice::Rice);
     vMenu.push_back(MenuChoice::Shrimp);
-    vMenu.push_back(MenuChoice::Vegetarian);
+    vMenu.push_back(MenuChoice::Vegetables);
     vMenu.push_back(MenuChoice::Noodles); // added for chowmein
     // Eggplant Tofu!
     vMenu.push_back(MenuChoice::Vegetarian);
     vMenu.push_back(MenuChoice::Vegan);
-    // There are desserts
-    vMenu.push_back(MenuChoice::Dessert);
-    vMenu.push_back(MenuChoice::Seafood);
+    
 
     // Entrees
     // Print each string in ui when
@@ -63,7 +60,7 @@ public:
     vSide.push_back(Side("White Steamed Rice", MenuChoice::Rice));
     vSide.push_back(Side("Brown Steamed Rice", MenuChoice::Rice));
     vSide.push_back(Side("Fried Rice", MenuChoice::Rice));
-    vSide.push_back(Side("Mixed Vegetables", MenuChoice::Vegan));
+    vSide.push_back(Side("Mixed Vegetables", MenuChoice::Vegetables));
   }
 
   void PandaGreeter();

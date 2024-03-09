@@ -7,7 +7,7 @@ using std::endl;
 using std::vector;
 
 void PandaExpress::PandaGreeter() {
-  cout << name << "Menu\n"
+  cout <<endl
        << std::fixed << std::showpoint << std::setprecision(2)
        << "Prices: "<<endl<<"Small(1 entree & 1 side): $" << priceS << " Calories: "<< calS<<endl
        << "Medium (2 entree & 1 side): $" << priceM << " Calories: "<< calM<<endl
@@ -15,7 +15,7 @@ void PandaExpress::PandaGreeter() {
 }
 
 void Hibachi::HibaGreeter() {
-  cout << name << "Menu\n"
+  cout <<endl
        << std::fixed << std::showpoint << std::setprecision(2)
        << "Prices: "<<endl<<"Small(2 entree & 1 side): $" << priceS << " Calories: "<< calS<<endl
        << "Medium (3 entree & 1 side): $" << priceM << " Calories: "<< calM<<endl

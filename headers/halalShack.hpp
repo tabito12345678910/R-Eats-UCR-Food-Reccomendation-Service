@@ -21,7 +21,6 @@ public:
     vNation.push_back(Nationality::Mediterranean);
 
     vMenu.push_back(MenuChoice::Fries);
-    vMenu.push_back(MenuChoice::Protein);
     vMenu.push_back(MenuChoice::Beef);
     vMenu.push_back(MenuChoice::Rice);
     vMenu.push_back(MenuChoice::Chicken);

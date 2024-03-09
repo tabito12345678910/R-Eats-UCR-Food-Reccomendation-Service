@@ -53,7 +53,7 @@ public:
     // Sides
     vSide.push_back(Side("Sushi Rice", MenuChoice::Rice));
     vSide.push_back(Side("Brown Rice", MenuChoice::Rice));
-    vSide.push_back(Side("Mixed Salad", MenuChoice::Vegan));
+    vSide.push_back(Side("Mixed Salad", MenuChoice::Vegetables));
   }
 
   void HibaGreeter();
