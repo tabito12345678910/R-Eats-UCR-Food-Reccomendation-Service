@@ -11,13 +11,13 @@ using std::string;
 int main() {
   vectorRestaurants vRestaurants;
   vector<MenuChoice> preferences;
-  unsigned int track = 1;
+  unsigned int track = 0;
   unsigned int status = 0;
   unsigned int diet = dietarySelect(vRestaurants, preferences);
   if (diet == 2) {
     cout << "Quiting Program" << endl;
     return 0;
-  } else if (diet != 1) {
+  } else if (diet != 1 && diet != 5) {
     track++;
   }
   unsigned int allergy = allergySelect(vRestaurants);
@@ -26,8 +26,8 @@ int main() {
     return 0;
   }
 
-  while (status == 0 && track < 4) {
-    status = menuSelect(diet, allergy, vRestaurants, preferences);
+  while (status == 0 && track < 3) {
+    status = menuSelect(diet, allergy, vRestaurants, preferences, track);
     track++;
   }
 

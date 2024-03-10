@@ -10,7 +10,7 @@ using std::cout;
 using std::endl;
 using std::string;
 
-string menuDisplay(unsigned int diet, unsigned int allergy) {
+string menuDisplay(unsigned int diet, unsigned int allergy, int track) {
   string choice;
   if (diet == 2 || allergy == 2) { // when quit from dietarySelect
     return "quit";
@@ -18,7 +18,7 @@ string menuDisplay(unsigned int diet, unsigned int allergy) {
 
   unsigned int disNum = 1;
 
-  cout << endl << "Enter 3 food types or cuisines " << endl;
+  cout << endl << "Enter 3 Preferences [" << track << "/3]"<< endl;
   // TODO Put the result into a unsigned int
   //    Then into a hash table that holds all restaurants with that enum
   //
@@ -53,10 +53,6 @@ string menuDisplay(unsigned int diet, unsigned int allergy) {
   disNum++;
   cout << disNum << ". Cuisines:" << endl;
   disNum++;
-  cout << disNum << ". None" << endl;
-  disNum++;
-  cout << disNum << ". [Done]" << endl;
-  disNum++;
   cout << disNum << ". [Quit]" << endl;
   disNum++;
 
@@ -70,12 +66,12 @@ string menuDisplay(unsigned int diet, unsigned int allergy) {
 }
 
 unsigned int menuSelect(unsigned int diet, unsigned int allergy,
-                        vectorRestaurants &vRestaurants, vector<MenuChoice> &prefs) {
+                        vectorRestaurants &vRestaurants, vector<MenuChoice> &prefs, int track) {
   unsigned int selected;
   string choice = "NULL"; // you should never see "NULL"
 
   while (choice != "quit" && choice != "q") { // Fixing logical error here
-    choice = menuDisplay(diet, allergy);
+    choice = menuDisplay(diet, allergy, track);
     std::transform(choice.begin(), choice.end(), choice.begin(),
                    [](unsigned char c) { return std::tolower(c); });
     if (choice == "quit" || choice == "q") {
