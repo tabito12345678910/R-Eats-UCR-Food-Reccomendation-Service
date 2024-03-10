@@ -8,11 +8,12 @@ void UserPreference::PrintMeals() {
     int count = 0;
     // loop scans for restaurants that meet user's preferences
     for (int j = 0; j < restaurants.getRestaurant(i).getMenu().size(); ++j) {
-      if (restaurants.getRestaurant(i).getMenu().at(j) == pref1) {
+      Restaurant currRestaurant = restaurants.getRestaurant(i);
+      if (currRestaurant.getMenu().at(j) == pref1) {
         count = count + 1;
-      } else if (restaurants.getRestaurant(i).getMenu().at(j) == pref2) {
+      } else if (currRestaurant.getMenu().at(j) == pref2) {
         count = count + 1;
-      } else if (restaurants.getRestaurant(i).getMenu().at(j) == pref3) {
+      } else if (currRestaurant.getMenu().at(j) == pref3) {
         count = count + 1;
       }
     }
@@ -23,9 +24,9 @@ void UserPreference::PrintMeals() {
       if (!restaurants.getRestaurant(i).getMeal().empty()) {
         for (int k = 0; k < restaurants.getRestaurant(i).getMeal().size();
              ++k) {
-          Restaurant rest = restaurants.getRestaurant(i);
-          MenuItem meal = restaurants.getRestaurant(i).getMeal().at(k);
-          PrintMealThatMatchPref(rest, meal);
+          Restaurant currRestaurant = restaurants.getRestaurant(i);
+          MenuItem meal = currRestaurant.getMeal().at(k);
+          PrintMealThatMatchPref(currRestaurant, meal);
         }
         if (CheckIfCoffeeOrTeaWanted()) {
           cout << endl
