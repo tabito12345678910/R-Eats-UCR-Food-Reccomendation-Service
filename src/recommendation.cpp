@@ -123,45 +123,37 @@ void UserPreference::PrintMealThatMatchPref(Restaurant rest, MenuItem item) {
     if (includesProtein) {
       FixMenuItem(item);
     }
-  } else {
-    // TEST  This code is for testing purposes
-    /* cout << "Preference not found in" << rest.getName() << endl; */
   }
+  /* else {
+    // TEST  This code is for testing purposes
+    cout << "Preference not found in" << rest.getName() << endl;
+  } */
 }
 
+// Checks for the protein, then changes the preference to that protein
 void UserPreference::CheckIfProteinIncluded(MenuItem &item) {
   if (item.getChoice1() == MenuChoice::Protein) {
-    if (pref1 == MenuChoice::Beef) {
-      item.ChangeChoice1(MenuChoice::Beef);
+    if (pref1 == MenuChoice::Beef || pref1 == MenuChoice::Chicken ||
+        pref1 == MenuChoice::Pork) {
+      item.ChangeChoice1(pref1);
       includesProtein = true;
-    } else if (pref1 == MenuChoice::Chicken) {
-      item.ChangeChoice1(MenuChoice::Chicken);
-      includesProtein = true;
-    } else if (pref1 == MenuChoice::Pork) {
-      item.ChangeChoice1(MenuChoice::Pork);
-      includesProtein = true;
+      return;
     }
-  } else if (item.getChoice2() == MenuChoice::Protein) {
-    if (pref2 == MenuChoice::Beef) {
-      item.ChangeChoice1(MenuChoice::Beef);
+  }
+  if (item.getChoice2() == MenuChoice::Protein) {
+    if (pref2 == MenuChoice::Beef || pref2 == MenuChoice::Chicken ||
+        pref2 == MenuChoice::Pork) {
+      item.ChangeChoice2(pref2);
       includesProtein = true;
-    } else if (pref2 == MenuChoice::Chicken) {
-      item.ChangeChoice1(MenuChoice::Chicken);
-      includesProtein = true;
-    } else if (pref2 == MenuChoice::Pork) {
-      item.ChangeChoice1(MenuChoice::Pork);
-      includesProtein = true;
+      return;
     }
-  } else if (item.getChoice3() == MenuChoice::Protein) {
-    if (pref3 == MenuChoice::Beef) {
-      item.ChangeChoice1(MenuChoice::Beef);
+  }
+  if (item.getChoice3() == MenuChoice::Protein) {
+    if (pref3 == MenuChoice::Beef || pref3 == MenuChoice::Chicken ||
+        pref3 == MenuChoice::Pork) {
+      item.ChangeChoice3(pref3);
       includesProtein = true;
-    } else if (pref3 == MenuChoice::Chicken) {
-      item.ChangeChoice1(MenuChoice::Chicken);
-      includesProtein = true;
-    } else if (pref3 == MenuChoice::Pork) {
-      item.ChangeChoice1(MenuChoice::Pork);
-      includesProtein = true;
+      return;
     }
   }
 }
