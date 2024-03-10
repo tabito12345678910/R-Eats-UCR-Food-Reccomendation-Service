@@ -6,9 +6,9 @@ void UserPreference::PrintMeals() {
   vectorRestaurants restaurants;
   for (int i = 0; i < restaurants.getRestaurants().size(); ++i) {
     int count = 0;
+    Restaurant currRestaurant = restaurants.getRestaurant(i);
     // loop scans for restaurants that meet user's preferences
-    for (int j = 0; j < restaurants.getRestaurant(i).getMenu().size(); ++j) {
-      Restaurant currRestaurant = restaurants.getRestaurant(i);
+    for (int j = 0; j < currRestaurant.getMenu().size(); ++j) {
       if (currRestaurant.getMenu().at(j) == pref1) {
         count = count + 1;
       } else if (currRestaurant.getMenu().at(j) == pref2) {
@@ -21,10 +21,8 @@ void UserPreference::PrintMeals() {
     if (count == 3) {
       // loop scans to find all meals that matches users preferences and prints
       // them for non buffet restaurants
-      if (!restaurants.getRestaurant(i).getMeal().empty()) {
-        for (int k = 0; k < restaurants.getRestaurant(i).getMeal().size();
-             ++k) {
-          Restaurant currRestaurant = restaurants.getRestaurant(i);
+      if (!currRestaurant.getMeal().empty()) {
+        for (int k = 0; k < currRestaurant.getMeal().size(); ++k) {
           MenuItem meal = currRestaurant.getMeal().at(k);
           PrintMealThatMatchPref(currRestaurant, meal);
         }
@@ -42,9 +40,9 @@ void UserPreference::PrintMeals() {
         // excludes buffet restaurants when wanting coffee or tea because buffet
         // restaurants dont have coffee or tea
         if (wantsCoffeeOrTea == false) {
-          cout << "Recommendations from "
-               << restaurants.getRestaurant(i).getName() << ": " << endl;
-          if (restaurants.getRestaurant(i).getName() == "Panda Express") {
+          cout << "Recommendations from " << currRestaurant.getName() << ": "
+               << endl;
+          if (currRestaurant.getName() == "Panda Express") {
             PandaExpress panda;
             panda.PandaGreeter();
             cout << "Entrees:" << endl;
@@ -65,7 +63,7 @@ void UserPreference::PrintMeals() {
               }
             }
             cout << endl;
-          } else if (restaurants.getRestaurant(i).getName() == "Hibachi") {
+          } else if (currRestaurant.getName() == "Hibachi") {
             Hibachi hiba;
             hiba.HibaGreeter();
             cout << "Entrees:" << endl;
@@ -168,42 +166,24 @@ void UserPreference::FixMenuItem(MenuItem &item) {
   }
 }
 
+// If the user wants a tea/coffe, returns true!
 bool UserPreference::CheckIfCoffeeOrTeaWanted() {
-  if (pref1 == MenuChoice::Coffee || pref1 == MenuChoice::Tea) {
-    wantsCoffeeOrTea = true;
-  }
-  if (pref2 == MenuChoice::Coffee || pref2 == MenuChoice::Tea) {
-    wantsCoffeeOrTea = true;
-  }
-  if (pref3 == MenuChoice::Coffee || pref2 == MenuChoice::Tea) {
-    wantsCoffeeOrTea = true;
-  }
-  return wantsCoffeeOrTea;
+  return pref1 == MenuChoice::Coffee || pref1 == MenuChoice::Tea ||
+         pref2 == MenuChoice::Coffee || pref2 == MenuChoice::Tea ||
+         pref3 == MenuChoice::Coffee || pref3 == MenuChoice::Tea;
 }
 
 void UserPreference::PrintEntreeThatMatchPref(Entree ent) {
-  if (ent.getEntreeChoice() == pref1) {
-    includesMeal = true;
-    cout << ent.getEntreeItemName() << endl;
-  } else if (ent.getEntreeChoice() == pref2) {
-    includesMeal = true;
-    cout << ent.getEntreeItemName() << endl;
-  } else if (ent.getEntreeChoice() == pref3) {
+  if (ent.getEntreeChoice() == pref1 || ent.getEntreeChoice() == pref2 ||
+      ent.getEntreeChoice() == pref3) {
     includesMeal = true;
     cout << ent.getEntreeItemName() << endl;
   }
 }
 
 void UserPreference::PrintSideThatMatchPref(Side sid) {
-  if (sid.getSideChoice() == pref1) {
-    includesMeal = true;
-    HasPreferredSide();
-    cout << sid.getSideItemName() << endl;
-  } else if (sid.getSideChoice() == pref2) {
-    includesMeal = true;
-    HasPreferredSide();
-    cout << sid.getSideItemName() << endl;
-  } else if (sid.getSideChoice() == pref3) {
+  if (sid.getSideChoice() == pref1 || sid.getSideChoice() == pref2 ||
+      sid.getSideChoice() == pref3) {
     includesMeal = true;
     HasPreferredSide();
     cout << sid.getSideItemName() << endl;
