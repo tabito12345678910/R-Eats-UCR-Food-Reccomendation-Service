@@ -70,7 +70,7 @@ string menuDisplay(unsigned int diet, unsigned int allergy) {
 }
 
 unsigned int menuSelect(unsigned int diet, unsigned int allergy,
-                        vectorRestaurants &vRestaurants) {
+                        vectorRestaurants &vRestaurants, vector<MenuChoice> &prefs) {
   unsigned int selected;
   string choice = "NULL"; // you should never see "NULL"
 
@@ -81,13 +81,13 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy,
     if (choice == "quit" || choice == "q") {
       cout << "Quitting Program" << endl;
     } else if (choice == "protein" && diet != 3 && diet != 4) {
-      selected = selectingMeat(vRestaurants);
+      selected = selectingMeat(vRestaurants, prefs);
       if (selected == 0) {
         return selected;
       }
     } else if (choice == "seafood" && diet != 4 && diet != 3 && allergy != 6) {
       selected = selectingSeafood(
-          vRestaurants); // selector for seafood options; returns 0 if back 1 if
+          vRestaurants, prefs); // selector for seafood options; returns 0 if back 1 if
                          // any other option
       if (selected == 0) {
         return selected;
@@ -96,62 +96,48 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy,
     } else if (choice == "vegetables") {
       // add Vegetables to preferences
       cout << "Vegetables added" << endl;
-      removeRestaurantByMenu(vRestaurants, MenuChoice::Vegetables);
-      removeItemsByPref(vRestaurants, MenuChoice::Vegetables);
+      prefs.push_back(MenuChoice::Vegetables);
       return 0;
 
     } else if (choice == "dairy" && diet != 4 && allergy != 7) {
       selected =
-          selectingDairy(vRestaurants); // selector for dairy options; returns 0
+          selectingDairy(vRestaurants, prefs); // selector for dairy options; returns 0
                                         // if back 1 if any other option
       if (selected == 0) {
         return selected;
       }
     } else if (choice == "dishes") {
       selected =
-          selectingDishes(vRestaurants); // selector for dish options; returns 0
+          selectingDishes(vRestaurants, prefs); // selector for dish options; returns 0
                                          // if back 1 if any other option
       if (selected == 0) {
         return selected;
       }
     } else if (choice == "drinks") {
       selected = selectingDrink(
-          diet, vRestaurants); // selector for drink options; returns 0 if back
+          diet, vRestaurants, prefs); // selector for drink options; returns 0 if back
                                // 1 if any other option
       if (selected == 0) {
         return selected;
-      } else if (selected == 2) {
-        return 1;
       }
     } else if (choice == "snacks") {
       // add Snacks to preferences
       cout << "Snacks added" << endl;
-      removeRestaurantByMenu(vRestaurants, MenuChoice::Snacks);
-      removeItemsByPref(vRestaurants, MenuChoice::Snacks);
+      prefs.push_back(MenuChoice::Snacks);
       return 0;
     } else if (choice == "dessert") {
       // add Dessert to preferences
       cout << "Dessert added" << endl;
-      removeRestaurantByMenu(vRestaurants, MenuChoice::Dessert);
-      removeItemsByPref(vRestaurants, MenuChoice::Dessert);
+      prefs.push_back(MenuChoice::Dessert);
       return 0;
 
     } else if (choice == "cuisines") {
       selected = selectingCuisine(
-          vRestaurants); // selector for cuisine options; returns 0 if back 1 if
+          vRestaurants, prefs); // selector for cuisine options; returns 0 if back 1 if
                          // any other option
       if (selected == 0) {
         return selected;
       }
-    } else if (choice == "none") {
-      cout << "No Preference" << endl;
-      // if none, show user all restaurant options, default
-      return 1;
-
-    } else if (choice == "done") {
-      return 1; // signals main that program is done and should display
-                // restaurant options that fit prefs
-
     } else { // invalid response
       cout << "Invalid Response: Try Again" << endl;
     }

@@ -1,5 +1,4 @@
 #include "../headers/menu.hpp"
-#include "../headers/recommendation.hpp"
 #include "../headers/vRestaurants.hpp"
 #include <iostream>
 #include <vector>
@@ -11,12 +10,15 @@ using std::string;
 
 int main() {
   vectorRestaurants vRestaurants;
+  vector<MenuChoice> preferences;
   unsigned int track = 1;
   unsigned int status = 0;
-  unsigned int diet = dietarySelect(vRestaurants);
+  unsigned int diet = dietarySelect(vRestaurants, preferences);
   if (diet == 2) {
     cout << "Quiting Program" << endl;
     return 0;
+  } else if (diet != 1) {
+    track++;
   }
   unsigned int allergy = allergySelect(vRestaurants);
   if (allergy == 2) {
@@ -25,7 +27,7 @@ int main() {
   }
 
   while (status == 0 && track < 4) {
-    status = menuSelect(diet, allergy, vRestaurants);
+    status = menuSelect(diet, allergy, vRestaurants, preferences);
     track++;
   }
 
@@ -34,19 +36,8 @@ int main() {
   } else if (status > 2) {
     return -1; // any other number is faulty
   }
-
-  cout << "Displaying Resturant Options" << endl;
-  int list = 1;
-  vector<Restaurant> test = vRestaurants.getRestaurants();
-  for (auto value : test) {
-    cout << list << "." << value.getName() << endl;
-    list++;
-    vector<MenuItem> test2 = value.getMenuItems();
-    for (auto item : test2) {
-      cout << item.getItemName() << " - " << item.getCost() << ", ";
-    }
-    cout << endl;
-  }
+  UserPreference user = UserPreference(preferences.at(0),preferences.at(1),preferences.at(2));
+  user.PrintMeals();
 
   return 0;
 }

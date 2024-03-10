@@ -21,6 +21,7 @@ private:
 
 public:
   // constructor
+  UserPreference();
   UserPreference(MenuChoice p1, MenuChoice p2, MenuChoice p3)
       : pref1(p1), pref2(p2), pref3(p3) {}
   // get preference
@@ -28,9 +29,10 @@ public:
   MenuChoice getPref2() { return pref2; }
   MenuChoice getPref3() { return pref3; }
   // set preference
-  void setPref1(MenuChoice pr1) { pref1 = pr1; }
-  void setPref2(MenuChoice pr2) { pref2 = pr2; }
-  void setPref3(MenuChoice pr3) { pref3 = pr3; }
+  void setPref(MenuChoice &pref, int track);
+  void setPref1(MenuChoice &pr1) { pref1 = pr1; }
+  void setPref2(MenuChoice &pr2) { pref2 = pr2; }
+  void setPref3(MenuChoice &pr3) { pref3 = pr3; }
   void PrintMeals();
   void CheckIfProteinIncluded(MenuItem &item);
   bool CheckIfCoffeeOrTeaWanted();

@@ -33,8 +33,7 @@ string seafoodOptions() { // displays meat options when "Seafood" is selected
        << "3. Scallops" << endl
        << "4. Shrimp" << endl
        << "5. Tuna" << endl
-       << "6. All" << endl
-       << "7. [Back]" << endl; //"Back" to go back to food preferences
+       << "6. [Back]" << endl; //"Back" to go back to food preferences
 
   cin >> choice;
   cin.clear();
@@ -94,9 +93,8 @@ string drinkOptions() { // displays meat options when "Drinks" is selected
   cout << endl
        << "Drink Options:" << endl
        << "1. Coffee" << endl
-       << "2. Fountain" << endl
-       << "3. Tea" << endl
-       << "4. [Back]" << endl; //"Back" to go back to food preferences4
+       << "2. Tea" << endl
+       << "3. [Back]" << endl; //"Back" to go back to food preferences4
   cin >> choice;
   cin.clear();
   cin.ignore(256, '\n');
