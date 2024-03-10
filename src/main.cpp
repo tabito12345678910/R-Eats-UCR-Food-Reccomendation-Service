@@ -11,9 +11,9 @@ using std::endl;
 using std::string;
 
 int main() {
-  string mainStatus;
   string from;
-  while (mainStatus != "quit") 
+  
+  while (true) 
   {  
     string restaurantChoice = "NULL";
     vectorRestaurants vRestaurants;
@@ -51,7 +51,11 @@ int main() {
     while (restaurantChoice != "quit" && restaurantChoice != "q" && restaurantChoice != "again") {
       unsigned int endStatus;
       user.PrintMeals();
-      cout << "Enter restaurant to learn more" << endl;
+      if(user.getIncludesMeal()) {
+        cout << "Enter Restaurant Name to learn more" << endl;
+      }
+      cout << "Enter [Again] to restart" << endl
+           << "Enter [Quit] to leave program" << endl;
       cin >> restaurantChoice;
       cin.clear();
       cin.ignore(256, '\n');
@@ -86,12 +90,13 @@ int main() {
           if(endStatus == 1) {
             cout << "Quiting Program" << endl;
             return 0;
-          } else {
+          } else if(endStatus == 2) {
             break;
           }
         }
-      
-      
+    }
+    if(restaurantChoice == "quit" || restaurantChoice == "q") {
+      return 0;
     }
   }
   return 0;
