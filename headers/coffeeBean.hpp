@@ -26,6 +26,8 @@ public:
     vMenu.push_back(MenuChoice::Vegetarian);
     // vMenu.push_back(MenuChoice::Cheese);
     vMenu.push_back(MenuChoice::Coffee);
+    vMenu.push_back(MenuChoice::Tea);
+
     // ALL PRICES AND CALORIES ARE FOR REGULAR SIZE, IMPLIMENT THIS IN UI
     vMeal.push_back(MenuItem("Cold Brewed Coffee", 4.68, "40 calories",
                              MenuChoice::Coffee, MenuChoice::Vegan,
