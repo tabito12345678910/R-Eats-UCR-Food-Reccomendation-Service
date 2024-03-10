@@ -105,40 +105,40 @@ unsigned int selectingDishes(vectorRestaurants &vRestaurants, vector<MenuChoice>
   return 1; // 0 signals main to continue asking for food prefs
 }
 
-unsigned int selectingCuisine(vectorRestaurants &vRestaurants, vector<MenuChoice> &prefs) {
-  // string choice;
-  // while (choice != "back") {
-  //   choice = cuisineOptions(); // show cuisine options and pick
-  //   transform(choice.begin(), choice.end(), choice.begin(),
-  //             [](unsigned char c) { return std::tolower(c); });
-  //   if (choice == "back") {
-  //     cout << "Backing" << endl;
-  //   } else if (choice == "american") {
-  //     cout << "American added" << endl;
-  //     removeByCuisine(vRestaurants, Nationality::American);
-  //     return 0;
-  //   } else if (choice == "chinese") {
-  //     cout << "Chinese added" << endl;
-  //     removeByCuisine(vRestaurants, Nationality::Chinese);
-  //     return 0;
-  //   } else if (choice == "japanese") {
-  //     cout << "Japanese added" << endl;
-  //     removeByCuisine(vRestaurants, Nationality::Japanese);
-  //     return 0;
-  //   } else if (choice == "mediterranean") {
-  //     cout << "Mediterranean added" << endl;
-  //     removeByCuisine(vRestaurants, Nationality::Mediterranean);
-  //     return 0;
-  //   } else if (choice == "mexican") {
-  //     cout << "Mexican added" << endl;
-  //     removeByCuisine(vRestaurants, Nationality::Mexican);
-  //     return 0;
-  //   } else {
-  //     cout << "Invalid Response: Try Again" << endl;
-  //   }
-  //}
-  return 1; // 0 signals main to continue asking for food prefs
-}
+// unsigned int selectingCuisine(vectorRestaurants &vRestaurants, vector<MenuChoice> &prefs) {
+//   // string choice;
+//   // while (choice != "back") {
+//   //   choice = cuisineOptions(); // show cuisine options and pick
+//   //   transform(choice.begin(), choice.end(), choice.begin(),
+//   //             [](unsigned char c) { return std::tolower(c); });
+//   //   if (choice == "back") {
+//   //     cout << "Backing" << endl;
+//   //   } else if (choice == "american") {
+//   //     cout << "American added" << endl;
+//   //     removeByCuisine(vRestaurants, Nationality::American);
+//   //     return 0;
+//   //   } else if (choice == "chinese") {
+//   //     cout << "Chinese added" << endl;
+//   //     removeByCuisine(vRestaurants, Nationality::Chinese);
+//   //     return 0;
+//   //   } else if (choice == "japanese") {
+//   //     cout << "Japanese added" << endl;
+//   //     removeByCuisine(vRestaurants, Nationality::Japanese);
+//   //     return 0;
+//   //   } else if (choice == "mediterranean") {
+//   //     cout << "Mediterranean added" << endl;
+//   //     removeByCuisine(vRestaurants, Nationality::Mediterranean);
+//   //     return 0;
+//   //   } else if (choice == "mexican") {
+//   //     cout << "Mexican added" << endl;
+//   //     removeByCuisine(vRestaurants, Nationality::Mexican);
+//   //     return 0;
+//   //   } else {
+//   //     cout << "Invalid Response: Try Again" << endl;
+//   //   }
+//   //}
+//   return 1; // 0 signals main to continue asking for food prefs
+// }
 
 unsigned int selectingDairy(vectorRestaurants &vRestaurants, vector<MenuChoice> &prefs) {
   string choice;

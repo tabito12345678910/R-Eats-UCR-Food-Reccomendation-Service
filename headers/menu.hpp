@@ -51,8 +51,8 @@ string menuDisplay(unsigned int diet, unsigned int allergy, int track) {
   disNum++;
   cout << disNum << ". Dessert" << endl;
   disNum++;
-  cout << disNum << ". Cuisines:" << endl;
-  disNum++;
+  // cout << disNum << ". Cuisines:" << endl;
+  // disNum++;
   cout << disNum << ". [Quit]" << endl;
   disNum++;
 
@@ -127,14 +127,16 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy,
       prefs.push_back(MenuChoice::Dessert);
       return 0;
 
-    } else if (choice == "cuisines") {
-      selected = selectingCuisine(
-          vRestaurants, prefs); // selector for cuisine options; returns 0 if back 1 if
-                         // any other option
-      if (selected == 0) {
-        return selected;
-      }
-    } else { // invalid response
+    } 
+    // else if (choice == "cuisines") {
+    //   selected = selectingCuisine(
+    //       vRestaurants, prefs); // selector for cuisine options; returns 0 if back 1 if
+    //                      // any other option
+    //   if (selected == 0) {
+    //     return selected;
+    //   }
+    //} 
+    else { // invalid response
       cout << "Invalid Response: Try Again" << endl;
     }
   }
