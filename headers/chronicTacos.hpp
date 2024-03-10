@@ -24,7 +24,7 @@ public:
     vMenu.push_back(MenuChoice::Vegetables);
     vMenu.push_back(MenuChoice::Snacks);
     vMenu.push_back(MenuChoice::Vegetarian);
-    vMenu.push_back(MenuChoice::Shrimp);
+    vMenu.push_back(MenuChoice::Seafood);
     
     vMeal.push_back(MenuItem("Quesadilla", 10.50, "730 ~ 1320 calories",
                              MenuChoice::Vegetables, MenuChoice::Cheese,
@@ -37,16 +37,16 @@ public:
                              MenuChoice::Fries));
     vMeal.push_back(MenuItem("Taco Plate", 9.95, "500 ~ 1260 calories",
                              MenuChoice::Protein, MenuChoice::Shrimp,
-                             MenuChoice::Rice));
+                             MenuChoice::Vegetarian));
     vMeal.push_back(MenuItem("Burrito", 9.95, "530 ~ 1260 calories",
                              MenuChoice::Protein, MenuChoice::Shrimp,
-                             MenuChoice::Vegetables));
+                             MenuChoice::Vegetarian));
     vMeal.push_back(MenuItem("Bowl-rito", 9.95, "380 ~ 900 calories",
                              MenuChoice::Protein, MenuChoice::Shrimp,
-                             MenuChoice::Rice));
+                             MenuChoice::Vegetarian));
     vMeal.push_back(MenuItem("Small Burrito", 7.50, "300 ~ 640 calories",
                              MenuChoice::Protein, MenuChoice::Shrimp,
-                             MenuChoice::Rice));
+                             MenuChoice::Vegetarian));
     vMeal.push_back(MenuItem("Chips and Salsa", 2.25, "350 calories",
                              MenuChoice::Snacks, MenuChoice::Vegetables,
                              MenuChoice::Vegetarian));

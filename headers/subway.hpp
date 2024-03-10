@@ -28,8 +28,6 @@ public:
     vMenu.push_back(MenuChoice::Dessert);
     vMenu.push_back(MenuChoice::Vegetarian);
     vMenu.push_back(MenuChoice::Vegan);
-    vMenu.push_back(MenuChoice::Cheese);
-    
 
     vMeal.push_back(MenuItem("Titan Turkey Sandwich 6 Inch", 7.29,
                              "490 calories", MenuChoice::Turkey,

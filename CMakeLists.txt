@@ -27,33 +27,18 @@ ADD_EXECUTABLE(QRCodeRestaurant
     src/restaurant.cpp
 )
 
-
 # Link against libqrencode
 target_link_libraries(QRCodeGenerator PRIVATE ${QRENCODE_LIB})
 target_link_libraries(QRCodeRestaurant PRIVATE ${QRENCODE_LIB})
 
 # Add the include directory for googletest
 ADD_SUBDIRECTORY(tests/googletest)
-# Testing Algorithm
-ADD_EXECUTABLE(Algorithm
-    tests/testAlgorithm.cpp
-    #src/main.cpp
-    src/restaurant.cpp
-    src/recommendation.cpp
-    src/buffetRestaurants.cpp
-    src/vRestaurants.cpp
-
-)
 
 ADD_EXECUTABLE( main
     src/main.cpp
     src/restaurant.cpp
-    src/recommendation.cpp
-    src/buffetRestaurants.cpp
     src/vRestaurants.cpp
 )
-
-
 
 
 # Link against librect (your restaurant library) for main

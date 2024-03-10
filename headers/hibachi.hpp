@@ -2,7 +2,7 @@
 #pragma once
 class Hibachi : public buffetRestaurant {
 public:
-  
+  void greeter();
   Hibachi() : meal("Poke Bowls"), priceS(12.50), priceM(13), priceL(14.5) {
     calS = "120 ~ 390";
     calM = "230 ~ 1020";
@@ -53,10 +53,8 @@ public:
     // Sides
     vSide.push_back(Side("Sushi Rice", MenuChoice::Rice));
     vSide.push_back(Side("Brown Rice", MenuChoice::Rice));
-    vSide.push_back(Side("Mixed Salad", MenuChoice::Vegetables));
+    vSide.push_back(Side("Mixed Salad", MenuChoice::Vegan));
   }
-
-  void HibaGreeter();
 
 private:
   double priceS, priceM, priceL;

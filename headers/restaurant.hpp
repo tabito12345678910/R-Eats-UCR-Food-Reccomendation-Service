@@ -21,9 +21,6 @@ public:
 
   void addMenuChoice(MenuChoice choice);
 
-  vector<MenuChoice> getMenu() { return vMenu; }
-  vector<MenuItem> getMeal() { return vMeal; }
-
   vector<MenuChoice> &getMenuChoices() { return vMenu; };
   Location getLocation() { return vLocation.at(0); };
   Beverages getBeverage() { return vDrinks.at(0); };
@@ -57,10 +54,6 @@ public:
   // Had to place this to public
   vector<string> vNameVariations;
 
-  //for buffet restaurants but needs to be here
-  vector<Entree> getEntree(){return vEntree;}
-  vector<Side> getSide(){return vSide;}
-
 protected:
   // These are vectors as of now, probably change it to strings or plain
   // enums This visually makes the code look clean
@@ -83,10 +76,6 @@ protected:
   double priceSDrink, priceMDrink, priceLDrink;
   //  std::vector<std::string, std::double, std::int>
   //      vMenu; // name, price, calories
-
-  //for buffet restuarants but needs to be here
-  vector<Entree> vEntree;
-  vector<Side> vSide;
 };
 
 #endif
