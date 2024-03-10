@@ -57,9 +57,9 @@ public:
   // Had to place this to public
   vector<string> vNameVariations;
 
-  //for buffet restaurants but needs to be here
-  vector<Entree> getEntree(){return vEntree;}
-  vector<Side> getSide(){return vSide;}
+  // for buffet restaurants but needs to be here
+  vector<Entree> &getEntree() { return vEntree; }
+  vector<Side> &getSide() { return vSide; }
 
 protected:
   // These are vectors as of now, probably change it to strings or plain
@@ -84,7 +84,7 @@ protected:
   //  std::vector<std::string, std::double, std::int>
   //      vMenu; // name, price, calories
 
-  //for buffet restuarants but needs to be here
+  // for buffet restuarants but needs to be here
   vector<Entree> vEntree;
   vector<Side> vSide;
 };
