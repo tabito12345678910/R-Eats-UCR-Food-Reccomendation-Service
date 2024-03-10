@@ -98,81 +98,34 @@ void UserPreference::PrintMeals() {
   }
 }
 
+// rewritting because redundant code
+// If you missed a case, well, I got it
+
 void UserPreference::PrintMealThatMatchPref(Restaurant rest, MenuItem item) {
   includesProtein = false;
   CheckIfProteinIncluded(item);
-  if (item.getChoice1() == pref1) {
-    if (item.getChoice2() == pref2) {
-      if (item.getChoice3() == pref3) {
-        includesMeal = true;
-        cout << "Recommendation from " << rest.getName() << ": " << endl;
-        cout << item.getItemName() << " Price: " << item.getItemCost()
-             << ", Calories: " << item.getCalories() << endl
-             << endl;
-        if (includesProtein == true) {
-          FixMenuItem(item);
-        }
-      }
-    } else if (item.getChoice2() == pref3) {
-      if (item.getChoice3() == pref2) {
-        includesMeal = true;
-        cout << "Recommendation from " << rest.getName() << ": " << endl;
-        cout << item.getItemName() << " Price: " << item.getItemCost()
-             << ", Calories: " << item.getCalories() << endl
-             << endl;
-        if (includesProtein == true) {
-          FixMenuItem(item);
-        }
-      }
+
+  // Adding preferences and choices into a vector to be sorted
+  vector<MenuChoice> sortedPrefs = {pref1, pref2, pref3};
+  vector<MenuChoice> sortedChoices = {item.getChoice1(), item.getChoice2(),
+                                      item.getChoice3()};
+
+  // Sorting the choices to make them equal to each other
+  sort(sortedPrefs.begin(), sortedPrefs.end());
+  sort(sortedChoices.begin(), sortedChoices.end());
+
+  if (sortedPrefs == sortedChoices) {
+    includesMeal = true;
+    cout << "Recommendation from " << rest.getName() << ": " << endl;
+    cout << item.getItemName() << " Price: " << item.getItemCost()
+         << ", Calories: " << item.getCalories() << endl
+         << endl;
+    if (includesProtein) {
+      FixMenuItem(item);
     }
-  } else if (item.getChoice1() == pref2) {
-    if (item.getChoice2() == pref1) {
-      if (item.getChoice3() == pref3) {
-        includesMeal = true;
-        cout << "Recommendation from " << rest.getName() << ": " << endl;
-        cout << item.getItemName() << " Price: " << item.getItemCost()
-             << ", Calories: " << item.getCalories() << endl
-             << endl;
-        if (includesProtein == true) {
-          FixMenuItem(item);
-        }
-      }
-    } else if (item.getChoice2() == pref3) {
-      if (item.getChoice3() == pref1) {
-        includesMeal = true;
-        cout << "Recommendation from " << rest.getName() << ": " << endl;
-        cout << item.getItemName() << " Price: " << item.getItemCost()
-             << ", Calories: " << item.getCalories() << endl
-             << endl;
-        if (includesProtein == true) {
-          FixMenuItem(item);
-        }
-      }
-    }
-  } else if (item.getChoice1() == pref3) {
-    if (item.getChoice2() == pref1) {
-      if (item.getChoice3() == pref2) {
-        includesMeal = true;
-        cout << "Recommendation from " << rest.getName() << ": " << endl;
-        cout << item.getItemName() << " Price: " << item.getItemCost()
-             << ", Calories: " << item.getCalories() << endl
-             << endl;
-        if (includesProtein == true) {
-          FixMenuItem(item);
-        }
-      }
-    } else if (item.getChoice2() == pref2) {
-      if (item.getChoice3() == pref1) {
-        includesMeal = true;
-        cout << "Recommendation from " << rest.getName() << ": " << endl;
-        cout << item.getItemName() << " Price: " << item.getItemCost()
-             << ", Calories: " << item.getCalories() << endl
-             << endl;
-        if (includesProtein == true) {
-          FixMenuItem(item);
-        }
-      }
-    }
+  } else {
+    // TEST  This code is for testing purposes
+    /* cout << "Preference not found in" << rest.getName() << endl; */
   }
 }
 
