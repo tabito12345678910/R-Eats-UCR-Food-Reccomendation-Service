@@ -42,9 +42,14 @@ vectorRestaurants::~vectorRestaurants(){
 Restaurant vectorRestaurants::getRestaurant(int index) {
   if (index < vRestaurants.size()) {
     return vRestaurants.at(index);
+   /*
+// FIX idk which one compiles better
+Restaurant &vectorRestaurants::getRestaurant(int index) {
+  if (index < static_cast<int>(vRestaurants.size())) {
+    return vRestaurants[index];
   }
   throw runtime_error("SMOKE");
-};
+};*/
 
 vector<Restaurant> &vectorRestaurants::getRestaurants() {
   return vRestaurants;

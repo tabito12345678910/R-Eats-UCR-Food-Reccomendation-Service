@@ -24,9 +24,11 @@ public:
   vector<MenuChoice> getMenu() { return vMenu; }
   vector<MenuItem> getMeal() { return vMeal; }
 
+  vector<MenuChoice> &getMenuChoices() { return vMenu; };
   Location getLocation() { return vLocation.at(0); };
   Beverages getBeverage() { return vDrinks.at(0); };
   Nationality getNationality() { return vNation.at(0); };
+  vector<MenuItem> &getMenuItems() { return vMeal; };
   string getName() { return restaurantName; }
   bool isOptionValid(const string &option) const {
     string lowercaseOption = option;

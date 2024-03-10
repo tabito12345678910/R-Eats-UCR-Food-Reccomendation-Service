@@ -27,7 +27,8 @@ enum class MenuChoice {
   Salmon,
   Scallops,
   Crab,
-  Snacks, //slightly diff nuance from dessert so added, cuz user wouldnt think chips and salsa = dessert
+  Snacks, // slightly diff nuance from dessert so added, cuz user wouldnt think
+          // chips and salsa = dessert
   Dessert,
   Seafood
 };
@@ -65,6 +66,7 @@ public:
            MenuChoice cho3)
       : itemName(in), itemCost(ic), calories(cal), choice1(cho1), choice2(cho2),
         choice3(cho3) {} // constructor each meal has two menuChoices assigned
+
   //getters
   string getItemName(){return itemName;}
   double getItemCost(){return itemCost;}
@@ -82,6 +84,12 @@ public:
   bool CheckIfChoice1Changed(){return choice1Changed;}
   bool CheckIfChoice2Changed(){return choice2Changed;}
   bool CheckIfChoice3Changed(){return choice3Changed;}
+
+  MenuChoice getChoOne() { return choice1; };
+  MenuChoice getChoTwo() { return choice2; };
+  MenuChoice getChoThree() { return choice3; };
+  string getItemName() { return itemName; };
+  double getCost() { return itemCost; };
 };
 
 // MenuItem but for buffetclass
