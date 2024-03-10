@@ -9,12 +9,9 @@ void UserPreference::PrintMeals() {
     Restaurant currRestaurant = restaurants.getRestaurant(i);
     // loop scans for restaurants that meet user's preferences
     for (int j = 0; j < currRestaurant.getMenu().size(); ++j) {
-      if (currRestaurant.getMenu().at(j) == pref1) {
-        count = count + 1;
-      } else if (currRestaurant.getMenu().at(j) == pref2) {
-        count = count + 1;
-      } else if (currRestaurant.getMenu().at(j) == pref3) {
-        count = count + 1;
+      auto menuChoice = currRestaurant.getMenu().at(j);
+      if (menuChoice == pref1 || menuChoice == pref2 || menuChoice == pref3) {
+        ++count;
       }
     }
     // count = 3 means that the restaurant includes all preferences
@@ -22,8 +19,7 @@ void UserPreference::PrintMeals() {
       // loop scans to find all meals that matches users preferences and prints
       // them for non buffet restaurants
       if (!currRestaurant.getMeal().empty()) {
-        for (int k = 0; k < currRestaurant.getMeal().size(); ++k) {
-          MenuItem meal = currRestaurant.getMeal().at(k);
+        for (const auto &meal : currRestaurant.getMeal()) {
           PrintMealThatMatchPref(currRestaurant, meal);
         }
         if (CheckIfCoffeeOrTeaWanted()) {
@@ -36,10 +32,9 @@ void UserPreference::PrintMeals() {
       }
       // buffet restaurants
       else {
-        CheckIfCoffeeOrTeaWanted();
         // excludes buffet restaurants when wanting coffee or tea because buffet
         // restaurants dont have coffee or tea
-        if (wantsCoffeeOrTea == false) {
+        if (CheckIfCoffeeOrTeaWanted() == false) {
           cout << "Recommendations from " << currRestaurant.getName() << ": "
                << endl;
           if (currRestaurant.getName() == "Panda Express") {
@@ -98,7 +93,6 @@ void UserPreference::PrintMeals() {
 
 // rewritting because redundant code
 // If you missed a case, well, I got it
-
 void UserPreference::PrintMealThatMatchPref(Restaurant rest, MenuItem item) {
   includesProtein = false;
   CheckIfProteinIncluded(item);

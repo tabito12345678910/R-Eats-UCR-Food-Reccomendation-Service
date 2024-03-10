@@ -16,7 +16,7 @@ private:
   // check if campus has meal that matches preference
   bool includesMeal = false;
   bool includesProtein = false;
-  bool wantsCoffeeOrTea = false;
+  /* bool wantsCoffeeOrTea = false; */
   bool preferredSide = false;
 
 public:
