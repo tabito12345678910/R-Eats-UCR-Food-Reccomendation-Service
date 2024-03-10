@@ -14,16 +14,18 @@ void removeRestaurantByMenu(vectorRestaurants &vRestaurants, MenuChoice pref) {
     cout << currentRestaurant.getName() << endl;
     for (unsigned int j = 0; j < currentRestaurant.getMenu().size(); j++) {
       if (currentRestaurant.getMenu().at(j) == pref) {
-        
-    for (unsigned int j = 0; j < currentRestaurant.getMenuChoices().size();
-         j++) {
-      if (currentRestaurant.getMenuChoices().at(j) == pref) {
-        found = true;
+
+        for (unsigned int j = 0; j < currentRestaurant.getMenuChoices().size();
+             j++) {
+          if (currentRestaurant.getMenuChoices().at(j) == pref) {
+            found = true;
+          }
+        }
+        if (found == false) {
+          vRestaurants.getRestaurants().erase(
+              vRestaurants.getRestaurants().begin() + i);
+        }
       }
-    }
-    if (found == false) {
-      vRestaurants.getRestaurants().erase(
-          vRestaurants.getRestaurants().begin() + i);
     }
   }
 }

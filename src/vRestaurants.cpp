@@ -42,35 +42,38 @@ vectorRestaurants::~vectorRestaurants(){
 Restaurant vectorRestaurants::getRestaurant(int index) {
   if (index < vRestaurants.size()) {
     return vRestaurants.at(index);
-    /*
- // FIX idk which one compiles better
- Restaurant &vectorRestaurants::getRestaurant(int index) {
-   if (index < static_cast<int>(vRestaurants.size())) {
-     return vRestaurants[index];
-   }
-   throw runtime_error("SMOKE");
- };*/
+  }
+  throw runtime_error("Couldn't grab restaurant");
+}
+/*
+// FIX idk which one compiles better
+Restaurant &vectorRestaurants::getRestaurant(int index) {
+if (index < static_cast<int>(vRestaurants.size())) {
+ return vRestaurants[index];
+}
+throw runtime_error("SMOKE");
+};*/
 
-    vector<Restaurant> &vectorRestaurants::getRestaurants() {
-      return vRestaurants;
-    };
+vector<Restaurant> &vectorRestaurants::getRestaurants() {
+  return vRestaurants;
+};
 
-    // Not very efficient
-    /* vectorRestaurants::Restaurant *getRestaurantByName(const std::string
-    &name) { for (Restaurant *res : vRestaurants) {
-        // Make sure you grab restaurantName
-        if (res->getName() == name) {
-          return res;
-        }
-      }
-      return nullptr;
-    }; */
+// Not very efficient
+/* vectorRestaurants::Restaurant *getRestaurantByName(const std::string
+&name) { for (Restaurant *res : vRestaurants) {
+    // Make sure you grab restaurantName
+    if (res->getName() == name) {
+      return res;
+    }
+  }
+  return nullptr;
+}; */
 
-    // Superior unorder map data structure
-    Restaurant vectorRestaurants::getRestaurantByName(const std::string &name) {
-      auto it = nameToRestaurant.find(name);
-      if (it != nameToRestaurant.end()) {
-        return it->second;
-      }
-      throw runtime_error("SMOKE");
-    };
+// Superior unorder map data structure
+Restaurant vectorRestaurants::getRestaurantByName(const std::string &name) {
+  auto it = nameToRestaurant.find(name);
+  if (it != nameToRestaurant.end()) {
+    return it->second;
+  }
+  throw runtime_error("Invalid Restaurant Name");
+};

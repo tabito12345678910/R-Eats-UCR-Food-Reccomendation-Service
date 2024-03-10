@@ -36,7 +36,6 @@ public:
     // Eggplant Tofu!
     vMenu.push_back(MenuChoice::Vegetarian);
     vMenu.push_back(MenuChoice::Vegan);
-    
 
     // Entrees
     // Print each string in ui when
