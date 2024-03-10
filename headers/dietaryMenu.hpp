@@ -1,5 +1,6 @@
 #include "foodSelector.hpp"
 #include "recommendation.hpp"
+#include "remove.hpp"
 #include <algorithm>
 #include <iostream>
 
@@ -94,10 +95,12 @@ unsigned int dietarySelect(vectorRestaurants &vRestaurants, vector<MenuChoice> &
       return 2;
     } else if (choice == "vegetarian") {
       prefs.push_back(MenuChoice::Vegetarian);
+      removeRestaurantByMenu(vRestaurants, MenuChoice::Vegetarian);
       return 3;
 
     } else if (choice == "vegan") {
       prefs.push_back(MenuChoice::Vegan);
+      removeRestaurantByMenu(vRestaurants, MenuChoice::Vegan);      
       return 4;
 
     } else if (choice == "pescatarian") {

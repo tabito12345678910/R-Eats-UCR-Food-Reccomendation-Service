@@ -1,7 +1,7 @@
 #include "dietaryMenu.hpp"
+#include "remove.hpp"
 #include "foodSelector.hpp"
 #include <iostream>
-
 #include <algorithm>
 #include <iostream>
 
@@ -82,9 +82,7 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy,
         return selected;
       }
     } else if (choice == "seafood" && diet != 4 && diet != 3 && allergy != 6) {
-      selected = selectingSeafood(
-          vRestaurants, prefs); // selector for seafood options; returns 0 if back 1 if
-                         // any other option
+      selected = selectingSeafood(vRestaurants, prefs); 
       if (selected == 0) {
         return selected;
       }
@@ -93,6 +91,7 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy,
       // add Vegetables to preferences
       cout << "Vegetables added" << endl;
       prefs.push_back(MenuChoice::Vegetables);
+      removeRestaurantByMenu(vRestaurants, MenuChoice::Vegetables);
       return 0;
 
     } else if (choice == "dairy" && diet != 4 && allergy != 7) {
@@ -110,9 +109,7 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy,
         return selected;
       }
     } else if (choice == "drinks") {
-      selected = selectingDrink(
-          diet, vRestaurants, prefs); // selector for drink options; returns 0 if back
-                               // 1 if any other option
+      selected = selectingDrink(diet, vRestaurants, prefs); 
       if (selected == 0) {
         return selected;
       }
@@ -120,11 +117,13 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy,
       // add Snacks to preferences
       cout << "Snacks added" << endl;
       prefs.push_back(MenuChoice::Snacks);
+      removeRestaurantByMenu(vRestaurants, MenuChoice::Snacks);
       return 0;
     } else if (choice == "dessert") {
       // add Dessert to preferences
       cout << "Dessert added" << endl;
       prefs.push_back(MenuChoice::Dessert);
+      removeRestaurantByMenu(vRestaurants, MenuChoice::Dessert);
       return 0;
 
     } 

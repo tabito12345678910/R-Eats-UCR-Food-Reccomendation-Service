@@ -34,3 +34,12 @@ Restaurant &vectorRestaurants::getRestaurantByName(const std::string &name) {
   }
   throw runtime_error("Invalid Restaurant Name");
 };
+
+bool vectorRestaurants::isValid(vector<Restaurant> restaurants, Restaurant restaurant) {
+  for(auto search : restaurants) {
+    if(search.getName() == restaurant.getName()) {
+      return true;
+    }
+  }
+  return false;
+}
