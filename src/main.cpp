@@ -12,7 +12,42 @@ using std::string;
 
 int main() {
   string from;
-  
+  cout << "Welcome to R'Eats" << endl << endl;
+  cout << "Please select your current location" << endl;
+  cout << "-HUB" << endl
+       << "-Lot30" << endl
+       << "-SSC" << endl
+       << "-MSE" << endl
+       << "-ND" << endl
+       << "-Big Springs" << endl
+       << "-Winston Chung Hall" << endl
+       << "-Orbach library" << endl
+       << "-Sproul" << endl
+       << "-Dorms" << endl
+       << "-Rivera Library" << endl
+       << "-Entemology Museum" << endl
+       << "[Quit]" << endl;
+  while (true) {
+    cin >> from;
+    cin.clear();
+    cin.ignore(256, '\n');
+    std::transform(from.begin(), from.end(), from.begin(),
+          [](unsigned char c) { return std::tolower(c); });
+
+    if (from == "hub" || from == "ssc" || from == "mse" 
+                    || from == "nd" || from == "sproul" 
+                    || from == "dorms" || from == "lot30" 
+                    || from == "bigsprings" || from == "winstonchung"
+                    || from == "riveralibrary" || from == "entemologymuseum") 
+  {
+    break;
+  } else if( from == "quit" || from == "q") {
+      return 0;  
+    }else {
+      cout << "Invalid Response: Try again" << endl;
+    }
+  }
+
   while (true) 
   {  
     string restaurantChoice = "NULL";
