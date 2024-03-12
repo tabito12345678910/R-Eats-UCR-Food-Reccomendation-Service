@@ -1,9 +1,7 @@
 #include "dietaryMenu.hpp"
 #include "foodSelector.hpp"
 #include <iostream>
-
 #include <algorithm>
-#include <iostream>
 
 using std::cin;
 using std::cout;

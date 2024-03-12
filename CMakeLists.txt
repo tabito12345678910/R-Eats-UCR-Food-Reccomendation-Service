@@ -63,12 +63,11 @@ src/buffetRestaurants.cpp
 src/vRestaurants.cpp)
 add_executable(main src/main.cpp ${SOURCE_FILES})
 
-set(TEST_FILES tests/test.cpp)
+set(TEST_FILES 
+tests/testConstructors.cpp 
+tests/testDietaryMenu.cpp 
+tests/testEta.cpp)
 add_executable(test ${TEST_FILES} ${SOURCE_FILES})
-
-
-
-
 
 # Link against librect (your restaurant library) for main
 target_link_libraries(main PRIVATE librect)

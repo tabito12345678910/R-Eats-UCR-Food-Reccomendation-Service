@@ -1,20 +1,12 @@
-#pragma once
 #include "../headers/restaurant.hpp"
 #include "../headers/vRestaurants.hpp"
-#include <algorithm>
-#include <iostream>
+#include "../headers/remove.hpp"
 #include <vector>
 #include "gtest/gtest.h"
 
 using namespace std;
 
-// using std::cin;
-// using std::cout;
-// using std::endl;
-// using std::string;
-
 TEST(MainCalls, removeRestaurantByMenu) {
-    vectorRestaurants();
-    removeRestaurantByMenu(vectorRestaurants, MenuChoice pref);
-
+    vectorRestaurants testRestaurants;
+    EXPECT_NO_THROW(removeRestaurantByMenu(testRestaurants, MenuChoice::Beef););
 }
