@@ -142,3 +142,26 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy,
 
   return 2;
 }
+
+string validPlace(string &from) {
+  if(from == "lot") {
+    return "lot30";
+  } else if (from == "student") {
+    return "ssc";
+  } else if (from == "material") {
+    return "mse";
+  } else if (from == "north") {
+    return "nd";
+  } else if (from == "big" || from == "spring") {
+    return "bigspring";
+  } else if (from == "winston") {
+    return "winstonchung";
+  } else if (from == "orbach") {
+    return "orbachlibrary";
+  } else if (from == "rivera") {
+    return "riveralibrary";
+  } else if (from == "entemology" || from == "museum") {
+    return "entemologymuseum";
+  }
+  return from;
+}

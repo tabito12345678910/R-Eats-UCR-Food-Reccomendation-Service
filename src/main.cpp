@@ -33,17 +33,18 @@ int main() {
     cin.ignore(256, '\n');
     std::transform(from.begin(), from.end(), from.begin(),
           [](unsigned char c) { return std::tolower(c); });
-
+    from = validPlace(from);
     if (from == "hub" || from == "ssc" || from == "mse" 
                     || from == "nd" || from == "sproul" 
                     || from == "dorms" || from == "lot30" 
                     || from == "bigsprings" || from == "winstonchung"
-                    || from == "riveralibrary" || from == "entemologymuseum") 
-  {
-    break;
-  } else if( from == "quit" || from == "q") {
+                    || from == "riveralibrary" || from == "entemologymuseum"
+                    || from == "orbachlibrary") 
+    {
+      break;
+    } else if( from == "quit" || from == "q") {
       return 0;  
-    }else {
+    } else {
       cout << "Invalid Response: Try again" << endl;
     }
   }
