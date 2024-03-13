@@ -1,4 +1,6 @@
 #include "foodSelector.hpp"
+#include "recommendation.hpp"
+#include "remove.hpp"
 #include <algorithm>
 #include <iostream>
 
@@ -78,7 +80,7 @@ unsigned int allergySelect(vectorRestaurants &vRestaurants) {
   return 2;
 }
 
-unsigned int dietarySelect(vectorRestaurants &vRestaurants) {
+unsigned int dietarySelect(vectorRestaurants &vRestaurants, vector<MenuChoice> &prefs) {
 
   string choice;
 
@@ -92,17 +94,13 @@ unsigned int dietarySelect(vectorRestaurants &vRestaurants) {
     if (choice == "quit") {
       return 2;
     } else if (choice == "vegetarian") {
-      // leave only resturants and menu items that are vegetarian
+      prefs.push_back(MenuChoice::Vegetarian);
       removeRestaurantByMenu(vRestaurants, MenuChoice::Vegetarian);
-      removeItemsByPref(vRestaurants, MenuChoice::Vegetarian);
       return 3;
 
     } else if (choice == "vegan") {
-      // leave only resturants and menu items that are vegan
-      removeRestaurantByMenu(
-          vRestaurants,
-          MenuChoice::Vegan); // removes restaurants without Vegan options
-      removeItemsByPref(vRestaurants, MenuChoice::Vegan);
+      prefs.push_back(MenuChoice::Vegan);
+      removeRestaurantByMenu(vRestaurants, MenuChoice::Vegan);      
       return 4;
 
     } else if (choice == "pescatarian") {

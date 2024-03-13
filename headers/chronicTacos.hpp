@@ -20,7 +20,6 @@ public:
     vMenu.push_back(MenuChoice::Beef);
     vMenu.push_back(MenuChoice::Protein);
     vMenu.push_back(MenuChoice::Rice);
-    vMenu.push_back(MenuChoice::Chicken);
     vMenu.push_back(MenuChoice::Vegetables);
     vMenu.push_back(MenuChoice::Snacks);
     vMenu.push_back(MenuChoice::Vegetarian);

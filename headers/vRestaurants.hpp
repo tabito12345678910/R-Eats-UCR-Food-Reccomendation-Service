@@ -17,6 +17,7 @@ public:
   //Restaurant &getRestaurant(int index);
 
   Restaurant &getRestaurantByName(const std::string &name);
+  bool isValid(vector<Restaurant> restaurants, Restaurant restaurant);
 
 private:
   vector<Restaurant> vRestaurants;
