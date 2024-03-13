@@ -33,8 +33,7 @@ string seafoodOptions() { // displays meat options when "Seafood" is selected
        << "3. Scallops" << endl
        << "4. Shrimp" << endl
        << "5. Tuna" << endl
-       << "6. All" << endl
-       << "7. [Back]" << endl; //"Back" to go back to food preferences
+       << "6. [Back]" << endl; //"Back" to go back to food preferences
 
   cin >> choice;
   cin.clear();
@@ -58,22 +57,22 @@ string dishOptions() { // displays meat options when "Dishes" is selected
   return choice;
 }
 
-string cuisineOptions() { // displays meat options when "Cuisine" is selected
-  string choice;
-  cout << endl
-       << "Cuisine Options:" << endl
-       << "1. American" << endl
-       << "2. Chinese" << endl
-       << "3. Japanese" << endl
-       << "4. Mediterranean" << endl
-       << "5. Mexican" << endl
-       << "6. [Back]" << endl; //"Back" to go back to food preferences
+// string cuisineOptions() { // displays meat options when "Cuisine" is selected
+//   string choice;
+//   cout << endl
+//        << "Cuisine Options:" << endl
+//        << "1. American" << endl
+//        << "2. Chinese" << endl
+//        << "3. Japanese" << endl
+//        << "4. Mediterranean" << endl
+//        << "5. Mexican" << endl
+//        << "6. [Back]" << endl; //"Back" to go back to food preferences
 
-  cin >> choice;
-  cin.clear();
-  cin.ignore(256, '\n');
-  return choice;
-}
+//   cin >> choice;
+//   cin.clear();
+//   cin.ignore(256, '\n');
+//   return choice;
+// }
 
 string dairyOptions() { // displays meat options when "Dairy" is selected
   string choice;
@@ -94,9 +93,8 @@ string drinkOptions() { // displays meat options when "Drinks" is selected
   cout << endl
        << "Drink Options:" << endl
        << "1. Coffee" << endl
-       << "2. Fountain" << endl
-       << "3. Tea" << endl
-       << "4. [Back]" << endl; //"Back" to go back to food preferences4
+       << "2. Tea" << endl
+       << "3. [Back]" << endl; //"Back" to go back to food preferences4
   cin >> choice;
   cin.clear();
   cin.ignore(256, '\n');
