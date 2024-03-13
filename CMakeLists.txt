@@ -1,4 +1,3 @@
-# CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
 project(Final-Project)
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y")
@@ -28,9 +27,9 @@ ADD_EXECUTABLE(QRCodeRestaurant
 )
 
 
-# Link against libqrencode
-target_link_libraries(QRCodeGenerator PRIVATE ${QRENCODE_LIB})
-target_link_libraries(QRCodeRestaurant PRIVATE ${QRENCODE_LIB})
+# # Link against libqrencode
+# target_link_libraries(QRCodeGenerator PRIVATE ${QRENCODE_LIB})
+# target_link_libraries(QRCodeRestaurant PRIVATE ${QRENCODE_LIB})
 
 # Add the include directory for googletest
 ADD_SUBDIRECTORY(tests/googletest)
@@ -62,6 +61,11 @@ target_link_libraries(main PRIVATE librect)
 ADD_EXECUTABLE(test
       tests/test.cpp
  )
+
+# Link against libqrencode
+target_link_libraries(QRCodeGenerator PRIVATE ${QRENCODE_LIB})
+target_link_libraries(QRCodeRestaurant PRIVATE ${QRENCODE_LIB})
+target_link_libraries(main PRIVATE ${QRENCODE_LIB})
 
 add_library(librect STATIC src/restaurant.cpp)
 TARGET_LINK_LIBRARIES(test gtest_main librect)

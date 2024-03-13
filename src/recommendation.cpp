@@ -109,7 +109,7 @@ void UserPreference::PrintMealThatMatchPref(Restaurant rest, MenuItem item) {
   if (sortedPrefs == sortedChoices) {
     includesMeal = true;
     cout << "Recommendation from " << rest.getName() << ": " << endl;
-    cout << item.getItemName() << " Price: " << item.getItemCost()
+    cout << item.getItemName() << " Price: $" << item.getItemCost()
          << ", Calories: " << item.getCalories() << endl
          << endl;
     if (includesProtein) {
