@@ -50,11 +50,11 @@ unsigned int mockselectingMeat(vectorRestaurants vRestaurants, string input) {
 
 TEST(MockfoodSelector, testmockselectingMeat) {
     MockVectorRestaurants mockRestaurants;
-   
+
     // Test cases
     EXPECT_EQ(mockselectingMeat(mockRestaurants, "back"), 1);
     EXPECT_EQ(mockselectingMeat(mockRestaurants, "BACK"), 1); //have to call twice or else won't enter loop
-    EXPECT_EQ(mockselectingMeat(mockRestaurants, "beef"), 0); 
+    EXPECT_EQ(mockselectingMeat(mockRestaurants, "beef"), 0);
     EXPECT_EQ(mockselectingMeat(mockRestaurants, "chicken"), 0);
     EXPECT_EQ(mockselectingMeat(mockRestaurants, "pork"), 0);
     EXPECT_EQ(mockselectingMeat(mockRestaurants, "turkey"), 0);
@@ -109,11 +109,11 @@ unsigned int mockselectingSeafood(vectorRestaurants vRestaurants, string input) 
 
 TEST(MockfoodSelector, testmockselectingSeafood) {
     MockVectorRestaurants mockRestaurants;
-   
+
     // Test cases
     EXPECT_EQ(mockselectingSeafood(mockRestaurants, "back"), 1);
     EXPECT_EQ(mockselectingSeafood(mockRestaurants, "BACK"), 1); //have to call twice or else won't enter loop
-    EXPECT_EQ(mockselectingSeafood(mockRestaurants, "crab"), 0); 
+    EXPECT_EQ(mockselectingSeafood(mockRestaurants, "crab"), 0);
     EXPECT_EQ(mockselectingSeafood(mockRestaurants, "salmon"), 0);
     EXPECT_EQ(mockselectingSeafood(mockRestaurants, "scallops"), 0);
     EXPECT_EQ(mockselectingSeafood(mockRestaurants, "shrimp"), 0);
@@ -158,11 +158,11 @@ unsigned int mockselectingDishes(vectorRestaurants vRestaurants, string input) {
 }
 TEST(MockfoodSelector, testmockselectingDishes) {
     MockVectorRestaurants mockRestaurants;
-   
+
     // Test cases
     EXPECT_EQ(mockselectingDishes(mockRestaurants, "back"), 1);
     EXPECT_EQ(mockselectingDishes(mockRestaurants, "BACK"), 1); //have to call twice or else won't enter loop
-    EXPECT_EQ(mockselectingDishes(mockRestaurants, "bread"), 0); 
+    EXPECT_EQ(mockselectingDishes(mockRestaurants, "bread"), 0);
     EXPECT_EQ(mockselectingDishes(mockRestaurants, "fries"), 0);
     EXPECT_EQ(mockselectingDishes(mockRestaurants, "noodles"), 0);
     EXPECT_EQ(mockselectingDishes(mockRestaurants, "rice"), 0);
@@ -206,11 +206,11 @@ unsigned int mockselectingCuisine(vectorRestaurants vRestaurants, string input) 
 
 TEST(MockfoodSelector, testmockselectingCuisine) {
     MockVectorRestaurants mockRestaurants;
-   
+
     // Test cases
     EXPECT_EQ(mockselectingCuisine(mockRestaurants, "back"), 1);
     EXPECT_EQ(mockselectingCuisine(mockRestaurants, "BACK"), 1); //have to call twice or else won't enter loop
-    EXPECT_EQ(mockselectingCuisine(mockRestaurants, "american"), 0); 
+    EXPECT_EQ(mockselectingCuisine(mockRestaurants, "american"), 0);
     EXPECT_EQ(mockselectingCuisine(mockRestaurants, "chinese"), 0);
     EXPECT_EQ(mockselectingCuisine(mockRestaurants, "japanese"), 0);
     EXPECT_EQ(mockselectingCuisine(mockRestaurants, "mediterranean"), 0);
@@ -246,11 +246,11 @@ unsigned int mockselectingDairy(vectorRestaurants vRestaurants, string input) {
 
 TEST(MockfoodSelector, testmockselectingDairy) {
     MockVectorRestaurants mockRestaurants;
-   
+
     // Test cases
     EXPECT_EQ(mockselectingDairy(mockRestaurants, "back"), 1);
     EXPECT_EQ(mockselectingDairy(mockRestaurants, "BACK"), 1); //have to call twice or else won't enter loop
-    EXPECT_EQ(mockselectingDairy(mockRestaurants, "cheese"), 0); 
+    EXPECT_EQ(mockselectingDairy(mockRestaurants, "cheese"), 0);
     EXPECT_EQ(mockselectingDairy(mockRestaurants, "milk"), 0);
     EXPECT_ANY_THROW(mockselectingDairy(mockRestaurants, "abc"));
 }
@@ -294,7 +294,7 @@ TEST(MockfoodSelector, testmockselectingDrink) {
     // Test cases
     EXPECT_EQ(mockselectingDrink(0, mockRestaurants, "back"), 1);
     EXPECT_EQ(mockselectingDrink(1, mockRestaurants, "BACK"), 1); //have to call twice or else won't enter loop
-    EXPECT_EQ(mockselectingDrink(0, mockRestaurants, "coffee"), 0); 
+    EXPECT_EQ(mockselectingDrink(0, mockRestaurants, "coffee"), 0);
     EXPECT_EQ(mockselectingDrink(4, mockRestaurants, "coffee"), 2);
     EXPECT_EQ(mockselectingDrink(1, mockRestaurants, "fountain"), 0);
     EXPECT_EQ(mockselectingDrink(0, mockRestaurants, "tea"), 0);
@@ -358,8 +358,8 @@ TEST(MockfoodRemove, testmockremoveRestaurantByMenu) {
             break;
         }
     }
-    EXPECT_TRUE(beefFoundBeforeRemoval); 
-    EXPECT_FALSE(beefFound); 
+    EXPECT_TRUE(beefFoundBeforeRemoval);
+    EXPECT_FALSE(beefFound);
 }
 
 
@@ -396,8 +396,8 @@ TEST(MockfoodRemove, testmockremoveByCuisine) {
                 break;
             }
     }
-    EXPECT_TRUE(AmericanFoundbefore); 
-    EXPECT_FALSE(AmericanFound); 
+    EXPECT_TRUE(AmericanFoundbefore);
+    EXPECT_FALSE(AmericanFound);
 }
 
 

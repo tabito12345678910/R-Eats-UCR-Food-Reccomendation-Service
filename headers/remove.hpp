@@ -7,13 +7,12 @@
 using namespace std;
 
 void removeRestaurantByMenu(vectorRestaurants &vRestaurants, MenuChoice pref) {
-  for (int i = vRestaurants.getRestaurants().size() - 1; i >= 0; i--)
-  {
+  for (int i = vRestaurants.getRestaurants().size() - 1; i >= 0; i--) {
     bool found = false;
     Restaurant currentRestaurant = vRestaurants.getRestaurant(i);
     for (unsigned int j = 0; j < currentRestaurant.getMenu().size(); j++) {
       if (currentRestaurant.getMenu().at(j) == pref) {
-          found = true;
+        found = true;
       }
     }
     if (found == false) {
@@ -24,15 +23,15 @@ void removeRestaurantByMenu(vectorRestaurants &vRestaurants, MenuChoice pref) {
 }
 
 // functions to make: remove by cuisines, remove by allergy, removeItem
-// void removeByCuisine(vectorRestaurants &vRestaurants, Nationality pref) {
-//   for (int i = vRestaurants.getRestaurants().size() - 1; i >= 0; i--) {
-//     Restaurant cur = vRestaurants.getRestaurant(i);
-//     if (cur.getNationality() != pref) {
-//       vRestaurants.getRestaurants().erase(
-//           vRestaurants.getRestaurants().begin() + i);
-//     }
-//   }
-// }
+void removeByCuisine(vectorRestaurants &vRestaurants, Nationality pref) {
+  for (int i = vRestaurants.getRestaurants().size() - 1; i >= 0; i--) {
+    Restaurant cur = vRestaurants.getRestaurant(i);
+    if (cur.getNationality() != pref) {
+      vRestaurants.getRestaurants().erase(
+          vRestaurants.getRestaurants().begin() + i);
+    }
+  }
+}
 
 void removeItem(vector<MenuItem> &vMeal, MenuChoice pref) {
   for (int i = vMeal.size() - 1; i >= 0; i--) {
