@@ -191,6 +191,10 @@ unsigned int selectingDrink(unsigned int diet,
       removeRestaurantByMenu(vRestaurants, MenuChoice::Coffee);
       return 0;
 
+ //   } else if (choice == "fountain") {
+ //     cout << "Fountain Drink added" << endl;
+//      return 0;
+
     } else if (choice == "tea") {
       cout << "Tea added" << endl;
       prefs.push_back(MenuChoice::Tea);
