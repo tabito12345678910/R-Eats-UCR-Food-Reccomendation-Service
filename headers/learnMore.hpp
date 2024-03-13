@@ -16,8 +16,7 @@ using std::string;
 unsigned int learnMore(string from, Restaurant to) {
     string choice = "NULL";
     Eta eta;
-    cout << "Coming from " << from << " Going to " << to.getName() << endl;
-    cout << "ETA: " << eta.getEta(from, to.getLocation()) << " Minutes" << endl;
+    cout << "ETA to " << to.getName() << ": "<< eta.getEta(from, to.getLocation()) << " Minutes" << endl;
 
     cout << endl << "Learn more about " << to.getName() << " using the QRCode below" << endl;
     //insert QRCode for Restaurant

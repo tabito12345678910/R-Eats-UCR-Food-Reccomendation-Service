@@ -13,7 +13,7 @@ using std::string;
 int main() {
   string from;
   cout << "Welcome to R'Eats" << endl << endl;
-  cout << "Please select your current location" << endl;
+  cout << "Please select closest location to you." << endl;
   cout << "-HUB" << endl
        << "-Lot30" << endl
        << "-SSC" << endl
