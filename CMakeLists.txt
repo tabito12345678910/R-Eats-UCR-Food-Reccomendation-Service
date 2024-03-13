@@ -15,23 +15,23 @@ include_directories(
 find_library(QRENCODE_LIB qrencode HINTS ${CMAKE_SOURCE_DIR}/external/libqrencode/)
 
 # # Ensure libqrencode library is found
-# if(NOT QRENCODE_LIB)
-#     message(FATAL_ERROR "libqrencode library not found")
-# endif()
+if(NOT QRENCODE_LIB)
+    message(FATAL_ERROR "libqrencode library not found")
+endif()
 
 # # Test QRCode backend code
-# ADD_EXECUTABLE(QRCodeGenerator tests/testQRCode.cpp)
+ADD_EXECUTABLE(QRCodeGenerator tests/testQRCode.cpp)
 
 # # Testing Testing everything is good
-# ADD_EXECUTABLE(QRCodeRestaurant
-#     tests/testQRCodeVRes.cpp
-#     src/restaurant.cpp
-# )
+ADD_EXECUTABLE(QRCodeRestaurant
+    tests/testQRCodeVRes.cpp
+    src/restaurant.cpp
+)
 
 
 # # Link against libqrencode
-# target_link_libraries(QRCodeGenerator PRIVATE ${QRENCODE_LIB})
-# target_link_libraries(QRCodeRestaurant PRIVATE ${QRENCODE_LIB})
+target_link_libraries(QRCodeGenerator PRIVATE ${QRENCODE_LIB})
+target_link_libraries(QRCodeRestaurant PRIVATE ${QRENCODE_LIB})
 
 # Add the include directory for googletest
 ADD_SUBDIRECTORY(tests/googletest)
@@ -39,7 +39,6 @@ ADD_SUBDIRECTORY(tests/googletest)
 # Testing Algorithm
 ADD_EXECUTABLE(Algorithm
     tests/testAlgorithm.cpp
-    #src/main.cpp
     src/restaurant.cpp
     src/recommendation.cpp
     src/buffetRestaurants.cpp
@@ -47,15 +46,15 @@ ADD_EXECUTABLE(Algorithm
 
 )
 
-set(SOURCE_FILES 
+set(SOURCE_FILES
 src/restaurant.cpp
 src/recommendation.cpp
 src/buffetRestaurants.cpp
 src/vRestaurants.cpp)
 add_executable(main src/main.cpp ${SOURCE_FILES})
 
-set(TEST_FILES 
-tests/testConstructors.cpp 
+set(TEST_FILES
+tests/testConstructors.cpp
 tests/testEta.cpp
 tests/testMenu.cpp)
 add_executable(test ${TEST_FILES} ${SOURCE_FILES})
@@ -64,9 +63,10 @@ add_executable(test ${TEST_FILES} ${SOURCE_FILES})
 target_link_libraries(main PRIVATE librect)
 
 
-ADD_EXECUTABLE(test
-      tests/test.cpp
- )
+# For some reason, tests/test.cpp does not exist
+# ADD_EXECUTABLE(test1
+#       tests/test.cpp
+#  )
 
 # Link against libqrencode
 target_link_libraries(QRCodeGenerator PRIVATE ${QRENCODE_LIB})
