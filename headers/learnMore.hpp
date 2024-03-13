@@ -17,6 +17,9 @@ using std::endl;
 using std::string;
 
 unsigned int learnMore(string from, Restaurant to) {
+  string OperatingSystem = "iphone";
+  cout << "Phone Operating System?(android/iphone)" << OperatingSystem;
+
   string choice = "NULL";
   Eta eta;
   cout << "ETA to " << to.getName() << ": "
@@ -27,7 +30,6 @@ unsigned int learnMore(string from, Restaurant to) {
        << endl;
   // insert QRCode for Restaurant
   if (true) {
-    string OperatingSystem = "apple";
     vector<string> vlink = {to.getLink(OperatingSystem)};
     QRCodeModule qrModule;
     qrModule.displayLinkAsQRCode(vlink);
