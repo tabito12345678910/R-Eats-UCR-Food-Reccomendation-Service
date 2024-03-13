@@ -33,11 +33,6 @@ unsigned int selectingMeat(vectorRestaurants &vRestaurants, vector<MenuChoice> &
       prefs.push_back(MenuChoice::Turkey);
       removeRestaurantByMenu(vRestaurants, MenuChoice::Turkey);
       return 0;
-    } else if (choice == "all") {
-      cout << "All Proteins added" << endl;
-      prefs.push_back(MenuChoice::Protein);
-      removeRestaurantByMenu(vRestaurants, MenuChoice::Protein);
-      return 0;
     } else {
       cout << "Invalid Response: Try Again" << endl;
     }

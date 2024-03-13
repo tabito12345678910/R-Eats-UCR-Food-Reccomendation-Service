@@ -15,8 +15,7 @@ string meatOptions() { // displays meat options when "Meat" is selected
        << "2. Chicken" << endl
        << "3. Pork" << endl
        << "4. Turkey" << endl
-       << "5. All" << endl
-       << "6. [Back]" << endl; //"Back" to go back to food preferences
+       << "5. [Back]" << endl; //"Back" to go back to food preferences
 
   cin >> choice;
   cin.clear();
