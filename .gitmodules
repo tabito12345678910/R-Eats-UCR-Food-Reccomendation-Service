@@ -5,6 +5,3 @@
 [submodule "external/libqrencode"]
 	path = external/libqrencode
 	url = https://github.com/fukuchi/libqrencode.git
-[submodule "libqrencode"]
-	path = libqrencode
-	url = https://github.com/fukuchi/libqrencode.git

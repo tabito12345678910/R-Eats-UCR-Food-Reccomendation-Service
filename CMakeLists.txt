@@ -40,7 +40,7 @@ ADD_SUBDIRECTORY(tests/googletest)
 # Testing Algorithm
 ADD_EXECUTABLE(Algorithm
     tests/testAlgorithm.cpp
-    # src/main.cpp
+    #src/main.cpp
     src/restaurant.cpp
     src/recommendation.cpp
     src/buffetRestaurants.cpp
