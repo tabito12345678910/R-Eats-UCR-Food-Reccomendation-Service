@@ -205,6 +205,7 @@ unsigned int selectingDrink(unsigned int diet,
 
     } else if (choice == "fountain") {
       cout << "Fountain Drink added" << endl;
+      return 0;
     } else if (choice == "tea") {
       cout << "Tea added" << endl;
       removeRestaurantByMenu(vRestaurants, MenuChoice::Tea);

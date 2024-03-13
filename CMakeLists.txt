@@ -40,21 +40,13 @@ ADD_SUBDIRECTORY(tests/googletest)
 # Testing Algorithm
 ADD_EXECUTABLE(Algorithm
     tests/testAlgorithm.cpp
-    #src/main.cpp
+    # src/main.cpp
     src/restaurant.cpp
     src/recommendation.cpp
     src/buffetRestaurants.cpp
     src/vRestaurants.cpp
 
 )
-
-# ADD_EXECUTABLE( main
-#     src/main.cpp
-#     src/restaurant.cpp
-#     src/recommendation.cpp
-#     src/buffetRestaurants.cpp
-#     src/vRestaurants.cpp
-# )
 
 set(SOURCE_FILES 
 src/restaurant.cpp
@@ -65,16 +57,12 @@ add_executable(main src/main.cpp ${SOURCE_FILES})
 
 set(TEST_FILES 
 tests/testConstructors.cpp 
-tests/testDietaryMenu.cpp 
-tests/testEta.cpp)
+tests/testEta.cpp
+tests/testMenu.cpp)
 add_executable(test ${TEST_FILES} ${SOURCE_FILES})
 
 # Link against librect (your restaurant library) for main
 target_link_libraries(main PRIVATE librect)
-
-# ADD_EXECUTABLE(test
-#       tests/test.cpp
-#  )
 
 add_library(librect STATIC src/restaurant.cpp)
 TARGET_LINK_LIBRARIES(test gtest_main librect)
