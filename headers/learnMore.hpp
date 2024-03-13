@@ -18,7 +18,8 @@ using std::string;
 
 unsigned int learnMore(string from, Restaurant to) {
   string OperatingSystem = "iphone";
-  cout << "Phone Operating System?(android/iphone)" << OperatingSystem;
+
+  cout << "Phone Operating System?(android/iphone) ";
   cin >> OperatingSystem;
   cin.clear();
   cin.ignore(256, '\n');
