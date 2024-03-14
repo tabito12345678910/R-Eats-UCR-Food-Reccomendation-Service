@@ -15,7 +15,7 @@ string dietaryDisplay() {
   cout << "1. Vegetarian" << endl
        << "2. Vegan" << endl
        << "3. Pescatarian" << endl
-       << "5. None"
+       << "4. None"
        << endl // default; will give every and all options; using "None" rather
                // than "No Preference" to avoid using getline
        << "6. [Quit]" << endl; // quit option
@@ -100,7 +100,9 @@ unsigned int dietarySelect(vectorRestaurants &vRestaurants, vector<MenuChoice> &
 
     } else if (choice == "vegan") {
       prefs.push_back(MenuChoice::Vegan);
-      removeRestaurantByMenu(vRestaurants, MenuChoice::Vegan);      
+      removeRestaurantByMenu(vRestaurants, MenuChoice::Vegan);
+      prefs.push_back(MenuChoice::Vegetarian);
+      removeRestaurantByMenu(vRestaurants, MenuChoice::Vegetarian);      
       return 4;
 
     } else if (choice == "pescatarian") {

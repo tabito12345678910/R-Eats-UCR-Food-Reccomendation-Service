@@ -61,6 +61,8 @@ int main() {
     if (diet == 2) {
       cout << "Quiting Program" << endl;
       return 0;
+    } else if (diet == 4) {
+      track += 2;
     } else if (diet != 1 && diet != 5) {
       track++;
     }
