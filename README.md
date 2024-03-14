@@ -66,7 +66,6 @@ This made the code much easier to read and elegant, as everything is compartment
 
 
  ## Screenshots
-> Screenshots of the input/output after running your application
 - Screenshot after no food allergies and requesting beef, chicken, pork, and asking for Habit's learnMore
 ![Alt Text](https://github.com/cs100/final-project-dtope004-nmat016-rrobe031-tsaka014/blob/master/media/Screen_with_QR.png?raw=true)
 
