@@ -77,5 +77,5 @@ This made the code much easier to read and elegant, as everything is compartment
  ## Installation/Usage
  > Instructions on installing and running your application
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ We used CI, so we have a "build passing" badge. We also used Gtest unit testing to check if the individual functions/classes work. 
 
