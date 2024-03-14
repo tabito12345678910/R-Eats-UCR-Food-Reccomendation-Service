@@ -82,4 +82,4 @@ This made the code much easier to read and elegant, as everything is compartment
 
  ## Testing
  We used CI, so we have a "build passing" badge. We also used Gtest unit testing to check if the individual functions/classes work.
-
+ Testing was a little difficult as our entire project is dynamic which takes in input calls from the user and changed outputs depeding on the input. We had to simplify the testing by creating mock functions for each of the functions used in the main program. We tested each indvidual mock function and used lcov based on these mock funcitons to make sure all the code was covered with tests. By doing so, these tests uncovered a few bugs we had that were diffcult to "test" running the main funciton.
