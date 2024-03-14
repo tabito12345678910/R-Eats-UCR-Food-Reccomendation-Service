@@ -73,7 +73,6 @@ This made the code much easier to read and elegant, as everything is compartment
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history.
 
  ## Screenshots
- > Screenshots of the input/output after running your application
 ![Alt Text](https://github.com/cs100/final-project-dtope004-nmat016-rrobe031-tsaka014/blob/master/media/Screen_with_QR.png?raw=true)
 
  ## Installation/Usage
