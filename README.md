@@ -6,30 +6,24 @@
 
 ## Project Description
   * Why is it important or interesting to you?
-  We are all college students and we would all have a nicer way to eat food for less
+  We are all college students and we would all have a nicer way to eat food for less, so we built an on-campus food recommendation service. 
   * What languages/tools/technologies do you plan to use? (This list may change throughout the project)
 * This will be a terminal based
 * It will all be written in C++
-* We will have a way to store user data using local files
-* Some sort of catering algorithm for people to choose exactly what they want to eat
-  * What will be the input/output of your project, you will also get calorie counts with a budget?
- * Assign everything to a user profile and you can choose how you want your preferences sorter.
-    - This being by price, calorie, price per calorie, distance
+* Catering algorithm for people to choose exactly what they want to eat. 
+* User would be inputing current location and meal preferences for the program to produce recommendations and ETA to recommended restaurant.
+Filter out recommendations through dietary restrictions and preferences, and produce relevant information to the recommended restaurant. 
+    - This being by price, calorie, and distance
  # Input:
- * Insert choices through the terminal with key binds
-* Answer a couple of questions and get your choices
-* Give your interests what you are hungry for and the price you want to pay
+ * Insert 3 choices through the terminal with key binds to decide your preferences
+* Answer if you have dietary restrictions
  # Output:
- * Suggestion for foods to eat and from what place to eat, and the price of the food after taxes
- * This would be done by assigning tags such as the type of food, dietary restrictions, price ranges, etc, and spit out the nearest available option to the users description
+ * Suggestion for foods to eat and from what place to eat, and the price of the food
+ * This would be done by assigning tags such as the type of food, dietary restrictions, price ranges, etc, and spit out the nearest available option to the user's description
   * What are the features that the project provides?
  * We will have a catering algorithm that will be fed from user input and interests
- * It will include all the benefits that installing the phone app, such as 5% cashback in points
  * Then give a QR code to download the app if you haven't already
- * Store user data and interests, and figure out how to utilize that
-* algorithm to store all of that data
-* Tell the app where you are, and then it will draw a graph from your location then tell you the distance you are to every food spot on campus
-* Works in any building, I may add the parking lots, UV, apartments, and local restaurants
+* Tell the app where you are, and then it will provide ETA to recommended restaurant
 * Add some sort of auto-correct features in case you spell your building incorrectly, and maybe visualize the graph and shortest path
 * A CLI map shown in ASCII
 
