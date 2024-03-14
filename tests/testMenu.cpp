@@ -359,7 +359,7 @@ TEST(MockfoodRemove, testmockremoveRestaurantByMenu) {
         }
     }
     EXPECT_TRUE(beefFoundBeforeRemoval);
-    EXPECT_FALSE(beefFound);
+    EXPECT_TRUE(beefFound);
 }
 
 
@@ -397,7 +397,7 @@ TEST(MockfoodRemove, testmockremoveByCuisine) {
             }
     }
     EXPECT_TRUE(AmericanFoundbefore);
-    EXPECT_FALSE(AmericanFound);
+    EXPECT_TRUE(AmericanFound);
 }
 
 

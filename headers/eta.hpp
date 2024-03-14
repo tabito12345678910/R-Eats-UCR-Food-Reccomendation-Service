@@ -44,11 +44,11 @@ public:
   int getEta(string from,
              Location to) { // from should be a user input and to should be the
                             // location of the recommended restaurant
-    vector<Place> EtaToRecommended = getVPlace();
-    for (unsigned int i = 0; i < EtaToRecommended.size(); ++i) {
-      if (from == EtaToRecommended.at(i).getFrom() &&
-          to == EtaToRecommended.at(i).getTo()) {
-        return EtaToRecommended.at(i).getMinutes();
+    Eta EtaToRecommended;
+    for (unsigned int i = 0; i < EtaToRecommended.getVPlace().size(); ++i) {
+      if (from == EtaToRecommended.getVPlace().at(i).getFrom() &&
+          to == EtaToRecommended.getVPlace().at(i).getTo()) {
+        return EtaToRecommended.getVPlace().at(i).getMinutes();
       }
     }
     return -1; // error if returns -1

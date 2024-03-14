@@ -19,10 +19,7 @@ using std::string;
 unsigned int learnMore(string from, Restaurant to) {
   string OperatingSystem = "iphone";
 
-  cout << "Phone Operating System?(android/iphone) ";
-  cin >> OperatingSystem;
-  cin.clear();
-  cin.ignore(256, '\n');
+ 
 
   string choice = "NULL";
   Eta eta;
@@ -31,8 +28,12 @@ unsigned int learnMore(string from, Restaurant to) {
 
   cout << endl
        << "Learn more about " << to.getName() << " using the QRCode below"
-       << endl;
+       << endl<<endl;
   // insert QRCode for Restaurant
+  cout << "Phone Operating System?(android/iphone) ";
+  cin >> OperatingSystem;
+  cin.clear();
+  cin.ignore(256, '\n');
   if (true) {
     vector<string> vlink = {to.getLink(OperatingSystem)};
     QRCodeModule qrModule;
