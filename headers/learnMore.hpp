@@ -19,8 +19,6 @@ using std::string;
 unsigned int learnMore(string from, Restaurant to) {
   string OperatingSystem = "iphone";
 
- 
-
   string choice = "NULL";
   Eta eta;
   cout << "ETA to " << to.getName() << ": "
@@ -28,7 +26,8 @@ unsigned int learnMore(string from, Restaurant to) {
 
   cout << endl
        << "Learn more about " << to.getName() << " using the QRCode below"
-       << endl<<endl;
+       << endl
+       << endl;
   // insert QRCode for Restaurant
   cout << "Phone Operating System?(android/iphone) ";
   cin >> OperatingSystem;

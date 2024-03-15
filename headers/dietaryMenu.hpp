@@ -80,7 +80,8 @@ unsigned int allergySelect(vectorRestaurants &vRestaurants) {
   return 2;
 }
 
-unsigned int dietarySelect(vectorRestaurants &vRestaurants, vector<MenuChoice> &prefs) {
+unsigned int dietarySelect(vectorRestaurants &vRestaurants,
+                           vector<MenuChoice> &prefs) {
 
   string choice;
 
@@ -102,7 +103,7 @@ unsigned int dietarySelect(vectorRestaurants &vRestaurants, vector<MenuChoice> &
       prefs.push_back(MenuChoice::Vegan);
       removeRestaurantByMenu(vRestaurants, MenuChoice::Vegan);
       prefs.push_back(MenuChoice::Vegetarian);
-      removeRestaurantByMenu(vRestaurants, MenuChoice::Vegetarian);      
+      removeRestaurantByMenu(vRestaurants, MenuChoice::Vegetarian);
       return 4;
 
     } else if (choice == "pescatarian") {

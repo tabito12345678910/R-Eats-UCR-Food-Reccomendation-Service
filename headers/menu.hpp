@@ -1,8 +1,8 @@
 #include "dietaryMenu.hpp"
-#include "remove.hpp"
 #include "foodSelector.hpp"
-#include <iostream>
+#include "remove.hpp"
 #include <algorithm>
+#include <iostream>
 
 using std::cin;
 using std::cout;
@@ -17,7 +17,7 @@ string menuDisplay(unsigned int diet, unsigned int allergy, int track) {
 
   unsigned int disNum = 1;
 
-  cout << endl << "Enter 3 Preferences [" << track << "/3]"<< endl;
+  cout << endl << "Enter 3 Preferences [" << track << "/3]" << endl;
   // TODO Put the result into a unsigned int
   //    Then into a hash table that holds all restaurants with that enum
   //
@@ -65,7 +65,8 @@ string menuDisplay(unsigned int diet, unsigned int allergy, int track) {
 }
 
 unsigned int menuSelect(unsigned int diet, unsigned int allergy,
-                        vectorRestaurants &vRestaurants, vector<MenuChoice> &prefs, int track) {
+                        vectorRestaurants &vRestaurants,
+                        vector<MenuChoice> &prefs, int track) {
   unsigned int selected;
   string choice = "NULL"; // you should never see "NULL"
 
@@ -81,7 +82,7 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy,
         return selected;
       }
     } else if (choice == "seafood" && diet != 4 && diet != 3 && allergy != 6) {
-      selected = selectingSeafood(vRestaurants, prefs); 
+      selected = selectingSeafood(vRestaurants, prefs);
       if (selected == 0) {
         return selected;
       }
@@ -94,21 +95,21 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy,
       return 0;
 
     } else if (choice == "dairy" && diet != 4 && allergy != 7) {
-      selected =
-          selectingDairy(vRestaurants, prefs); // selector for dairy options; returns 0
+      selected = selectingDairy(vRestaurants,
+                                prefs); // selector for dairy options; returns 0
                                         // if back 1 if any other option
       if (selected == 0) {
         return selected;
       }
     } else if (choice == "dishes") {
-      selected =
-          selectingDishes(vRestaurants, prefs); // selector for dish options; returns 0
+      selected = selectingDishes(vRestaurants,
+                                 prefs); // selector for dish options; returns 0
                                          // if back 1 if any other option
       if (selected == 0) {
         return selected;
       }
     } else if (choice == "drinks") {
-      selected = selectingDrink(diet, vRestaurants, prefs); 
+      selected = selectingDrink(diet, vRestaurants, prefs);
       if (selected == 0) {
         return selected;
       }
@@ -125,15 +126,16 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy,
       removeRestaurantByMenu(vRestaurants, MenuChoice::Dessert);
       return 0;
 
-    } 
+    }
     // else if (choice == "cuisines") {
     //   selected = selectingCuisine(
-    //       vRestaurants, prefs); // selector for cuisine options; returns 0 if back 1 if
+    //       vRestaurants, prefs); // selector for cuisine options; returns 0 if
+    //       back 1 if
     //                      // any other option
     //   if (selected == 0) {
     //     return selected;
     //   }
-    //} 
+    //}
     else { // invalid response
       cout << "Invalid Response: Try Again" << endl;
     }
@@ -143,7 +145,7 @@ unsigned int menuSelect(unsigned int diet, unsigned int allergy,
 }
 
 string validPlace(string &from) {
-  if(from == "lot") {
+  if (from == "lot") {
     return "lot30";
   } else if (from == "student") {
     return "ssc";

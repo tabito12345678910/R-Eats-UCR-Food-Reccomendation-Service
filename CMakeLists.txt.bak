@@ -1,0 +1,40 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
+project(Final-Project)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y")
+
+# Add the path to libqrencode if it's installed in a non-standard location
+# set(QRENCODE_LIBRARY_DIR "/path/to/libqrencode")
+
+# # Find libqrencode
+# find_library(QRENCODE_LIB qrencode)
+
+# Find libqrencode
+find_package(QREncode REQUIRED)
+
+# Add the include directory of libqrencode
+include_directories(${QRENCODE_INCLUDE_DIR})
+
+target_link_libraries(main PRIVATE ${QRENCODE_LIB})
+
+ADD_SUBDIRECTORY(tests/googletest)
+
+ADD_EXECUTABLE( main
+    src/main.cpp
+    src/restaurant.cpp
+)
+
+# FIX  Demo Purposes
+ADD_EXECUTABLE(qrCodeDemo
+    tests/testQRCode.cpp
+)
+
+ADD_EXECUTABLE(test
+      tests/test.cpp
+ )
+
+# Link qrCodeDemo with libqrencode
+target_link_libraries(qrCodeDemo PRIVATE ${QRENCODE_LIB})
+
+add_library(librect STATIC src/restaurant.cpp)
+TARGET_LINK_LIBRARIES(test gtest_main librect)
+TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)

@@ -1,11 +1,12 @@
 #ifndef FOODSELECTOR_HPP
 #define FOODSELECTOR_HPP
 #include "foodOptions.hpp"
-#include "remove.hpp"
 #include "recommendation.hpp"
+#include "remove.hpp"
 #include <algorithm>
 
-unsigned int selectingMeat(vectorRestaurants &vRestaurants, vector<MenuChoice> &prefs) {
+unsigned int selectingMeat(vectorRestaurants &vRestaurants,
+                           vector<MenuChoice> &prefs) {
   string choice;
   while (choice != "back") {
     choice = meatOptions(); // show meat options and pick
@@ -40,7 +41,8 @@ unsigned int selectingMeat(vectorRestaurants &vRestaurants, vector<MenuChoice> &
   return 1; // 0 signals main to continue asking for food prefs
 }
 
-unsigned int selectingSeafood(vectorRestaurants &vRestaurants, vector<MenuChoice> &prefs) {
+unsigned int selectingSeafood(vectorRestaurants &vRestaurants,
+                              vector<MenuChoice> &prefs) {
   string choice;
   while (choice != "back") {
     choice = seafoodOptions(); // show seafood options and pick
@@ -80,7 +82,8 @@ unsigned int selectingSeafood(vectorRestaurants &vRestaurants, vector<MenuChoice
   return 1; // 0 signals main to continue asking for food prefs
 }
 
-unsigned int selectingDishes(vectorRestaurants &vRestaurants, vector<MenuChoice> &prefs) {
+unsigned int selectingDishes(vectorRestaurants &vRestaurants,
+                             vector<MenuChoice> &prefs) {
   string choice;
   while (choice != "back") {
     choice = dishOptions(); // show dish options and pick
@@ -115,7 +118,8 @@ unsigned int selectingDishes(vectorRestaurants &vRestaurants, vector<MenuChoice>
   return 1; // 0 signals main to continue asking for food prefs
 }
 
-// unsigned int selectingCuisine(vectorRestaurants &vRestaurants, vector<MenuChoice> &prefs) {
+// unsigned int selectingCuisine(vectorRestaurants &vRestaurants,
+// vector<MenuChoice> &prefs) {
 //   // string choice;
 //   // while (choice != "back") {
 //   //   choice = cuisineOptions(); // show cuisine options and pick
@@ -150,7 +154,8 @@ unsigned int selectingDishes(vectorRestaurants &vRestaurants, vector<MenuChoice>
 //   return 1; // 0 signals main to continue asking for food prefs
 // }
 
-unsigned int selectingDairy(vectorRestaurants &vRestaurants, vector<MenuChoice> &prefs) {
+unsigned int selectingDairy(vectorRestaurants &vRestaurants,
+                            vector<MenuChoice> &prefs) {
   string choice;
   while (choice != "back") {
     choice = dairyOptions(); // show dairy options and pick
@@ -176,8 +181,8 @@ unsigned int selectingDairy(vectorRestaurants &vRestaurants, vector<MenuChoice> 
   return 1; // 0 signals main to continue asking for food prefs
 }
 
-unsigned int selectingDrink(unsigned int diet,
-                            vectorRestaurants &vRestaurants, vector<MenuChoice> &prefs) {
+unsigned int selectingDrink(unsigned int diet, vectorRestaurants &vRestaurants,
+                            vector<MenuChoice> &prefs) {
   string choice;
   while (choice != "back") {
     choice = drinkOptions(); // show drink options and pick
@@ -191,9 +196,9 @@ unsigned int selectingDrink(unsigned int diet,
       removeRestaurantByMenu(vRestaurants, MenuChoice::Coffee);
       return 0;
 
- //   } else if (choice == "fountain") {
- //     cout << "Fountain Drink added" << endl;
-//      return 0;
+      //   } else if (choice == "fountain") {
+      //     cout << "Fountain Drink added" << endl;
+      //      return 0;
 
     } else if (choice == "tea") {
       cout << "Tea added" << endl;

@@ -9,12 +9,11 @@ public:
   vectorRestaurants();
   ~vectorRestaurants();
 
-
   Restaurant &getRestaurant(int index);
   vector<Restaurant> &getRestaurants();
 
-  //vector<Restaurant> &getRestaurants();
-  //Restaurant &getRestaurant(int index);
+  // vector<Restaurant> &getRestaurants();
+  // Restaurant &getRestaurant(int index);
 
   Restaurant &getRestaurantByName(const std::string &name);
   bool isValid(vector<Restaurant> restaurants, Restaurant restaurant);
