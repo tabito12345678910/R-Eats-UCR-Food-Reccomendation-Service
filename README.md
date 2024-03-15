@@ -1,4 +1,4 @@
-# \R'Eats\
+# R'Eats
 
   Authors: \<[Danny Topete](https://github.com/Sped32DJ), [Nathan Matsuo](https://github.com/nathan0404), [Ryan Robes](https://github.com/idkmori), [Tabito Sakamoto](https://github.com/tabito12345678910)\>
 
