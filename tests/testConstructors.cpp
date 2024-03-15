@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 
 TEST(RestaurantTestsChronicTacos, ChronicTacosConstructor) {
-  EXPECT_NO_THROW({ ChronicTacos testChronicTacos(); });
+  EXPECT_NO_THROW({ ChronicTacos testChronicTacos; });
 }
 
 TEST(RestaurantTestsChronicTacos, ChronicTacosVectors) {
@@ -15,7 +15,7 @@ TEST(RestaurantTestsChronicTacos, ChronicTacosVectors) {
 }
 
 TEST(RestaurantTestsCoffeeBean, CoffeeBeanConstructor) {
-  EXPECT_NO_THROW({ CoffeeBean testCoffeeBean(); });
+  EXPECT_NO_THROW({ CoffeeBean testCoffeeBean; });
 }
 
 // TEST(RestaurantTestsCoffeeBean, CoffeeBeanVectors) {
@@ -25,7 +25,7 @@ TEST(RestaurantTestsCoffeeBean, CoffeeBeanConstructor) {
 // }
 
 TEST(RestaurantTestsHabit, HabitConstructor) {
-  EXPECT_NO_THROW({ Habit testHabit(); });
+  EXPECT_NO_THROW({ Habit testHabit; });
 }
 
 TEST(RestaurantTestsHabit, HabitVectors) {
@@ -35,7 +35,7 @@ TEST(RestaurantTestsHabit, HabitVectors) {
 }
 
 TEST(RestaurantTestsHalalShack, HalalShackConstructor) {
-  EXPECT_NO_THROW({ HalalShack testHalalShack(); });
+  EXPECT_NO_THROW({ HalalShack testHalalShack; });
 }
 
 TEST(RestaurantTestsHalalShack, HalalShackVectors) {
@@ -45,7 +45,7 @@ TEST(RestaurantTestsHalalShack, HalalShackVectors) {
 }
 
 TEST(RestaurantTestsHibachi, HibachiConstructor) {
-  EXPECT_NO_THROW({ Hibachi testHibachi(); });
+  EXPECT_NO_THROW({ Hibachi testHibachi; });
 }
 
 TEST(RestaurantTestsHibachi, HibachiVectors) {
@@ -55,7 +55,7 @@ TEST(RestaurantTestsHibachi, HibachiVectors) {
 }
 
 TEST(RestaurantTestsPandaExpress, PandaExpressConstructor) {
-  EXPECT_NO_THROW({ PandaExpress testPandaExpress(); });
+  EXPECT_NO_THROW({ PandaExpress testPandaExpress; });
 }
 
 TEST(RestaurantTestsPandaExpress, PandaExpressVectors) {
@@ -65,7 +65,7 @@ TEST(RestaurantTestsPandaExpress, PandaExpressVectors) {
 }
 
 TEST(RestaurantTestsStarbucks, StarbucksConstructor) {
-  EXPECT_NO_THROW({ Starbucks testStarbucks(); });
+  EXPECT_NO_THROW({ Starbucks testStarbucks; });
 }
 
 TEST(RestaurantTestsStarbucks, StarbucksVectors) {
@@ -76,7 +76,7 @@ TEST(RestaurantTestsStarbucks, StarbucksVectors) {
 }
 
 TEST(RestaurantTestsSubway, SubwayConstructor) {
-  EXPECT_NO_THROW({ Subway testSubway(); });
+  EXPECT_NO_THROW({ Subway testSubway; });
 }
 
 TEST(RestaurantTestsSubway, SubwayVectors) {
