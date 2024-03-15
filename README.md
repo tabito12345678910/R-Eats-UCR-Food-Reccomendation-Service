@@ -1,18 +1,18 @@
 
-# \<R'Eats\>
+# \R'Eats\
 
-  Authors: \<[Danny Topete](https://github.com/Sped32DJ), [Nathan Matsuo](https://github.com/nathan0404), [Ryan Robes](https://github.com/idkmori), [Tabito Sakamoto](https://github.com/tabito12345678910)\>
+  Authors: \[Danny Topete](https://github.com/Sped32DJ), [Nathan Matsuo](https://github.com/nathan0404), [Ryan Robes](https://github.com/idkmori), [Tabito Sakamoto](https://github.com/tabito12345678910)\
 
 
 ## Project Description
   * Why is it important or interesting to you?
-  We are all college students and we would all have a nicer way to eat food for less, so we built an on-campus food recommendation service. 
+  We are all college students and we would all have a nicer way to eat food for less, so we built an on-campus food recommendation service.
   * What languages/tools/technologies do you plan to use? (This list may change throughout the project)
 * This will be a terminal based
 * It will all be written in C++
-* Catering algorithm for people to choose exactly what they want to eat. 
+* Catering algorithm for people to choose exactly what they want to eat.
 * User would be inputing current location and meal preferences for the program to produce recommendations and ETA to recommended restaurant.
-Filter out recommendations through dietary restrictions and preferences, and produce relevant information to the recommended restaurant. 
+Filter out recommendations through dietary restrictions and preferences, and produce relevant information to the recommended restaurant.
     - This being by price, calorie, and distance
  # Input:
  * Insert 3 choices through the terminal with key binds to decide your preferences
